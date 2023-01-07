@@ -1,0 +1,2006 @@
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM__Changes_.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM__Changes_.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM__Changes_.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM__Changes_.xml	
+@@ -0,0 +1,4 @@
++<changelist name="Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]" date="1673098674494" recycled="false" toDelete="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 1/7/2023 8:37 PM [Changes]" />
++</changelist>
+Index: ../client/.idea/inspectionProfiles/Project_Default.xml
+IDEA additional info:
+Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+<+>UTF-8
+===================================================================
+diff --git a/../client/.idea/inspectionProfiles/Project_Default.xml b/../client/.idea/inspectionProfiles/Project_Default.xml
+new file mode 100644
+--- /dev/null	
++++ b/../client/.idea/inspectionProfiles/Project_Default.xml	
+@@ -0,0 +1,6 @@
++<component name="InspectionProjectProfileManager">
++  <profile version="1.0">
++    <option name="myName" value="Project Default" />
++    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
++  </profile>
++</component>
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]/shelved.patch
+new file mode 100644
+--- /dev/null	
++++ b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]/shelved.patch	
+@@ -0,0 +1,50 @@
++Index: .idea/workspace.xml
++===================================================================
++diff --git a/.idea/workspace.xml b/.idea/workspace.xml
++--- a/.idea/workspace.xml
+++++ b/.idea/workspace.xml
++@@ -1,8 +1,43 @@
++ <?xml version="1.0" encoding="UTF-8"?>
++ <project version="4">
+++  <component name="ChangeListManager">
+++    <list default="true" id="49eb259c-7e73-4227-b392-34da4c4c5a27" name="Changes" comment="">
+++      <change afterPath="$PROJECT_DIR$/../client/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/bcrypt_lib.node" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/shelved.patch" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/bcrypt_lib.node" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/shelved.patch" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_.xml" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_1.xml" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+++    </list>
+++    <option name="SHOW_DIALOG" value="false" />
+++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+++    <option name="LAST_RESOLUTION" value="IGNORE" />
+++  </component>
+++  <component name="Git.Settings">
+++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+++  </component>
+++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++   <component name="PropertiesComponent">{
++   &quot;keyToString&quot;: {
++     &quot;last_opened_file_path&quot;: &quot;C:/Program Files/nodejs/node_modules/npm/bin/npm&quot;
++   }
++ }</component>
+++  <component name="TaskManager">
+++    <servers />
+++  </component>
+++  <component name="Vcs.Log.Tabs.Properties">
+++    <option name="TAB_STATES">
+++      <map>
+++        <entry key="MAIN">
+++          <value>
+++            <State />
+++          </value>
+++        </entry>
+++      </map>
+++    </option>
+++  </component>
++ </project>
++\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]1/shelved.patch
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]1/shelved.patch b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]1/shelved.patch
+new file mode 100644
+--- /dev/null	
++++ b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]1/shelved.patch	
+@@ -0,0 +1,1893 @@
++Index: ../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_.xml b/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_.xml
++new file mode 100644
++--- /dev/null
+++++ b/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_.xml
++@@ -0,0 +1,4 @@
+++<changelist name="Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]" date="1673087935166" recycled="false" toDelete="true">
+++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/shelved.patch" />
+++  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 1/7/2023 5:38 PM [Changes]" />
+++</changelist>
++\ No newline at end of file
++Index: ../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_1.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_1.xml b/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_1.xml
++new file mode 100644
++--- /dev/null
+++++ b/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_1.xml
++@@ -0,0 +1,9 @@
+++<changelist name="Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1" date="1673087945404" recycled="true" deleted="true">
+++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/shelved.patch" />
+++  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 1/7/2023 5:38 PM [Changes]" />
+++  <binary>
+++    <option name="BEFORE_PATH" value="../server/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node" />
+++    <option name="AFTER_PATH" value="../server/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node" />
+++    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/bcrypt_lib.node" />
+++  </binary>
+++</changelist>
++\ No newline at end of file
++Index: ../client/.idea/inspectionProfiles/Project_Default.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/../client/.idea/inspectionProfiles/Project_Default.xml b/../client/.idea/inspectionProfiles/Project_Default.xml
++new file mode 100644
++--- /dev/null
+++++ b/../client/.idea/inspectionProfiles/Project_Default.xml
++@@ -0,0 +1,6 @@
+++<component name="InspectionProjectProfileManager">
+++  <profile version="1.0">
+++    <option name="myName" value="Project Default" />
+++    <inspection_tool class="Eslint" enabled="true" level="WARNING" enabled_by_default="true" />
+++  </profile>
+++</component>
++\ No newline at end of file
++Index: ../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/shelved.patch
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/shelved.patch b/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/shelved.patch
++new file mode 100644
++--- /dev/null
+++++ b/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/shelved.patch
++@@ -0,0 +1,1354 @@
+++Index: ../server/routes/auth.js
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/routes/auth.js b/../server/routes/auth.js
+++--- a/../server/routes/auth.js
++++++ b/../server/routes/auth.js
+++@@ -7,9 +7,9 @@
+++ router.post("/register", async(req, res) => {
+++     const {username, email, password} = req.body
+++
+++-
++++
+++     try {
+++-
++++
+++         // const salt = await bcrypt.genSalt(process.env.SALT_TOKEN)
+++         const salt = await bcrypt.genSalt(10)
+++         const hashedPassword = await bcrypt.hash(password, salt)
+++@@ -31,30 +31,33 @@
+++
+++ // Login
+++ router.post("/login", async(req, res) => {
+++-    const { email, password } = req.body
++++    const { username, password } = req.body
++++    // console.log(username + password)
++++
+++     try {
+++-        const existingUser = await User.findOne({ email })
+++-
++++        const existingUser = await User.findOne({ username })
++++        console.log(existingUser)
+++         if (!existingUser) {
+++             return res.status(404).json({ message: "User does not exist" })
+++         }
+++
+++-        const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
+++-
++++        // const isPasswordCorrect = await bcrypt.compare(password, existingUser.password);
++++            const isPasswordCorrect = true
+++         if (!isPasswordCorrect) {
+++             return res.status(400).json({ message: "Invalid Credentials" })
+++         }
+++
+++         const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, 'test')
+++-        console.log(req.headers.authorization)
++++        // console.log(req.headers.authorization)
++++        console.log(existingUser)
+++
+++         res.status(200).json({ result: existingUser, token: token })
+++         // res.status(200).json(existingUser)
+++-
++++
+++
+++     } catch (error) {
+++         res.status(500).json({ message: "Something went wrong." })
+++     }
+++ })
+++
+++-module.exports = router
+++\ No newline at end of file
++++module.exports = router
+++Index: ../server/routes/users.js
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/routes/users.js b/../server/routes/users.js
+++--- a/../server/routes/users.js
++++++ b/../server/routes/users.js
+++@@ -115,4 +115,4 @@
+++     res.send("Homepage")
+++ })
+++
+++-module.exports = router
+++\ No newline at end of file
++++module.exports = router
+++Index: ../server/index.js
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/index.js b/../server/index.js
+++--- a/../server/index.js
++++++ b/../server/index.js
+++@@ -1,5 +1,6 @@
+++ const express = require("express");
+++ const app = express();
++++var cors = require('cors')
+++ const mongoose = require("mongoose");
+++ const dotenv = require("dotenv");
+++ const helmet = require("helmet");
+++@@ -11,10 +12,11 @@
+++ const postRoute = require("./routes/posts")
+++ const commentRoute = require("./routes/comments")
+++ const cookies = require("cookie-parser");
+++-const bodyParser = require("body-parser")
++++const bodyParser = require("body-parser")
+++
+++-const PORT = process.env.PORT || 5000
++++const PORT = process.env.PORT || 5000
+++
++++app.use(express.json()).use(express.urlencoded({extended: true})).use(cors());
+++ // Middleware
+++ app.use(express.json())
+++ app.use(helmet())
+++@@ -25,15 +27,14 @@
+++ app.use("/api/posts", postRoute)
+++ app.use("/api/auth", authRoute)
+++ app.use("/api/comments", commentRoute)
+++-app.use(bodyParser.urlencoded({ extended: true }));
++++
+++
+++ app.get("/", (req, res) => {
+++-
+++     res.send("Welcome to server")
+++ })
+++
+++
+++-mongoose.set('strictQuery', true).connect(process.env.MONGO_URI, { useNewUrlParser: true, useUnifiedTopology: true })
++++mongoose.set('strictQuery', true).connect(process.env.MONGO_URI, {} )
+++     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
+++     .catch((error) => console.log(error.message))
+++
+++Index: ../server/package-lock.json
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/package-lock.json b/../server/package-lock.json
+++--- a/../server/package-lock.json
++++++ b/../server/package-lock.json
+++@@ -12,12 +12,14 @@
+++         "bcrypt": "^5.1.0",
+++         "body-parser": "^1.20.1",
+++         "cookie-parser": "^1.4.6",
++++        "cors": "^2.8.5",
+++         "dotenv": "^16.0.3",
+++         "express": "^4.18.2",
+++         "helmet": "^6.0.1",
+++         "jsonwebtoken": "^8.5.1",
+++         "mongoose": "^6.8.0",
+++-        "morgan": "^1.10.0"
++++        "morgan": "^1.10.0",
++++        "nodemon": "^2.0.20"
+++       }
+++     },
+++     "node_modules/@aws-crypto/ie11-detection": {
+++@@ -1177,6 +1179,18 @@
+++       "integrity": "sha512-quJQXlTSUGL2LH9SUXo8VwsY4soanhgo6LNSm84E1LBcE8s3O0wpdiRzyR9z/ZZJMlMWv37qOOb9pdJlMUEKFQ==",
+++       "engines": {
+++         "node": ">=8"
++++      }
++++    },
++++    "node_modules/anymatch": {
++++      "version": "3.1.3",
++++      "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz",
++++      "integrity": "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==",
++++      "dependencies": {
++++        "normalize-path": "^3.0.0",
++++        "picomatch": "^2.0.4"
++++      },
++++      "engines": {
++++        "node": ">= 8"
+++       }
+++     },
+++     "node_modules/aproba": {
+++@@ -1254,6 +1268,14 @@
+++         "node": ">= 10.0.0"
+++       }
+++     },
++++    "node_modules/binary-extensions": {
++++      "version": "2.2.0",
++++      "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz",
++++      "integrity": "sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==",
++++      "engines": {
++++        "node": ">=8"
++++      }
++++    },
+++     "node_modules/body-parser": {
+++       "version": "1.20.1",
+++       "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-1.20.1.tgz",
+++@@ -1292,6 +1314,17 @@
+++         "concat-map": "0.0.1"
+++       }
+++     },
++++    "node_modules/braces": {
++++      "version": "3.0.2",
++++      "resolved": "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz",
++++      "integrity": "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==",
++++      "dependencies": {
++++        "fill-range": "^7.0.1"
++++      },
++++      "engines": {
++++        "node": ">=8"
++++      }
++++    },
+++     "node_modules/bson": {
+++       "version": "4.7.0",
+++       "resolved": "https://registry.npmjs.org/bson/-/bson-4.7.0.tgz",
+++@@ -1351,6 +1384,32 @@
+++         "url": "https://github.com/sponsors/ljharb"
+++       }
+++     },
++++    "node_modules/chokidar": {
++++      "version": "3.5.3",
++++      "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz",
++++      "integrity": "sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==",
++++      "funding": [
++++        {
++++          "type": "individual",
++++          "url": "https://paulmillr.com/funding/"
++++        }
++++      ],
++++      "dependencies": {
++++        "anymatch": "~3.1.2",
++++        "braces": "~3.0.2",
++++        "glob-parent": "~5.1.2",
++++        "is-binary-path": "~2.1.0",
++++        "is-glob": "~4.0.1",
++++        "normalize-path": "~3.0.0",
++++        "readdirp": "~3.6.0"
++++      },
++++      "engines": {
++++        "node": ">= 8.10.0"
++++      },
++++      "optionalDependencies": {
++++        "fsevents": "~2.3.2"
++++      }
++++    },
+++     "node_modules/chownr": {
+++       "version": "2.0.0",
+++       "resolved": "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz",
+++@@ -1429,6 +1488,18 @@
+++       "resolved": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz",
+++       "integrity": "sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ=="
+++     },
++++    "node_modules/cors": {
++++      "version": "2.8.5",
++++      "resolved": "https://registry.npmjs.org/cors/-/cors-2.8.5.tgz",
++++      "integrity": "sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==",
++++      "dependencies": {
++++        "object-assign": "^4",
++++        "vary": "^1"
++++      },
++++      "engines": {
++++        "node": ">= 0.10"
++++      }
++++    },
+++     "node_modules/debug": {
+++       "version": "2.6.9",
+++       "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz",
+++@@ -1571,6 +1642,17 @@
+++         "url": "https://paypal.me/naturalintelligence"
+++       }
+++     },
++++    "node_modules/fill-range": {
++++      "version": "7.0.1",
++++      "resolved": "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz",
++++      "integrity": "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==",
++++      "dependencies": {
++++        "to-regex-range": "^5.0.1"
++++      },
++++      "engines": {
++++        "node": ">=8"
++++      }
++++    },
+++     "node_modules/finalhandler": {
+++       "version": "1.2.0",
+++       "resolved": "https://registry.npmjs.org/finalhandler/-/finalhandler-1.2.0.tgz",
+++@@ -1631,6 +1713,19 @@
+++       "resolved": "https://registry.npmjs.org/fs.realpath/-/fs.realpath-1.0.0.tgz",
+++       "integrity": "sha512-OO0pH2lK6a0hZnAdau5ItzHPI6pUlvI7jMVnxUQRtw4owF2wk8lOSabtGDCTP4Ggrg2MbGnWO9X8K1t4+fGMDw=="
+++     },
++++    "node_modules/fsevents": {
++++      "version": "2.3.2",
++++      "resolved": "https://registry.npmjs.org/fsevents/-/fsevents-2.3.2.tgz",
++++      "integrity": "sha512-xiqMQR4xAeHTuB9uWm+fFRcIOgKBMiOBP+eXiyT7jsgVCq1bkVygt00oASowB7EdtpOHaaPgKt812P9ab+DDKA==",
++++      "hasInstallScript": true,
++++      "optional": true,
++++      "os": [
++++        "darwin"
++++      ],
++++      "engines": {
++++        "node": "^8.16.0 || ^10.6.0 || >=11.0.0"
++++      }
++++    },
+++     "node_modules/function-bind": {
+++       "version": "1.1.1",
+++       "resolved": "https://registry.npmjs.org/function-bind/-/function-bind-1.1.1.tgz",
+++@@ -1687,6 +1782,17 @@
+++         "url": "https://github.com/sponsors/isaacs"
+++       }
+++     },
++++    "node_modules/glob-parent": {
++++      "version": "5.1.2",
++++      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
++++      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
++++      "dependencies": {
++++        "is-glob": "^4.0.1"
++++      },
++++      "engines": {
++++        "node": ">= 6"
++++      }
++++    },
+++     "node_modules/has": {
+++       "version": "1.0.3",
+++       "resolved": "https://registry.npmjs.org/has/-/has-1.0.3.tgz",
+++@@ -1698,6 +1804,14 @@
+++         "node": ">= 0.4.0"
+++       }
+++     },
++++    "node_modules/has-flag": {
++++      "version": "3.0.0",
++++      "resolved": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
++++      "integrity": "sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==",
++++      "engines": {
++++        "node": ">=4"
++++      }
++++    },
+++     "node_modules/has-symbols": {
+++       "version": "1.0.3",
+++       "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.0.3.tgz",
+++@@ -1800,6 +1914,11 @@
+++         }
+++       ]
+++     },
++++    "node_modules/ignore-by-default": {
++++      "version": "1.0.1",
++++      "resolved": "https://registry.npmjs.org/ignore-by-default/-/ignore-by-default-1.0.1.tgz",
++++      "integrity": "sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA=="
++++    },
+++     "node_modules/inflight": {
+++       "version": "1.0.6",
+++       "resolved": "https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz",
+++@@ -1827,6 +1946,25 @@
+++         "node": ">= 0.10"
+++       }
+++     },
++++    "node_modules/is-binary-path": {
++++      "version": "2.1.0",
++++      "resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
++++      "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
++++      "dependencies": {
++++        "binary-extensions": "^2.0.0"
++++      },
++++      "engines": {
++++        "node": ">=8"
++++      }
++++    },
++++    "node_modules/is-extglob": {
++++      "version": "2.1.1",
++++      "resolved": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
++++      "integrity": "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==",
++++      "engines": {
++++        "node": ">=0.10.0"
++++      }
++++    },
+++     "node_modules/is-fullwidth-code-point": {
+++       "version": "3.0.0",
+++       "resolved": "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz",
+++@@ -1835,6 +1973,25 @@
+++         "node": ">=8"
+++       }
+++     },
++++    "node_modules/is-glob": {
++++      "version": "4.0.3",
++++      "resolved": "https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz",
++++      "integrity": "sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==",
++++      "dependencies": {
++++        "is-extglob": "^2.1.1"
++++      },
++++      "engines": {
++++        "node": ">=0.10.0"
++++      }
++++    },
++++    "node_modules/is-number": {
++++      "version": "7.0.0",
++++      "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
++++      "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==",
++++      "engines": {
++++        "node": ">=0.12.0"
++++      }
++++    },
+++     "node_modules/jsonwebtoken": {
+++       "version": "8.5.1",
+++       "resolved": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz",
+++@@ -2251,6 +2408,54 @@
+++         "webidl-conversions": "^3.0.0"
+++       }
+++     },
++++    "node_modules/nodemon": {
++++      "version": "2.0.20",
++++      "resolved": "https://registry.npmjs.org/nodemon/-/nodemon-2.0.20.tgz",
++++      "integrity": "sha512-Km2mWHKKY5GzRg6i1j5OxOHQtuvVsgskLfigG25yTtbyfRGn/GNvIbRyOf1PSCKJ2aT/58TiuUsuOU5UToVViw==",
++++      "dependencies": {
++++        "chokidar": "^3.5.2",
++++        "debug": "^3.2.7",
++++        "ignore-by-default": "^1.0.1",
++++        "minimatch": "^3.1.2",
++++        "pstree.remy": "^1.1.8",
++++        "semver": "^5.7.1",
++++        "simple-update-notifier": "^1.0.7",
++++        "supports-color": "^5.5.0",
++++        "touch": "^3.1.0",
++++        "undefsafe": "^2.0.5"
++++      },
++++      "bin": {
++++        "nodemon": "bin/nodemon.js"
++++      },
++++      "engines": {
++++        "node": ">=8.10.0"
++++      },
++++      "funding": {
++++        "type": "opencollective",
++++        "url": "https://opencollective.com/nodemon"
++++      }
++++    },
++++    "node_modules/nodemon/node_modules/debug": {
++++      "version": "3.2.7",
++++      "resolved": "https://registry.npmjs.org/debug/-/debug-3.2.7.tgz",
++++      "integrity": "sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==",
++++      "dependencies": {
++++        "ms": "^2.1.1"
++++      }
++++    },
++++    "node_modules/nodemon/node_modules/ms": {
++++      "version": "2.1.3",
++++      "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
++++      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="
++++    },
++++    "node_modules/nodemon/node_modules/semver": {
++++      "version": "5.7.1",
++++      "resolved": "https://registry.npmjs.org/semver/-/semver-5.7.1.tgz",
++++      "integrity": "sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==",
++++      "bin": {
++++        "semver": "bin/semver"
++++      }
++++    },
+++     "node_modules/nopt": {
+++       "version": "5.0.0",
+++       "resolved": "https://registry.npmjs.org/nopt/-/nopt-5.0.0.tgz",
+++@@ -2265,6 +2470,14 @@
+++         "node": ">=6"
+++       }
+++     },
++++    "node_modules/normalize-path": {
++++      "version": "3.0.0",
++++      "resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
++++      "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==",
++++      "engines": {
++++        "node": ">=0.10.0"
++++      }
++++    },
+++     "node_modules/npmlog": {
+++       "version": "5.0.1",
+++       "resolved": "https://registry.npmjs.org/npmlog/-/npmlog-5.0.1.tgz",
+++@@ -2340,6 +2553,17 @@
+++       "resolved": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz",
+++       "integrity": "sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ=="
+++     },
++++    "node_modules/picomatch": {
++++      "version": "2.3.1",
++++      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
++++      "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==",
++++      "engines": {
++++        "node": ">=8.6"
++++      },
++++      "funding": {
++++        "url": "https://github.com/sponsors/jonschlinkert"
++++      }
++++    },
+++     "node_modules/proxy-addr": {
+++       "version": "2.0.7",
+++       "resolved": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.7.tgz",
+++@@ -2352,6 +2576,11 @@
+++         "node": ">= 0.10"
+++       }
+++     },
++++    "node_modules/pstree.remy": {
++++      "version": "1.1.8",
++++      "resolved": "https://registry.npmjs.org/pstree.remy/-/pstree.remy-1.1.8.tgz",
++++      "integrity": "sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w=="
++++    },
+++     "node_modules/punycode": {
+++       "version": "2.1.1",
+++       "resolved": "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz",
+++@@ -2409,6 +2638,17 @@
+++         "node": ">= 6"
+++       }
+++     },
++++    "node_modules/readdirp": {
++++      "version": "3.6.0",
++++      "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz",
++++      "integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==",
++++      "dependencies": {
++++        "picomatch": "^2.2.1"
++++      },
++++      "engines": {
++++        "node": ">=8.10.0"
++++      }
++++    },
+++     "node_modules/rimraf": {
+++       "version": "3.0.2",
+++       "resolved": "https://registry.npmjs.org/rimraf/-/rimraf-3.0.2.tgz",
+++@@ -2548,6 +2788,25 @@
+++       "resolved": "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz",
+++       "integrity": "sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ=="
+++     },
++++    "node_modules/simple-update-notifier": {
++++      "version": "1.1.0",
++++      "resolved": "https://registry.npmjs.org/simple-update-notifier/-/simple-update-notifier-1.1.0.tgz",
++++      "integrity": "sha512-VpsrsJSUcJEseSbMHkrsrAVSdvVS5I96Qo1QAQ4FxQ9wXFcB+pjj7FB7/us9+GcgfW4ziHtYMc1J0PLczb55mg==",
++++      "dependencies": {
++++        "semver": "~7.0.0"
++++      },
++++      "engines": {
++++        "node": ">=8.10.0"
++++      }
++++    },
++++    "node_modules/simple-update-notifier/node_modules/semver": {
++++      "version": "7.0.0",
++++      "resolved": "https://registry.npmjs.org/semver/-/semver-7.0.0.tgz",
++++      "integrity": "sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==",
++++      "bin": {
++++        "semver": "bin/semver.js"
++++      }
++++    },
+++     "node_modules/smart-buffer": {
+++       "version": "4.2.0",
+++       "resolved": "https://registry.npmjs.org/smart-buffer/-/smart-buffer-4.2.0.tgz",
+++@@ -2625,6 +2884,17 @@
+++       "integrity": "sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==",
+++       "optional": true
+++     },
++++    "node_modules/supports-color": {
++++      "version": "5.5.0",
++++      "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
++++      "integrity": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==",
++++      "dependencies": {
++++        "has-flag": "^3.0.0"
++++      },
++++      "engines": {
++++        "node": ">=4"
++++      }
++++    },
+++     "node_modules/tar": {
+++       "version": "6.1.13",
+++       "resolved": "https://registry.npmjs.org/tar/-/tar-6.1.13.tgz",
+++@@ -2641,6 +2911,17 @@
+++         "node": ">=10"
+++       }
+++     },
++++    "node_modules/to-regex-range": {
++++      "version": "5.0.1",
++++      "resolved": "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz",
++++      "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==",
++++      "dependencies": {
++++        "is-number": "^7.0.0"
++++      },
++++      "engines": {
++++        "node": ">=8.0"
++++      }
++++    },
+++     "node_modules/toidentifier": {
+++       "version": "1.0.1",
+++       "resolved": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz",
+++@@ -2649,6 +2930,31 @@
+++         "node": ">=0.6"
+++       }
+++     },
++++    "node_modules/touch": {
++++      "version": "3.1.0",
++++      "resolved": "https://registry.npmjs.org/touch/-/touch-3.1.0.tgz",
++++      "integrity": "sha512-WBx8Uy5TLtOSRtIq+M03/sKDrXCLHxwDcquSP2c43Le03/9serjQBIztjRz6FkJez9D/hleyAXTBGLwwZUw9lA==",
++++      "dependencies": {
++++        "nopt": "~1.0.10"
++++      },
++++      "bin": {
++++        "nodetouch": "bin/nodetouch.js"
++++      }
++++    },
++++    "node_modules/touch/node_modules/nopt": {
++++      "version": "1.0.10",
++++      "resolved": "https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz",
++++      "integrity": "sha512-NWmpvLSqUrgrAC9HCuxEvb+PSloHpqVu+FqcO4eeF2h5qYRhA7ev6KvelyQAKtegUbC6RypJnlEOhd8vloNKYg==",
++++      "dependencies": {
++++        "abbrev": "1"
++++      },
++++      "bin": {
++++        "nopt": "bin/nopt.js"
++++      },
++++      "engines": {
++++        "node": "*"
++++      }
++++    },
+++     "node_modules/tr46": {
+++       "version": "3.0.0",
+++       "resolved": "https://registry.npmjs.org/tr46/-/tr46-3.0.0.tgz",
+++@@ -2678,6 +2984,11 @@
+++         "node": ">= 0.6"
+++       }
+++     },
++++    "node_modules/undefsafe": {
++++      "version": "2.0.5",
++++      "resolved": "https://registry.npmjs.org/undefsafe/-/undefsafe-2.0.5.tgz",
++++      "integrity": "sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA=="
++++    },
+++     "node_modules/unpipe": {
+++       "version": "1.0.0",
+++       "resolved": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz",
+++Index: ../server/package.json
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/package.json b/../server/package.json
+++--- a/../server/package.json
++++++ b/../server/package.json
+++@@ -13,11 +13,13 @@
+++     "bcrypt": "^5.1.0",
+++     "body-parser": "^1.20.1",
+++     "cookie-parser": "^1.4.6",
++++    "cors": "^2.8.5",
+++     "dotenv": "^16.0.3",
+++     "express": "^4.18.2",
+++     "helmet": "^6.0.1",
+++     "jsonwebtoken": "^8.5.1",
+++     "mongoose": "^6.8.0",
+++-    "morgan": "^1.10.0"
++++    "morgan": "^1.10.0",
++++    "nodemon": "^2.0.20"
+++   }
+++ }
+++Index: ../server/.env
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/.env b/../server/.env
+++--- a/../server/.env
++++++ b/../server/.env
+++@@ -1,3 +1,3 @@
+++ PORT = 5000
+++-MONGO_URI = "mongodb+srv://edkl-123:edkl-123@cluster0.dqqezqk.mongodb.net/social-networking2"
+++-SALT_TOKEN = 10
+++\ No newline at end of file
++++MONGO_URI = "mongodb://127.0.0.1:27017/SocialNetworking"
++++SALT_TOKEN = 10
+++Index: ../server/node_modules/.bin/node-pre-gyp
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.bin/node-pre-gyp b/../server/node_modules/.bin/node-pre-gyp
+++--- a/../server/node_modules/.bin/node-pre-gyp
++++++ b/../server/node_modules/.bin/node-pre-gyp
+++@@ -1,1 +1,12 @@
+++-../@mapbox/node-pre-gyp/bin/node-pre-gyp
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../@mapbox/node-pre-gyp/bin/node-pre-gyp" "$@"
++++else
++++  exec node  "$basedir/../@mapbox/node-pre-gyp/bin/node-pre-gyp" "$@"
++++fi
+++Index: ../server/node_modules/.bin/mime
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.bin/mime b/../server/node_modules/.bin/mime
+++--- a/../server/node_modules/.bin/mime
++++++ b/../server/node_modules/.bin/mime
+++@@ -1,1 +1,12 @@
+++-../mime/cli.js
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../mime/cli.js" "$@"
++++else
++++  exec node  "$basedir/../mime/cli.js" "$@"
++++fi
+++Index: ../server/node_modules/jsonwebtoken/node_modules/.bin/semver
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/jsonwebtoken/node_modules/.bin/semver b/../server/node_modules/jsonwebtoken/node_modules/.bin/semver
+++--- a/../server/node_modules/jsonwebtoken/node_modules/.bin/semver
++++++ b/../server/node_modules/jsonwebtoken/node_modules/.bin/semver
+++@@ -1,1 +1,12 @@
+++-../semver/bin/semver
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../semver/bin/semver" "$@"
++++else
++++  exec node  "$basedir/../semver/bin/semver" "$@"
++++fi
+++Index: ../server/node_modules/.bin/nopt
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.bin/nopt b/../server/node_modules/.bin/nopt
+++--- a/../server/node_modules/.bin/nopt
++++++ b/../server/node_modules/.bin/nopt
+++@@ -1,1 +1,12 @@
+++-../nopt/bin/nopt.js
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../nopt/bin/nopt.js" "$@"
++++else
++++  exec node  "$basedir/../nopt/bin/nopt.js" "$@"
++++fi
+++Index: ../server/node_modules/make-dir/node_modules/.bin/semver
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/make-dir/node_modules/.bin/semver b/../server/node_modules/make-dir/node_modules/.bin/semver
+++--- a/../server/node_modules/make-dir/node_modules/.bin/semver
++++++ b/../server/node_modules/make-dir/node_modules/.bin/semver
+++@@ -1,1 +1,12 @@
+++-../semver/bin/semver.js
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../semver/bin/semver.js" "$@"
++++else
++++  exec node  "$basedir/../semver/bin/semver.js" "$@"
++++fi
+++Index: ../server/node_modules/.bin/semver
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.bin/semver b/../server/node_modules/.bin/semver
+++--- a/../server/node_modules/.bin/semver
++++++ b/../server/node_modules/.bin/semver
+++@@ -1,1 +1,12 @@
+++-../semver/bin/semver.js
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../semver/bin/semver.js" "$@"
++++else
++++  exec node  "$basedir/../semver/bin/semver.js" "$@"
++++fi
+++Index: ../server/node_modules/.bin/color-support
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.bin/color-support b/../server/node_modules/.bin/color-support
+++--- a/../server/node_modules/.bin/color-support
++++++ b/../server/node_modules/.bin/color-support
+++@@ -1,1 +1,12 @@
+++-../color-support/bin.js
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../color-support/bin.js" "$@"
++++else
++++  exec node  "$basedir/../color-support/bin.js" "$@"
++++fi
+++Index: ../server/node_modules/.bin/uuid
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.bin/uuid b/../server/node_modules/.bin/uuid
+++--- a/../server/node_modules/.bin/uuid
++++++ b/../server/node_modules/.bin/uuid
+++@@ -1,1 +1,12 @@
+++-../uuid/dist/bin/uuid
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../uuid/dist/bin/uuid" "$@"
++++else
++++  exec node  "$basedir/../uuid/dist/bin/uuid" "$@"
++++fi
+++Index: ../server/node_modules/.bin/mkdirp
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.bin/mkdirp b/../server/node_modules/.bin/mkdirp
+++--- a/../server/node_modules/.bin/mkdirp
++++++ b/../server/node_modules/.bin/mkdirp
+++@@ -1,1 +1,12 @@
+++-../mkdirp/bin/cmd.js
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../mkdirp/bin/cmd.js" "$@"
++++else
++++  exec node  "$basedir/../mkdirp/bin/cmd.js" "$@"
++++fi
+++Index: ../server/node_modules/.bin/rimraf
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.bin/rimraf b/../server/node_modules/.bin/rimraf
+++--- a/../server/node_modules/.bin/rimraf
++++++ b/../server/node_modules/.bin/rimraf
+++@@ -1,1 +1,12 @@
+++-../rimraf/bin.js
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../rimraf/bin.js" "$@"
++++else
++++  exec node  "$basedir/../rimraf/bin.js" "$@"
++++fi
+++Index: ../server/node_modules/.bin/fxparser
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.bin/fxparser b/../server/node_modules/.bin/fxparser
+++--- a/../server/node_modules/.bin/fxparser
++++++ b/../server/node_modules/.bin/fxparser
+++@@ -1,1 +1,12 @@
+++-../fast-xml-parser/src/cli/cli.js
+++\ No newline at end of file
++++#!/bin/sh
++++basedir=$(dirname "$(echo "$0" | sed -e 's,\\,/,g')")
++++
++++case `uname` in
++++    *CYGWIN*|*MINGW*|*MSYS*) basedir=`cygpath -w "$basedir"`;;
++++esac
++++
++++if [ -x "$basedir/node" ]; then
++++  exec "$basedir/node"  "$basedir/../fast-xml-parser/src/cli/cli.js" "$@"
++++else
++++  exec node  "$basedir/../fast-xml-parser/src/cli/cli.js" "$@"
++++fi
+++Index: ../server/node_modules/.package-lock.json
+++IDEA additional info:
+++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
+++<+>UTF-8
+++===================================================================
+++diff --git a/../server/node_modules/.package-lock.json b/../server/node_modules/.package-lock.json
+++--- a/../server/node_modules/.package-lock.json
++++++ b/../server/node_modules/.package-lock.json
+++@@ -1163,6 +1163,18 @@
+++         "node": ">=8"
+++       }
+++     },
++++    "node_modules/anymatch": {
++++      "version": "3.1.3",
++++      "resolved": "https://registry.npmjs.org/anymatch/-/anymatch-3.1.3.tgz",
++++      "integrity": "sha512-KMReFUr0B4t+D+OBkjR3KYqvocp2XaSzO55UcB6mgQMd3KbcE+mWTyvVV7D/zsdEbNnV6acZUutkiHQXvTr1Rw==",
++++      "dependencies": {
++++        "normalize-path": "^3.0.0",
++++        "picomatch": "^2.0.4"
++++      },
++++      "engines": {
++++        "node": ">= 8"
++++      }
++++    },
+++     "node_modules/aproba": {
+++       "version": "2.0.0",
+++       "resolved": "https://registry.npmjs.org/aproba/-/aproba-2.0.0.tgz",
+++@@ -1238,6 +1250,14 @@
+++         "node": ">= 10.0.0"
+++       }
+++     },
++++    "node_modules/binary-extensions": {
++++      "version": "2.2.0",
++++      "resolved": "https://registry.npmjs.org/binary-extensions/-/binary-extensions-2.2.0.tgz",
++++      "integrity": "sha512-jDctJ/IVQbZoJykoeHbhXpOlNBqGNcwXJKJog42E5HDPUwQTSdjCHdihjj0DlnheQ7blbT6dHOafNAiS8ooQKA==",
++++      "engines": {
++++        "node": ">=8"
++++      }
++++    },
+++     "node_modules/body-parser": {
+++       "version": "1.20.1",
+++       "resolved": "https://registry.npmjs.org/body-parser/-/body-parser-1.20.1.tgz",
+++@@ -1276,6 +1296,17 @@
+++         "concat-map": "0.0.1"
+++       }
+++     },
++++    "node_modules/braces": {
++++      "version": "3.0.2",
++++      "resolved": "https://registry.npmjs.org/braces/-/braces-3.0.2.tgz",
++++      "integrity": "sha512-b8um+L1RzM3WDSzvhm6gIz1yfTbBt6YTlcEKAvsmqCZZFw46z626lVj9j1yEPW33H5H+lBQpZMP1k8l+78Ha0A==",
++++      "dependencies": {
++++        "fill-range": "^7.0.1"
++++      },
++++      "engines": {
++++        "node": ">=8"
++++      }
++++    },
+++     "node_modules/bson": {
+++       "version": "4.7.0",
+++       "resolved": "https://registry.npmjs.org/bson/-/bson-4.7.0.tgz",
+++@@ -1335,6 +1366,32 @@
+++         "url": "https://github.com/sponsors/ljharb"
+++       }
+++     },
++++    "node_modules/chokidar": {
++++      "version": "3.5.3",
++++      "resolved": "https://registry.npmjs.org/chokidar/-/chokidar-3.5.3.tgz",
++++      "integrity": "sha512-Dr3sfKRP6oTcjf2JmUmFJfeVMvXBdegxB0iVQ5eb2V10uFJUCAS8OByZdVAyVb8xXNz3GjjTgj9kLWsZTqE6kw==",
++++      "funding": [
++++        {
++++          "type": "individual",
++++          "url": "https://paulmillr.com/funding/"
++++        }
++++      ],
++++      "dependencies": {
++++        "anymatch": "~3.1.2",
++++        "braces": "~3.0.2",
++++        "glob-parent": "~5.1.2",
++++        "is-binary-path": "~2.1.0",
++++        "is-glob": "~4.0.1",
++++        "normalize-path": "~3.0.0",
++++        "readdirp": "~3.6.0"
++++      },
++++      "engines": {
++++        "node": ">= 8.10.0"
++++      },
++++      "optionalDependencies": {
++++        "fsevents": "~2.3.2"
++++      }
++++    },
+++     "node_modules/chownr": {
+++       "version": "2.0.0",
+++       "resolved": "https://registry.npmjs.org/chownr/-/chownr-2.0.0.tgz",
+++@@ -1413,6 +1470,18 @@
+++       "resolved": "https://registry.npmjs.org/cookie-signature/-/cookie-signature-1.0.6.tgz",
+++       "integrity": "sha512-QADzlaHc8icV8I7vbaJXJwod9HWYp8uCqf1xa4OfNu1T7JVxQIrUgOWtHdNDtPiywmFbiS12VjotIXLrKM3orQ=="
+++     },
++++    "node_modules/cors": {
++++      "version": "2.8.5",
++++      "resolved": "https://registry.npmjs.org/cors/-/cors-2.8.5.tgz",
++++      "integrity": "sha512-KIHbLJqu73RGr/hnbrO9uBeixNGuvSQjul/jdFvS/KFSIH1hWVd1ng7zOHx+YrEfInLG7q4n6GHQ9cDtxv/P6g==",
++++      "dependencies": {
++++        "object-assign": "^4",
++++        "vary": "^1"
++++      },
++++      "engines": {
++++        "node": ">= 0.10"
++++      }
++++    },
+++     "node_modules/debug": {
+++       "version": "2.6.9",
+++       "resolved": "https://registry.npmjs.org/debug/-/debug-2.6.9.tgz",
+++@@ -1555,6 +1624,17 @@
+++         "url": "https://paypal.me/naturalintelligence"
+++       }
+++     },
++++    "node_modules/fill-range": {
++++      "version": "7.0.1",
++++      "resolved": "https://registry.npmjs.org/fill-range/-/fill-range-7.0.1.tgz",
++++      "integrity": "sha512-qOo9F+dMUmC2Lcb4BbVvnKJxTPjCm+RRpe4gDuGrzkL7mEVl/djYSu2OdQ2Pa302N4oqkSg9ir6jaLWJ2USVpQ==",
++++      "dependencies": {
++++        "to-regex-range": "^5.0.1"
++++      },
++++      "engines": {
++++        "node": ">=8"
++++      }
++++    },
+++     "node_modules/finalhandler": {
+++       "version": "1.2.0",
+++       "resolved": "https://registry.npmjs.org/finalhandler/-/finalhandler-1.2.0.tgz",
+++@@ -1671,6 +1751,17 @@
+++         "url": "https://github.com/sponsors/isaacs"
+++       }
+++     },
++++    "node_modules/glob-parent": {
++++      "version": "5.1.2",
++++      "resolved": "https://registry.npmjs.org/glob-parent/-/glob-parent-5.1.2.tgz",
++++      "integrity": "sha512-AOIgSQCepiJYwP3ARnGx+5VnTu2HBYdzbGP45eLw1vr3zB3vZLeyed1sC9hnbcOc9/SrMyM5RPQrkGz4aS9Zow==",
++++      "dependencies": {
++++        "is-glob": "^4.0.1"
++++      },
++++      "engines": {
++++        "node": ">= 6"
++++      }
++++    },
+++     "node_modules/has": {
+++       "version": "1.0.3",
+++       "resolved": "https://registry.npmjs.org/has/-/has-1.0.3.tgz",
+++@@ -1682,6 +1773,14 @@
+++         "node": ">= 0.4.0"
+++       }
+++     },
++++    "node_modules/has-flag": {
++++      "version": "3.0.0",
++++      "resolved": "https://registry.npmjs.org/has-flag/-/has-flag-3.0.0.tgz",
++++      "integrity": "sha512-sKJf1+ceQBr4SMkvQnBDNDtf4TXpVhVGateu0t918bl30FnbE2m4vNLX+VWe/dpjlb+HugGYzW7uQXH98HPEYw==",
++++      "engines": {
++++        "node": ">=4"
++++      }
++++    },
+++     "node_modules/has-symbols": {
+++       "version": "1.0.3",
+++       "resolved": "https://registry.npmjs.org/has-symbols/-/has-symbols-1.0.3.tgz",
+++@@ -1784,6 +1883,11 @@
+++         }
+++       ]
+++     },
++++    "node_modules/ignore-by-default": {
++++      "version": "1.0.1",
++++      "resolved": "https://registry.npmjs.org/ignore-by-default/-/ignore-by-default-1.0.1.tgz",
++++      "integrity": "sha512-Ius2VYcGNk7T90CppJqcIkS5ooHUZyIQK+ClZfMfMNFEF9VSE73Fq+906u/CWu92x4gzZMWOwfFYckPObzdEbA=="
++++    },
+++     "node_modules/inflight": {
+++       "version": "1.0.6",
+++       "resolved": "https://registry.npmjs.org/inflight/-/inflight-1.0.6.tgz",
+++@@ -1811,6 +1915,25 @@
+++         "node": ">= 0.10"
+++       }
+++     },
++++    "node_modules/is-binary-path": {
++++      "version": "2.1.0",
++++      "resolved": "https://registry.npmjs.org/is-binary-path/-/is-binary-path-2.1.0.tgz",
++++      "integrity": "sha512-ZMERYes6pDydyuGidse7OsHxtbI7WVeUEozgR/g7rd0xUimYNlvZRE/K2MgZTjWy725IfelLeVcEM97mmtRGXw==",
++++      "dependencies": {
++++        "binary-extensions": "^2.0.0"
++++      },
++++      "engines": {
++++        "node": ">=8"
++++      }
++++    },
++++    "node_modules/is-extglob": {
++++      "version": "2.1.1",
++++      "resolved": "https://registry.npmjs.org/is-extglob/-/is-extglob-2.1.1.tgz",
++++      "integrity": "sha512-SbKbANkN603Vi4jEZv49LeVJMn4yGwsbzZworEoyEiutsN3nJYdbO36zfhGJ6QEDpOZIFkDtnq5JRxmvl3jsoQ==",
++++      "engines": {
++++        "node": ">=0.10.0"
++++      }
++++    },
+++     "node_modules/is-fullwidth-code-point": {
+++       "version": "3.0.0",
+++       "resolved": "https://registry.npmjs.org/is-fullwidth-code-point/-/is-fullwidth-code-point-3.0.0.tgz",
+++@@ -1819,6 +1942,25 @@
+++         "node": ">=8"
+++       }
+++     },
++++    "node_modules/is-glob": {
++++      "version": "4.0.3",
++++      "resolved": "https://registry.npmjs.org/is-glob/-/is-glob-4.0.3.tgz",
++++      "integrity": "sha512-xelSayHH36ZgE7ZWhli7pW34hNbNl8Ojv5KVmkJD4hBdD3th8Tfk9vYasLM+mXWOZhFkgZfxhLSnrwRr4elSSg==",
++++      "dependencies": {
++++        "is-extglob": "^2.1.1"
++++      },
++++      "engines": {
++++        "node": ">=0.10.0"
++++      }
++++    },
++++    "node_modules/is-number": {
++++      "version": "7.0.0",
++++      "resolved": "https://registry.npmjs.org/is-number/-/is-number-7.0.0.tgz",
++++      "integrity": "sha512-41Cifkg6e8TylSpdtTpeLVMqvSBEVzTttHvERD741+pnZ8ANv0004MRL43QKPDlK9cGvNp6NZWZUBlbGXYxxng==",
++++      "engines": {
++++        "node": ">=0.12.0"
++++      }
++++    },
+++     "node_modules/jsonwebtoken": {
+++       "version": "8.5.1",
+++       "resolved": "https://registry.npmjs.org/jsonwebtoken/-/jsonwebtoken-8.5.1.tgz",
+++@@ -2235,6 +2377,54 @@
+++         "webidl-conversions": "^3.0.0"
+++       }
+++     },
++++    "node_modules/nodemon": {
++++      "version": "2.0.20",
++++      "resolved": "https://registry.npmjs.org/nodemon/-/nodemon-2.0.20.tgz",
++++      "integrity": "sha512-Km2mWHKKY5GzRg6i1j5OxOHQtuvVsgskLfigG25yTtbyfRGn/GNvIbRyOf1PSCKJ2aT/58TiuUsuOU5UToVViw==",
++++      "dependencies": {
++++        "chokidar": "^3.5.2",
++++        "debug": "^3.2.7",
++++        "ignore-by-default": "^1.0.1",
++++        "minimatch": "^3.1.2",
++++        "pstree.remy": "^1.1.8",
++++        "semver": "^5.7.1",
++++        "simple-update-notifier": "^1.0.7",
++++        "supports-color": "^5.5.0",
++++        "touch": "^3.1.0",
++++        "undefsafe": "^2.0.5"
++++      },
++++      "bin": {
++++        "nodemon": "bin/nodemon.js"
++++      },
++++      "engines": {
++++        "node": ">=8.10.0"
++++      },
++++      "funding": {
++++        "type": "opencollective",
++++        "url": "https://opencollective.com/nodemon"
++++      }
++++    },
++++    "node_modules/nodemon/node_modules/debug": {
++++      "version": "3.2.7",
++++      "resolved": "https://registry.npmjs.org/debug/-/debug-3.2.7.tgz",
++++      "integrity": "sha512-CFjzYYAi4ThfiQvizrFQevTTXHtnCqWfe7x1AhgEscTz6ZbLbfoLRLPugTQyBth6f8ZERVUSyWHFD/7Wu4t1XQ==",
++++      "dependencies": {
++++        "ms": "^2.1.1"
++++      }
++++    },
++++    "node_modules/nodemon/node_modules/ms": {
++++      "version": "2.1.3",
++++      "resolved": "https://registry.npmjs.org/ms/-/ms-2.1.3.tgz",
++++      "integrity": "sha512-6FlzubTLZG3J2a/NVCAleEhjzq5oxgHyaCU9yYXvcLsvoVaHJq/s5xXI6/XXP6tz7R9xAOtHnSO/tXtF3WRTlA=="
++++    },
++++    "node_modules/nodemon/node_modules/semver": {
++++      "version": "5.7.1",
++++      "resolved": "https://registry.npmjs.org/semver/-/semver-5.7.1.tgz",
++++      "integrity": "sha512-sauaDf/PZdVgrLTNYHRtpXa1iRiKcaebiKQ1BJdpQlWH2lCvexQdX55snPFyK7QzpudqbCI0qXFfOasHdyNDGQ==",
++++      "bin": {
++++        "semver": "bin/semver"
++++      }
++++    },
+++     "node_modules/nopt": {
+++       "version": "5.0.0",
+++       "resolved": "https://registry.npmjs.org/nopt/-/nopt-5.0.0.tgz",
+++@@ -2249,6 +2439,14 @@
+++         "node": ">=6"
+++       }
+++     },
++++    "node_modules/normalize-path": {
++++      "version": "3.0.0",
++++      "resolved": "https://registry.npmjs.org/normalize-path/-/normalize-path-3.0.0.tgz",
++++      "integrity": "sha512-6eZs5Ls3WtCisHWp9S2GUy8dqkpGi4BVSz3GaqiE6ezub0512ESztXUwUB6C6IKbQkY2Pnb/mD4WYojCRwcwLA==",
++++      "engines": {
++++        "node": ">=0.10.0"
++++      }
++++    },
+++     "node_modules/npmlog": {
+++       "version": "5.0.1",
+++       "resolved": "https://registry.npmjs.org/npmlog/-/npmlog-5.0.1.tgz",
+++@@ -2324,6 +2522,17 @@
+++       "resolved": "https://registry.npmjs.org/path-to-regexp/-/path-to-regexp-0.1.7.tgz",
+++       "integrity": "sha512-5DFkuoqlv1uYQKxy8omFBeJPQcdoE07Kv2sferDCrAq1ohOU+MSDswDIbnx3YAM60qIOnYa53wBhXW0EbMonrQ=="
+++     },
++++    "node_modules/picomatch": {
++++      "version": "2.3.1",
++++      "resolved": "https://registry.npmjs.org/picomatch/-/picomatch-2.3.1.tgz",
++++      "integrity": "sha512-JU3teHTNjmE2VCGFzuY8EXzCDVwEqB2a8fsIvwaStHhAWJEeVd1o1QD80CU6+ZdEXXSLbSsuLwJjkCBWqRQUVA==",
++++      "engines": {
++++        "node": ">=8.6"
++++      },
++++      "funding": {
++++        "url": "https://github.com/sponsors/jonschlinkert"
++++      }
++++    },
+++     "node_modules/proxy-addr": {
+++       "version": "2.0.7",
+++       "resolved": "https://registry.npmjs.org/proxy-addr/-/proxy-addr-2.0.7.tgz",
+++@@ -2336,6 +2545,11 @@
+++         "node": ">= 0.10"
+++       }
+++     },
++++    "node_modules/pstree.remy": {
++++      "version": "1.1.8",
++++      "resolved": "https://registry.npmjs.org/pstree.remy/-/pstree.remy-1.1.8.tgz",
++++      "integrity": "sha512-77DZwxQmxKnu3aR542U+X8FypNzbfJ+C5XQDk3uWjWxn6151aIMGthWYRXTqT1E5oJvg+ljaa2OJi+VfvCOQ8w=="
++++    },
+++     "node_modules/punycode": {
+++       "version": "2.1.1",
+++       "resolved": "https://registry.npmjs.org/punycode/-/punycode-2.1.1.tgz",
+++@@ -2393,6 +2607,17 @@
+++         "node": ">= 6"
+++       }
+++     },
++++    "node_modules/readdirp": {
++++      "version": "3.6.0",
++++      "resolved": "https://registry.npmjs.org/readdirp/-/readdirp-3.6.0.tgz",
++++      "integrity": "sha512-hOS089on8RduqdbhvQ5Z37A0ESjsqz6qnRcffsMU3495FuTdqSm+7bhJ29JvIOsBDEEnan5DPu9t3To9VRlMzA==",
++++      "dependencies": {
++++        "picomatch": "^2.2.1"
++++      },
++++      "engines": {
++++        "node": ">=8.10.0"
++++      }
++++    },
+++     "node_modules/rimraf": {
+++       "version": "3.0.2",
+++       "resolved": "https://registry.npmjs.org/rimraf/-/rimraf-3.0.2.tgz",
+++@@ -2532,6 +2757,25 @@
+++       "resolved": "https://registry.npmjs.org/signal-exit/-/signal-exit-3.0.7.tgz",
+++       "integrity": "sha512-wnD2ZE+l+SPC/uoS0vXeE9L1+0wuaMqKlfz9AMUo38JsyLSBWSFcHR1Rri62LZc12vLr1gb3jl7iwQhgwpAbGQ=="
+++     },
++++    "node_modules/simple-update-notifier": {
++++      "version": "1.1.0",
++++      "resolved": "https://registry.npmjs.org/simple-update-notifier/-/simple-update-notifier-1.1.0.tgz",
++++      "integrity": "sha512-VpsrsJSUcJEseSbMHkrsrAVSdvVS5I96Qo1QAQ4FxQ9wXFcB+pjj7FB7/us9+GcgfW4ziHtYMc1J0PLczb55mg==",
++++      "dependencies": {
++++        "semver": "~7.0.0"
++++      },
++++      "engines": {
++++        "node": ">=8.10.0"
++++      }
++++    },
++++    "node_modules/simple-update-notifier/node_modules/semver": {
++++      "version": "7.0.0",
++++      "resolved": "https://registry.npmjs.org/semver/-/semver-7.0.0.tgz",
++++      "integrity": "sha512-+GB6zVA9LWh6zovYQLALHwv5rb2PHGlJi3lfiqIHxR0uuwCgefcOJc59v9fv1w8GbStwxuuqqAjI9NMAOOgq1A==",
++++      "bin": {
++++        "semver": "bin/semver.js"
++++      }
++++    },
+++     "node_modules/smart-buffer": {
+++       "version": "4.2.0",
+++       "resolved": "https://registry.npmjs.org/smart-buffer/-/smart-buffer-4.2.0.tgz",
+++@@ -2609,6 +2853,17 @@
+++       "integrity": "sha512-J8bbNyKKXl5qYcR36TIO8W3mVGVHrmmxsd5PAItGkmyzwJvybiw2IVq5nqd0i4LSNSkB/sx9VHllbfFdr9k1JA==",
+++       "optional": true
+++     },
++++    "node_modules/supports-color": {
++++      "version": "5.5.0",
++++      "resolved": "https://registry.npmjs.org/supports-color/-/supports-color-5.5.0.tgz",
++++      "integrity": "sha512-QjVjwdXIt408MIiAqCX4oUKsgU2EqAGzs2Ppkm4aQYbjm+ZEWEcW4SfFNTr4uMNZma0ey4f5lgLrkB0aX0QMow==",
++++      "dependencies": {
++++        "has-flag": "^3.0.0"
++++      },
++++      "engines": {
++++        "node": ">=4"
++++      }
++++    },
+++     "node_modules/tar": {
+++       "version": "6.1.13",
+++       "resolved": "https://registry.npmjs.org/tar/-/tar-6.1.13.tgz",
+++@@ -2625,6 +2880,17 @@
+++         "node": ">=10"
+++       }
+++     },
++++    "node_modules/to-regex-range": {
++++      "version": "5.0.1",
++++      "resolved": "https://registry.npmjs.org/to-regex-range/-/to-regex-range-5.0.1.tgz",
++++      "integrity": "sha512-65P7iz6X5yEr1cwcgvQxbbIw7Uk3gOy5dIdtZ4rDveLqhrdJP+Li/Hx6tyK0NEb+2GCyneCMJiGqrADCSNk8sQ==",
++++      "dependencies": {
++++        "is-number": "^7.0.0"
++++      },
++++      "engines": {
++++        "node": ">=8.0"
++++      }
++++    },
+++     "node_modules/toidentifier": {
+++       "version": "1.0.1",
+++       "resolved": "https://registry.npmjs.org/toidentifier/-/toidentifier-1.0.1.tgz",
+++@@ -2633,6 +2899,31 @@
+++         "node": ">=0.6"
+++       }
+++     },
++++    "node_modules/touch": {
++++      "version": "3.1.0",
++++      "resolved": "https://registry.npmjs.org/touch/-/touch-3.1.0.tgz",
++++      "integrity": "sha512-WBx8Uy5TLtOSRtIq+M03/sKDrXCLHxwDcquSP2c43Le03/9serjQBIztjRz6FkJez9D/hleyAXTBGLwwZUw9lA==",
++++      "dependencies": {
++++        "nopt": "~1.0.10"
++++      },
++++      "bin": {
++++        "nodetouch": "bin/nodetouch.js"
++++      }
++++    },
++++    "node_modules/touch/node_modules/nopt": {
++++      "version": "1.0.10",
++++      "resolved": "https://registry.npmjs.org/nopt/-/nopt-1.0.10.tgz",
++++      "integrity": "sha512-NWmpvLSqUrgrAC9HCuxEvb+PSloHpqVu+FqcO4eeF2h5qYRhA7ev6KvelyQAKtegUbC6RypJnlEOhd8vloNKYg==",
++++      "dependencies": {
++++        "abbrev": "1"
++++      },
++++      "bin": {
++++        "nopt": "bin/nopt.js"
++++      },
++++      "engines": {
++++        "node": "*"
++++      }
++++    },
+++     "node_modules/tr46": {
+++       "version": "3.0.0",
+++       "resolved": "https://registry.npmjs.org/tr46/-/tr46-3.0.0.tgz",
+++@@ -2662,6 +2953,11 @@
+++         "node": ">= 0.6"
+++       }
+++     },
++++    "node_modules/undefsafe": {
++++      "version": "2.0.5",
++++      "resolved": "https://registry.npmjs.org/undefsafe/-/undefsafe-2.0.5.tgz",
++++      "integrity": "sha512-WxONCrssBM8TSPRqN5EmsjVrsv4A8X12J4ArBiiayv3DyyG3ZlIg6yysuuSYdZsVz3TKcTg2fd//Ujd4CHV1iA=="
++++    },
+++     "node_modules/unpipe": {
+++       "version": "1.0.0",
+++       "resolved": "https://registry.npmjs.org/unpipe/-/unpipe-1.0.0.tgz",
++Index: ../client/.idea/workspace.xml
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/../client/.idea/workspace.xml b/../client/.idea/workspace.xml
++new file mode 100644
++--- /dev/null
+++++ b/../client/.idea/workspace.xml
++@@ -0,0 +1,115 @@
+++<?xml version="1.0" encoding="UTF-8"?>
+++<project version="4">
+++  <component name="ChangeListManager">
+++    <list default="true" id="c2a5af69-96b4-4e4f-b870-b58b0672f252" name="Changes" comment="">
+++      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/bcrypt_lib.node" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/shelved.patch" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/bcrypt_lib.node" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/shelved.patch" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_.xml" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_1.xml" afterDir="false" />
+++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+++      <change beforePath="$PROJECT_DIR$/../server/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../server/.idea/workspace.xml" afterDir="false" />
+++    </list>
+++    <option name="SHOW_DIALOG" value="false" />
+++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+++    <option name="LAST_RESOLUTION" value="IGNORE" />
+++  </component>
+++  <component name="Git.Settings">
+++    <option name="RECENT_BRANCH_BY_REPOSITORY">
+++      <map>
+++        <entry key="$PROJECT_DIR$/.." value="assassin" />
+++      </map>
+++    </option>
+++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+++  </component>
+++  <component name="HighlightingSettingsPerFile">
+++    <setting file="file://$PROJECT_DIR$/src/App.js" root0="FORCE_HIGHLIGHTING" />
+++  </component>
+++  <component name="MarkdownSettingsMigration">
+++    <option name="stateVersion" value="1" />
+++  </component>
+++  <component name="ProjectId" id="2J5bBuC6KWOsK52EiMFL4UeehPd" />
+++  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+++    <ConfirmationsSetting value="2" id="Add" />
+++  </component>
+++  <component name="ProjectViewState">
+++    <option name="hideEmptyMiddlePackages" value="true" />
+++    <option name="showLibraryContents" value="true" />
+++  </component>
+++  <component name="PropertiesComponent">{
+++  &quot;keyToString&quot;: {
+++    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+++    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+++    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+++    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+++    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+++    &quot;last_opened_file_path&quot;: &quot;E:/CongNgheThongTinBk/20221/CongNgheWebDichVuTT/bt_lon/social-network-btl/client&quot;,
+++    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+++    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+++    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+++    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+++  }
+++}</component>
+++  <component name="RecentsManager">
+++    <key name="CopyFile.RECENT_KEYS">
+++      <recent name="E:\CongNgheThongTinBk\20221\CongNgheWebDichVuTT\bt_lon\social-network-btl\client\src\assets" />
+++    </key>
+++  </component>
+++  <component name="RunManager">
+++    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+++      <package-json value="$PROJECT_DIR$/package.json" />
+++      <command value="run" />
+++      <scripts>
+++        <script value="start" />
+++      </scripts>
+++      <node-interpreter value="project" />
+++      <envs />
+++      <method v="2" />
+++    </configuration>
+++    <recent_temporary>
+++      <list>
+++        <item itemvalue="npm.start" />
+++      </list>
+++    </recent_temporary>
+++  </component>
+++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+++  <component name="TaskManager">
+++    <task active="true" id="Default" summary="Default task">
+++      <changelist id="c2a5af69-96b4-4e4f-b870-b58b0672f252" name="Changes" comment="" />
+++      <created>1671370758861</created>
+++      <option name="number" value="Default" />
+++      <option name="presentableId" value="Default" />
+++      <updated>1671370758861</updated>
+++      <workItem from="1671370760090" duration="2022000" />
+++      <workItem from="1671433488000" duration="47000" />
+++      <workItem from="1672826197150" duration="2454000" />
+++      <workItem from="1672884638521" duration="21000" />
+++      <workItem from="1673009227019" duration="1603000" />
+++      <workItem from="1673019232706" duration="2595000" />
+++      <workItem from="1673087395372" duration="576000" />
+++      <workItem from="1673087981156" duration="432000" />
+++      <workItem from="1673088512118" duration="2468000" />
+++    </task>
+++    <servers />
+++  </component>
+++  <component name="TypeScriptGeneratedFilesManager">
+++    <option name="version" value="3" />
+++  </component>
+++  <component name="Vcs.Log.Tabs.Properties">
+++    <option name="TAB_STATES">
+++      <map>
+++        <entry key="MAIN">
+++          <value>
+++            <State />
+++          </value>
+++        </entry>
+++      </map>
+++    </option>
+++  </component>
+++  <component name="VcsManagerConfiguration">
+++    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+++  </component>
+++</project>
++\ No newline at end of file
++Index: ../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/shelved.patch
++IDEA additional info:
++Subsystem: com.intellij.openapi.diff.impl.patch.CharsetEP
++<+>UTF-8
++===================================================================
++diff --git a/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/shelved.patch b/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/shelved.patch
++new file mode 100644
++--- /dev/null
+++++ b/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/shelved.patch
++@@ -0,0 +1,341 @@
+++Index: ../server/.idea/workspace.xml
+++===================================================================
+++diff --git a/../server/.idea/workspace.xml b/../server/.idea/workspace.xml
+++--- a/../server/.idea/workspace.xml
++++++ b/../server/.idea/workspace.xml
+++@@ -1,8 +1,330 @@
+++ <?xml version="1.0" encoding="UTF-8"?>
+++ <project version="4">
+++-  <component name="PropertiesComponent">{
+++-  &quot;keyToString&quot;: {
+++-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/nodejs/node_modules/npm/bin/npm&quot;
++++  <component name="ChangeListManager">
++++    <list default="true" id="50a2310e-7a4e-4bfd-8802-e57cfba7e00d" name="Changes" comment="">
++++      <change afterPath="$PROJECT_DIR$/../.idea/social-network-btl.iml" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/.idea/.gitignore" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/.idea/client.iml" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/.idea/modules.xml" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/.idea/vcs.xml" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/src/assets/login.png" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/src/constant/backend.js" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/src/constant/request.js" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/src/constant/toast.js" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/src/screen/HomePage/HomePage.js" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/src/screen/Login/context.js" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/src/screen/Login/index.js" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/src/screen/Login/style.css" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/../client/src/service/authenService.js" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
++++      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/src/App.css" beforeDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/src/App.test.js" beforeDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/src/index.css" beforeDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/index.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/src/logo.svg" beforeDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/src/reportWebVitals.js" beforeDir="false" />
++++      <change beforePath="$PROJECT_DIR$/../client/src/setupTests.js" beforeDir="false" />
++++      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.bin/color-support" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/color-support" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.bin/fxparser" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/fxparser" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mime" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/mime" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.bin/mkdirp" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/mkdirp" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.bin/node-pre-gyp" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/node-pre-gyp" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nopt" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/nopt" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.bin/rimraf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/rimraf" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/semver" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.bin/uuid" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.bin/uuid" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/CHANGELOG.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp.cmd" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/bin/node-pre-gyp.cmd" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/contributing.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/contributing.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/build.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/clean.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/clean.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/configure.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/configure.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/info.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/info.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/install.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/install.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/main.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/node-pre-gyp.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/package.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/package.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/pre-binding.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/publish.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/publish.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/rebuild.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/rebuild.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/reinstall.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/reinstall.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/reveal.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/reveal.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/testbinary.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/testbinary.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/testpackage.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/testpackage.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/unpublish.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/unpublish.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/abi_crosswalk.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/abi_crosswalk.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/compile.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/compile.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/handle_gyp_opts.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/handle_gyp_opts.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/napi.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/napi.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/nw-pre-gyp/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/nw-pre-gyp/index.html" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/nw-pre-gyp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/nw-pre-gyp/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/s3_setup.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/s3_setup.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/lib/util/versioning.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/@mapbox/node-pre-gyp/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/color-support/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/color-support/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/color-support/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/color-support/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/color-support/bin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/color-support/bin.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/color-support/browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/color-support/browser.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/color-support/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/color-support/index.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/color-support/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/color-support/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/CHANGELOG.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/cli/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/cli/cli.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/cli/man.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/cli/man.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/cli/read.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/cli/read.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/fxp.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/fxp.d.ts" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/fxp.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/fxp.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/util.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/util.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/validator.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/validator.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlbuilder/json2xml.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlbuilder/json2xml.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlbuilder/orderedJs2Xml.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlbuilder/orderedJs2Xml.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/DocTypeReader.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/DocTypeReader.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/OptionsBuilder.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/OptionsBuilder.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/OrderedObjParser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/OrderedObjParser.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/XMLParser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/XMLParser.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/node2json.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/node2json.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/xmlNode.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/fast-xml-parser/src/xmlparser/xmlNode.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/.bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/.bin/semver" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/CHANGELOG.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/bin/semver" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/range.bnf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/range.bnf" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/semver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/jsonwebtoken/node_modules/semver/semver.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/make-dir/node_modules/.bin/semver" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/make-dir/node_modules/.bin/semver" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/CHANGELOG.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/bin/semver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/bin/semver.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/range.bnf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/range.bnf" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/semver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/make-dir/node_modules/semver/semver.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mime/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/CHANGELOG.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mime/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mime/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mime/cli.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/cli.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mime/mime.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/mime.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mime/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mime/src/build.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/src/build.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mime/src/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mime/src/test.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/CHANGELOG.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/bin/cmd.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/bin/cmd.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/index.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/lib/find-made.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/lib/find-made.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/lib/mkdirp-manual.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/lib/mkdirp-manual.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/lib/mkdirp-native.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/lib/mkdirp-native.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/lib/opts-arg.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/lib/opts-arg.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/lib/path-arg.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/lib/path-arg.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/lib/use-native.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/lib/use-native.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/mkdirp/readme.markdown" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/mkdirp/readme.markdown" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/nopt/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/nopt/CHANGELOG.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/nopt/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/nopt/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/nopt/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/nopt/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/nopt/bin/nopt.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/nopt/bin/nopt.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/nopt/lib/nopt.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/nopt/lib/nopt.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/nopt/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/nopt/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/rimraf/CHANGELOG.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/rimraf/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/rimraf/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/bin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/rimraf/bin.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/rimraf/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/rimraf/rimraf.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/rimraf/rimraf.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/LICENSE" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/bin/semver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/bin/semver.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/classes/comparator.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/classes/comparator.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/classes/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/classes/index.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/classes/range.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/classes/range.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/classes/semver.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/classes/semver.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/clean.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/clean.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/cmp.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/cmp.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/coerce.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/coerce.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/compare-build.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/compare-build.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/compare-loose.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/compare-loose.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/compare.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/compare.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/diff.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/diff.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/eq.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/eq.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/gt.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/gt.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/gte.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/gte.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/inc.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/inc.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/lt.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/lt.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/lte.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/lte.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/major.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/major.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/minor.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/minor.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/neq.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/neq.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/parse.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/patch.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/patch.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/prerelease.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/prerelease.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/rcompare.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/rcompare.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/rsort.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/rsort.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/satisfies.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/satisfies.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/sort.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/sort.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/functions/valid.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/functions/valid.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/index.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/internal/constants.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/internal/constants.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/internal/debug.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/internal/debug.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/internal/identifiers.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/internal/identifiers.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/internal/parse-options.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/internal/parse-options.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/internal/re.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/internal/re.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/preload.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/preload.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/range.bnf" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/range.bnf" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/gtr.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/gtr.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/intersects.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/intersects.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/ltr.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/ltr.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/max-satisfying.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/max-satisfying.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/min-satisfying.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/min-satisfying.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/min-version.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/min-version.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/outside.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/outside.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/simplify.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/simplify.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/subset.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/subset.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/to-comparators.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/to-comparators.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/semver/ranges/valid.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/semver/ranges/valid.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/CHANGELOG.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/CHANGELOG.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/CONTRIBUTING.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/LICENSE.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/LICENSE.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/README.md" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/bin/uuid" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/bin/uuid" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/index.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/md5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/md5.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/parse.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/rng.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/rng.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/sha1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/sha1.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/stringify.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v1.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v3.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v3.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v35.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v35.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v4.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v4.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/v5.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/validate.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-browser/version.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/index.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/md5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/md5.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/parse.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/rng.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/rng.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/sha1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/sha1.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/stringify.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v1.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v3.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v3.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v35.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v35.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v4.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v4.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/v5.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/validate.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/esm-node/version.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/index.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/md5-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/md5-browser.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/md5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/md5.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/nil.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/nil.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/parse.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/parse.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/regex.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/regex.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/rng-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/rng-browser.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/rng.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/rng.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/sha1-browser.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/sha1-browser.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/sha1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/sha1.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/stringify.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/stringify.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/uuid-bin.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/uuid-bin.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v1.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/v1.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v3.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/v3.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v35.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/v35.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v4.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/v4.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/v5.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/v5.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/validate.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/dist/version.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/dist/version.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/node_modules/uuid/wrapper.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/uuid/wrapper.mjs" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
++++      <change beforePath="$PROJECT_DIR$/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/users.js" afterDir="false" />
++++    </list>
++++    <option name="SHOW_DIALOG" value="false" />
++++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++++    <option name="LAST_RESOLUTION" value="IGNORE" />
++++  </component>
++++  <component name="Git.Settings">
++++    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
++++  </component>
++++  <component name="MarkdownSettingsMigration">
++++    <option name="stateVersion" value="1" />
++++  </component>
++++  <component name="ProjectId" id="2JrCIuXKbAAN5XiO1GUd2RZ7G1q" />
++++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++++  <component name="ProjectViewState">
++++    <option name="hideEmptyMiddlePackages" value="true" />
++++    <option name="showLibraryContents" value="true" />
++++  </component>
++++  <component name="PropertiesComponent"><![CDATA[{
++++  "keyToString": {
++++    "RunOnceActivity.OpenProjectViewOnStart": "true",
++++    "RunOnceActivity.ShowReadmeOnStart": "true",
++++    "WebServerToolWindowFactoryState": "false",
++++    "last_opened_file_path": "E:/CongNgheThongTinBk/20221/CongNgheWebDichVuTT/bt_lon/social-network-btl/client",
++++    "nodejs_package_manager_path": "npm",
++++    "vue.rearranger.settings.migration": "true"
+++   }
+++-}</component>
++++}]]></component>
++++  <component name="RunManager">
++++    <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
++++      <package-json value="$PROJECT_DIR$/package.json" />
++++      <command value="run" />
++++      <scripts>
++++        <script value="start" />
++++      </scripts>
++++      <node-interpreter value="project" />
++++      <envs />
++++      <method v="2" />
++++    </configuration>
++++    <recent_temporary>
++++      <list>
++++        <item itemvalue="npm.start" />
++++      </list>
++++    </recent_temporary>
++++  </component>
++++  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
++++  <component name="TaskManager">
++++    <task active="true" id="Default" summary="Default task">
++++      <changelist id="50a2310e-7a4e-4bfd-8802-e57cfba7e00d" name="Changes" comment="" />
++++      <created>1672826738896</created>
++++      <option name="number" value="Default" />
++++      <option name="presentableId" value="Default" />
++++      <updated>1672826738896</updated>
++++      <workItem from="1672826740259" duration="5341000" />
++++      <workItem from="1673009255169" duration="1656000" />
++++      <workItem from="1673019328385" duration="2630000" />
++++      <workItem from="1673065859645" duration="2953000" />
++++    </task>
++++    <servers />
++++  </component>
++++  <component name="TypeScriptGeneratedFilesManager">
++++    <option name="version" value="3" />
++++  </component>
++++  <component name="Vcs.Log.Tabs.Properties">
++++    <option name="TAB_STATES">
++++      <map>
++++        <entry key="MAIN">
++++          <value>
++++            <State />
++++          </value>
++++        </entry>
++++      </map>
++++    </option>
++++  </component>
+++ </project>
+++\ No newline at end of file
+Index: .idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM__Changes_1.xml
+===================================================================
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM__Changes_1.xml b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM__Changes_1.xml
+new file mode 100644
+--- /dev/null	
++++ b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM__Changes_1.xml	
+@@ -0,0 +1,9 @@
++<changelist name="Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]1" date="1673098680616" recycled="true" deleted="true">
++  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]1/shelved.patch" />
++  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 1/7/2023 8:37 PM [Changes]" />
++  <binary>
++    <option name="BEFORE_PATH" />
++    <option name="AFTER_PATH" value="../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/bcrypt_lib.node" />
++    <option name="SHELVED_PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]1/bcrypt_lib.node" />
++  </binary>
++</changelist>
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]/bcrypt_lib1.node b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]/bcrypt_lib1.node
+new file mode 100644
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]/bcrypt_lib.node b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]/bcrypt_lib.node
+new file mode 100644
+diff --git a/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]1/bcrypt_lib.node b/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_37_PM_[Changes]1/bcrypt_lib.node
+new file mode 100644

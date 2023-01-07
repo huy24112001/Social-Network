@@ -1,0 +1,47 @@
+Index: .idea/workspace.xml
+===================================================================
+diff --git a/.idea/workspace.xml b/.idea/workspace.xml
+--- a/.idea/workspace.xml	
++++ b/.idea/workspace.xml	
+@@ -1,8 +1,35 @@
+ <?xml version="1.0" encoding="UTF-8"?>
+ <project version="4">
+-  <component name="PropertiesComponent">{
+-  &quot;keyToString&quot;: {
+-    &quot;last_opened_file_path&quot;: &quot;C:/Program Files/nodejs/node_modules/npm/bin/npm&quot;
++  <component name="ChangeListManager">
++    <list default="true" id="49eb259c-7e73-4227-b392-34da4c4c5a27" name="Changes" comment="">
++      <change afterPath="$PROJECT_DIR$/../client/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/bcrypt_lib.node" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/bcrypt_lib.node" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM_[Changes]1/shelved.patch" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../client/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_5_38_PM__Changes_1.xml" afterDir="false" />
++      <change afterPath="$PROJECT_DIR$/../client/.idea/workspace.xml" afterDir="false" />
++    </list>
++    <option name="SHOW_DIALOG" value="false" />
++    <option name="HIGHLIGHT_CONFLICTS" value="true" />
++    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
++    <option name="LAST_RESOLUTION" value="IGNORE" />
++  </component>
++  <component name="Git.Settings">
++    <option name="RECENT_BRANCH_BY_REPOSITORY">
++      <map>
++        <entry key="$PROJECT_DIR$/.." value="assassin" />
++      </map>
++    </option>
++  </component>
++  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
++  <component name="PropertiesComponent"><![CDATA[{
++  "keyToString": {
++    "last_opened_file_path": "E:/CongNgheThongTinBk/20221/CongNgheWebDichVuTT/bt_lon/social-network-btl/server"
+   }
+-}</component>
+-</project>
+\ No newline at end of file
++}]]></component>
++  <component name="TaskManager">
++    <servers />
++  </component>
++</project>
