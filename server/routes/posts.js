@@ -36,12 +36,12 @@ router.put("/:id", async(req, res) => {
     }
 })
 
-// delete a post 
+// delete a post
 router.delete("/:id", async(req, res) => {
     try {
         const postId = req.params.id
         const post = await Post.findById(postId)
-        if (post.userId == req.body.userId) {
+        if (post.userId === req.body.userId) {
             await post.deleteOne();
             res.status(200).json("The post has been deleted.")
         } else{
@@ -71,17 +71,17 @@ router.put("/:id/like", async (req, res) => {
         }
     } catch (error) {
         res.status(500).json(err)
-        
+
     }
 })
 
 
-// get a post 
+// get a post
 router.get("/:id", async(req, res) => {
     try {
         const postId = req.params.id
         const post = await Post.findById(postId)
-        res.status(200).json(post)        
+        res.status(200).json(post)
     } catch (error) {
         res.status(500).json(error)
     }

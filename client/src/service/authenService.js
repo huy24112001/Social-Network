@@ -11,7 +11,7 @@ export async function login(params) {
   return response?.data || []
 }
 export async function signup(data) {
-  const url = REACT_APP_BACK_END + '/users'
+  const url = REACT_APP_BACK_END + '/api/auth/register'
   const response = await postAsync(url, data)
   console.log(response);
   return response?.data || []
