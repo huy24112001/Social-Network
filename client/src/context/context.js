@@ -1,6 +1,6 @@
 import { createContext, useContext, useMemo } from "react";
-import { toastError, toastSuccess } from "../../constant/toast";
-import { login, signup } from "../../service/authenService";
+import { toastError, toastSuccess } from "../constant/toast";
+import { login, signup } from "../service/authenService";
 
 import 'react-toastify/dist/ReactToastify.css';
 

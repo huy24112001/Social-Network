@@ -1,14 +1,18 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM  from 'react-dom';
 import App from './App';
 import {ToastContainer} from "react-toastify";
+import {LoginContextProvider} from "./context/context";
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+
+ReactDOM.render(
   <React.StrictMode>
+      <LoginContextProvider>
         <App />
+      </LoginContextProvider>
       <ToastContainer />
-  </React.StrictMode>
+  </React.StrictMode>,
+    document.getElementById('root')
 );
 
 

@@ -2,332 +2,45 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="211929a4-9f57-4b11-a2b0-61c38f5546db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/ad.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/gift.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/heart.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/like.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/10.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/9.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/1.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/10.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/2.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/3.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/4.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/5.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/6.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/7.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/8.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/9.jpeg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/context/context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/yarn.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/screen/HomePage/HomePage.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/HomePage/HomePage.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/screen/Login/context.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Login/context.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/screen/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/screen/Login/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Login/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/service/authenService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/service/authenService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.env" beforeDir="false" afterPath="$PROJECT_DIR$/.env" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/assets/login.png" beforeDir="false" afterPath="$PROJECT_DIR$/../client/public/assets/login.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/HomePage/HomePage.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Login/context.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Login/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/Login/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Login/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_38_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_38_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_39_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_39_PM__Changes_.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_39_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_39_PM__Changes_1.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nodemon" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nodemon.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nodemon.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nodetouch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nodetouch.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.bin/nodetouch.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/.package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/.package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/anymatch/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/anymatch/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/anymatch/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/anymatch/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/anymatch/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/bcrypt_lib.iobj" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/bcrypt_lib.iobj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/bcrypt_lib.ipdb" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/bcrypt_lib.ipdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/bcrypt_lib.node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/bcrypt_lib.node" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/bcrypt_lib.pdb" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/bcrypt_lib.pdb" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/nothing.lib" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/nothing.lib" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/obj/bcrypt_lib/src/bcrypt.obj" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/obj/bcrypt_lib/src/bcrypt.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/obj/bcrypt_lib/src/bcrypt_node.obj" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/obj/bcrypt_lib/src/bcrypt_node.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/obj/bcrypt_lib/src/blowfish.obj" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/obj/bcrypt_lib/src/blowfish.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/obj/bcrypt_lib/win_delay_load_hook.obj" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/Release/obj/bcrypt_lib/win_delay_load_hook.obj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/action_after_build.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/action_after_build.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/action_after_build.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/action_after_build.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/bcrypt_lib.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/bcrypt_lib.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/bcrypt_lib.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/bcrypt_lib.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/config.gypi" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build-tmp-napi-v3/config.gypi" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.delete.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.delete.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.delete.15.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.delete.50.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.delete.64.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.delete.74.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.11.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.13.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.13.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.15.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.15.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.22.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.22.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.26.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.26.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.36.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.50.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.64.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.read.74.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.write.1.tlog" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.write.1.tlog" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.write.15.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.write.50.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.write.64.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/build/Release/obj/bcrypt_lib/bcrypt_lib.tlog/link-VCTIP.write.74.tlog" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/lib/binding/napi-v3/bcrypt_lib.node" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/node-addon-api/nothing.vcxproj" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/node-addon-api/nothing.vcxproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/bcrypt/node-addon-api/nothing.vcxproj.filters" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/bcrypt/node-addon-api/nothing.vcxproj.filters" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/binary-extensions/binary-extensions.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/binary-extensions/binary-extensions.json.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/binary-extensions/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/binary-extensions/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/binary-extensions/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/binary-extensions/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/binary-extensions/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/compile.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/expand.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/stringify.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/lib/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/braces/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chokidar/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chokidar/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chokidar/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chokidar/lib/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chokidar/lib/fsevents-handler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chokidar/lib/nodefs-handler.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chokidar/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/chokidar/types/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cors/CONTRIBUTING.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cors/CONTRIBUTING.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cors/HISTORY.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cors/HISTORY.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cors/LICENSE" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cors/LICENSE" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cors/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cors/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cors/lib/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cors/lib/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/cors/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/node_modules/cors/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fill-range/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fill-range/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fill-range/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/fill-range/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/glob-parent/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/has-flag/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/has-flag/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/has-flag/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/has-flag/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ignore-by-default/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ignore-by-default/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ignore-by-default/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/ignore-by-default/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-binary-path/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-binary-path/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-binary-path/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-binary-path/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-binary-path/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-extglob/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-extglob/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-extglob/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-extglob/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-glob/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-glob/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-glob/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-glob/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-number/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-number/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-number/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/is-number/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/bin/nodemon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/bin/windows-kill.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/authors.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/config.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/help.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/logo.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/options.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/topics.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/usage.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/doc/cli/whoami.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/cli/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/cli/parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/command.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/defaults.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/exec.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/config/load.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/help/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/match.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/run.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/signals.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/monitor/watch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/nodemon.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/rules/add.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/rules/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/rules/parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/spawn.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/bus.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/clone.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/colour.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/log.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/utils/merge.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/lib/version.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/.bin/semver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/.bin/semver.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/.bin/semver.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/node.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/src/browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/src/common.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/src/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/debug/src/node.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/ms/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/ms/license.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/ms/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/ms/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/semver/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/semver/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/semver/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/semver/bin/semver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/semver/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/semver/range.bnf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/node_modules/semver/semver.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/nodemon/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/normalize-path/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/normalize-path/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/normalize-path/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/normalize-path/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/lib/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/lib/parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/lib/picomatch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/lib/scan.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/lib/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/picomatch/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/lib/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/lib/tree.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/lib/utils.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/tests/fixtures/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/tests/fixtures/out1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/tests/fixtures/out2" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/pstree.remy/tests/index.test.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/readdirp/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/readdirp/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/readdirp/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/readdirp/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/readdirp/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/build/index.d.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/build/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/.bin/semver" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/.bin/semver.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/.bin/semver.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/CHANGELOG.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/bin/semver.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/classes/comparator.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/classes/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/classes/range.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/classes/semver.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/clean.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/cmp.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/coerce.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/compare-build.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/compare-loose.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/compare.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/diff.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/eq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/gt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/gte.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/inc.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/lt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/lte.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/major.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/minor.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/neq.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/parse.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/patch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/prerelease.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/rcompare.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/rsort.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/satisfies.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/sort.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/functions/valid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/internal/constants.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/internal/debug.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/internal/identifiers.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/internal/re.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/range.bnf" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/ranges/gtr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/ranges/intersects.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/ranges/ltr.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/ranges/max-satisfying.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/ranges/min-satisfying.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/ranges/min-version.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/ranges/outside.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/ranges/to-comparators.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/node_modules/semver/ranges/valid.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/borderedText.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/cache.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/cache.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/getDistVersion.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/getDistVersion.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/hasNewVersion.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/hasNewVersion.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/index.spec.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/isNpmOrYarn.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/simple-update-notifier/src/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/supports-color/browser.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/supports-color/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/supports-color/license" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/supports-color/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/supports-color/readme.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/to-regex-range/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/to-regex-range/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/to-regex-range/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/to-regex-range/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/bin/nodetouch.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/.bin/nopt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/.bin/nopt.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/.bin/nopt.ps1" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/nopt/.npmignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/nopt/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/nopt/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/nopt/bin/nopt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/nopt/examples/my-program.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/nopt/lib/nopt.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/node_modules/nopt/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/touch/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/undefsafe/.github/workflows/release.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/undefsafe/.jscsrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/undefsafe/.jshintrc" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/undefsafe/.travis.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/undefsafe/LICENSE" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/undefsafe/README.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/undefsafe/example.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/undefsafe/lib/undefsafe.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/node_modules/undefsafe/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/posts.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -357,7 +70,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/CongNgheThongTinBk/20221/CongNgheWebDichVuTT/bt_lon/social-network-btl/client",
+    "last_opened_file_path": "E:/CongNgheThongTinBk/20221/CongNgheWebDichVuTT/bt_lon/socialnetworking-master",
     "nodejs_package_manager_path": "npm",
     "vue.rearranger.settings.migration": "true"
   }
@@ -388,6 +101,7 @@
       <option name="presentableId" value="Default" />
       <updated>1673154958320</updated>
       <workItem from="1673154961083" duration="619000" />
+      <workItem from="1673159372047" duration="5501000" />
     </task>
     <servers />
   </component>

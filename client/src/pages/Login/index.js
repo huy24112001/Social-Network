@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Lock, User } from 'react-feather'
 import './style.css'
 import {useNavigate} from 'react-router-dom'
-import { LoginContextProvider, useLoginContext } from './context'
+import { useLoginContext } from '../../context/context'
 import {
     Button,
     Dialog,
@@ -18,7 +18,7 @@ import {Close, Send} from "@mui/icons-material";
 
 
 
-const LoginImpl = () => {
+const Login = () => {
     const navigate = useNavigate()
     const { handleSignup, handleLogin } = useLoginContext()
     const [username, setUsername] = useState('')
@@ -33,7 +33,7 @@ const LoginImpl = () => {
         e.preventDefault()
         try {
             let rs = await handleLogin(username, password)
-            console.log(' hai')
+            // console.log(' hai')
             setTimeout(()=>{
                 if(rs)  navigate("/home")
             },2000);
@@ -135,5 +135,5 @@ const LoginImpl = () => {
         </div>
     )
 }
-const Login = () => <LoginContextProvider><LoginImpl /></LoginContextProvider>
+
 export default Login;
