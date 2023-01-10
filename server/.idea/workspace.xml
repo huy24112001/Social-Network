@@ -2,50 +2,40 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="211929a4-9f57-4b11-a2b0-61c38f5546db" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/ad.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/gift.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/heart.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/like.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/person/9.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/1.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/10.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/2.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/3.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/4.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/5.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/6.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/7.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/8.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/public/assets/post/9.jpeg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/src/context/context.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/store/context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../client/src/store/user-context.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/routes/friend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../client/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/App.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/App.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/assets/login.png" beforeDir="false" afterPath="$PROJECT_DIR$/../client/public/assets/login.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/rightbar/Rightbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/rightbar/Rightbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/rightbar/rightbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/rightbar/rightbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/topbar/Topbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/topbar/Topbar.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/components/topbar/topbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/components/topbar/topbar.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/context/context.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/context/context.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/HomePage/HomePage.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Login/context.js" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../client/src/pages/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Login/index.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../client/src/pages/Login/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/Login/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_38_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_38_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_39_PM__Changes_.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_39_PM__Changes_.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_39_PM__Changes_1.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_1_7_2023_8_39_PM__Changes_1.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/home/Home.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/pages/profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/src/service/authenService.js" beforeDir="false" afterPath="$PROJECT_DIR$/../client/src/service/authenService.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../client/yarn.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/models/User.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/auth.js" beforeDir="false" afterPath="$PROJECT_DIR$/routes/auth.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
@@ -64,17 +54,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "E:/CongNgheThongTinBk/20221/CongNgheWebDichVuTT/bt_lon/socialnetworking-master",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/CongNgheThongTinBk/20221/CongNgheWebDichVuTT/bt_lon/social-network-btl/server&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="start" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
@@ -101,7 +91,10 @@
       <option name="presentableId" value="Default" />
       <updated>1673154958320</updated>
       <workItem from="1673154961083" duration="619000" />
-      <workItem from="1673159372047" duration="5501000" />
+      <workItem from="1673159372047" duration="5779000" />
+      <workItem from="1673245779101" duration="4360000" />
+      <workItem from="1673275650460" duration="1313000" />
+      <workItem from="1673348801695" duration="3044000" />
     </task>
     <servers />
   </component>

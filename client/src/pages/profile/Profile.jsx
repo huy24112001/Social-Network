@@ -3,13 +3,21 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
+import {useContext, useEffect} from "react";
+import Context from "../../store/context";
 
 export default function Profile() {
-  return (
+
+    const [state , dispatch] = useContext(Context)
+
+
+
+    return (
     <>
       <Topbar />
       <div className="profile">
-        <Sidebar />
+        {/*<Sidebar />*/}
+
         <div className="profileRight">
           <div className="profileRightTop">
             <div className="profileCover">
@@ -25,13 +33,14 @@ export default function Profile() {
               />
             </div>
             <div className="profileInfo">
-                <h4 className="profileInfoName">Safak Kocaoglu</h4>
+                <h4 className="profileInfoName">{state.infoUser.username}</h4>
                 <span className="profileInfoDesc">Hello my friends!</span>
             </div>
           </div>
           <div className="profileRightBottom">
+            <Rightbar profile />
             <Feed />
-            <Rightbar profile/>
+
           </div>
         </div>
       </div>

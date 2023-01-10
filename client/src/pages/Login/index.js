@@ -34,8 +34,9 @@ const Login = () => {
         try {
             let rs = await handleLogin(username, password)
             // console.log(' hai')
+
             setTimeout(()=>{
-                if(rs)  navigate("/home")
+            if(rs)  navigate("/home")
             },2000);
 
 
@@ -47,7 +48,8 @@ const Login = () => {
     async function handleSubmit2(e){
         e.preventDefault()
         try {
-            let rs = await handleSignup(username, password);
+            let rs = await handleSignup(username, password, email);
+            // console.log('fdf')
             setTimeout(()=>{
                 if(rs)  navigate("/home")
             },2000);
@@ -68,7 +70,7 @@ const Login = () => {
                         <h2 className="title">Sign in</h2>
                         <div className="input-field">
                             <User style={{ placeSelf: 'center' }} />
-                            <input type="text" placeholder="Username" onChange={(e) => setUsername(e.target.value)} value={username} />
+                            <input type="text" placeholder="Email" onChange={(e) => setUsername(e.target.value)} value={username} />
                         </div>
                         <div className="input-field">
                             <Lock style={{ placeSelf: 'center' }} />

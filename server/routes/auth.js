@@ -31,9 +31,9 @@ router.post("/register", async(req, res) => {
 
 // Login
 router.post("/login", async(req, res) => {
-    const { username, password } = req.body
+    const { email, password } = req.body
     try {
-        const existingUser = await User.findOne({ username })
+        const existingUser = await User.findOne({ email })
         console.log(existingUser)
         if (!existingUser) {
             return res.status(404).json({ message: "User does not exist" })

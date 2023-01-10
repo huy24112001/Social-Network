@@ -1,8 +1,12 @@
 import "./rightbar.css";
 import { Users } from "../../constant/dummyData";
 import Online from "../online/Online";
+import {useContext} from "react";
+import Context from "../../store/context";
 
-export default function Rightbar({ profile }) {
+export default function Rightbar({profile}) {
+  const [state , dispatch] = useContext(Context)
+  console.log(state)
   const HomeRightbar = () => {
     return (
       <>
@@ -30,15 +34,16 @@ export default function Rightbar({ profile }) {
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">City:</span>
-            <span className="rightbarInfoValue">New York</span>
+            <span className="rightbarInfoValue">{state.infoUser.city}</span>
           </div>
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">From:</span>
-            <span className="rightbarInfoValue">Madrid</span>
+            <span className="rightbarInfoValue">{state.infoUser.from}</span>
           </div>
           <div className="rightbarInfoItem">
             <span className="rightbarInfoKey">Relationship:</span>
-            <span className="rightbarInfoValue">Single</span>
+            <span className="rightbarInfoValue">{state.infoUser.relationship === 1 ? "Độc thân" :
+                state.infoUser.relationship === 2 ? "Hẹn hò" : "Không có thông tin"  }</span>
           </div>
         </div>
         <h4 className="rightbarTitle">User friends</h4>

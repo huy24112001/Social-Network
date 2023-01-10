@@ -38,22 +38,25 @@ const UserSchema = new mongoose.Schema({
     isAdmin:{
         type: Boolean,
         default: false
-    }, 
+    },
     desc: {
         type: String,
         max: 50
     },
     city: {
         type: String,
-        max: 50
+        max: 50,
+        default: 'Khong co thong tin'
     },
     from: {
         type: String,
-        max: 50
+        max: 50,
+        default: 'Khong co thong tin'
     },
     relationship: {
         type: Number,
-        enum: [1, 2, 3]
+        enum: [1, 2, 3],
+        default: 1
     }
 },
     {

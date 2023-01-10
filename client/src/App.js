@@ -2,6 +2,7 @@ import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 import Login from "./pages/login";
 import Home from "../src/pages/home/Home";
+import Profile from "./pages/profile/Profile";
 
 
 function App() {
@@ -15,6 +16,8 @@ function App() {
           <>
             <Route path="/" element={<Login />} />
             <Route path="/home" element={<Home/>}/>
+              <Route path="/profile" element={<Profile/>}/>
+
 
 
           </>
@@ -23,6 +26,7 @@ function App() {
 
         </Routes>
       </BrowserRouter>
+      // <div>huy</div>
 
   );
 }

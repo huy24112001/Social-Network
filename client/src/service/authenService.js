@@ -1,4 +1,4 @@
-import { getAsyncWithToken, postAsync } from "../constant/request";
+import {getAsync, getAsyncWithToken, postAsync} from "../constant/request";
 import {REACT_APP_BACK_END} from "../constant/backend";
 
 
@@ -34,4 +34,10 @@ export async function logoutUser() {
   },
   ).then(data => { console.log('data', data?.statusText);return data?.statusText || '' })
     .catch(err => console.log(`err`, err))
+}
+
+export async function searchUser(param) {
+  const url = REACT_APP_BACK_END + '/api/friends/search'
+  const response = await getAsync(url,param)
+  return response?.data || []
 }

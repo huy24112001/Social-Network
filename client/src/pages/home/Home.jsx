@@ -3,8 +3,11 @@ import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
 import "./home.css"
+import {useContext} from "react";
+import Context from "../../store/context";
 
 export default function Home() {
+
   return (
     <>
       <Topbar />
@@ -12,6 +15,7 @@ export default function Home() {
         <Sidebar />
         <Feed/>
         <Rightbar/>
+
       </div>
     </>
   );

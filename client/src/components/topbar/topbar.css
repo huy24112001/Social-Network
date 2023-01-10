@@ -94,3 +94,40 @@
   object-fit: cover;
   cursor: pointer;
 }
+.user{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 500;
+  margin-right: 50px;
+}
+.menu{
+  position: absolute;
+  background-color: rgb(245, 239, 239);
+  list-style: none;
+  top: 40px;
+  right: 40px;
+  width: 135px;
+  border-radius: 3px;
+  display: none;
+  /*elevation: revert;*/
+  box-shadow: 2px 2px 2px 2px #2873c9;
+
+}
+.name{
+  margin-left: 15px;
+}
+.itemMenu{
+  padding: 10px;
+  border-bottom: 1px solid #fff;
+  color: rgb(89, 86, 86);
+}
+.user:hover>.menu{
+  display: block;
+}
+.imgNav{
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  object-fit: cover;
+}
