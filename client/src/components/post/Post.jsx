@@ -4,27 +4,26 @@ import {
   Box
 } from '@material-ui/core';
 import {
-  Button,
-  CircularProgress,
-  Grid,
   IconButton,
-  Input,
-  Menu,
-  MenuItem,
-  Typography,
-  useTheme,
+  Input
 } from "@mui/material";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 import ThumbUp from "@mui/icons-material/ThumbUp"
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
-import SyncIcon from "@mui/icons-material/Sync";
-import FavoriteBorderIcon from "@mui/icons-material/Favorite";
-import FavoriteIcon from "@mui/icons-material/Favorite";
+// import SyncIcon from "@mui/icons-material/Sync";
+// import FavoriteBorderIcon from "@mui/icons-material/Favorite";
+// import FavoriteIcon from "@mui/icons-material/Favorite";
 
 import IosShareIcon from "@mui/icons-material/IosShare";
-import { Comments, Users } from "../../constant/dummyData";
+import { Comments, Users } from "../../dummyData";
 import { useState } from "react";
 import Comment from "../comment/Comment";
+import { Link } from "react-router-dom";
+import likeImg from "../../img/like.png"
+import heartImg from "../../img/heart.png"
 
 export default function Post({ post }) {
   const comments = Comments.filter(comment => comment.postId === post.id)
@@ -34,9 +33,14 @@ export default function Post({ post }) {
   const [isLiked,setIsLiked] = useState(false)
   const [openComment, setOpenComment] = useState(false)
   const [commentText, setCommentText] = useState('')
+  const [popup, setPopup] = useState(false)
 
   const handleOpenComment = () => {
     setOpenComment(!openComment)
+  }
+
+  const handleOpenMenuPost = () => {
+    setPopup(true)
   }
 
   const likeHandler =()=>{
@@ -48,19 +52,39 @@ export default function Post({ post }) {
       <div className="postWrapper">
         <div className="postTop">
           <div className="postTopLeft">
-            <img
-              className="postProfileImg"
-              src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
-              alt=""
-            />
+            <Link to={`/profile/${post?.userId}`} >
+              <img
+                className="postProfileImg"
+                src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
+                alt=""
+              />
+            </Link>
             <span className="postUsername">
+              <Link to={`/profile/${post?.userId}`} style={{color:'#000', textDecoration: 'none' }}>
+              
               {Users.filter((u) => u.id === post?.userId)[0].username}
+              </Link>
             </span>
+            
             <span className="postDate">{post.date}</span>
           </div>
-          <div className="postTopRight">
-            <MoreVert />
-          </div>
+            <div className="postTopRight">
+              {/* <MoreVert onClick={() => setPopup(true)} /> */}
+              <Popup 
+                trigger={
+                  <IconButton>
+                    <MoreVert />
+                  </IconButton>
+                } 
+                position="bottom right"
+              >
+                <div className={'popup'}>
+                    <li>Chỉnh sửa bài viết</li>
+                    <li>Ẩn bài viết</li>
+                    <li>Xóa bài viết</li>
+                </div>
+              </Popup>
+            </div>
         </div>
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
@@ -68,8 +92,8 @@ export default function Post({ post }) {
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            <img className="likeIcon" src="assets/like.png" onClick={likeHandler} alt="" />
-            <img className="likeIcon" src="assets/heart.png" onClick={likeHandler} alt="" />
+            <img className="likeIcon" src={likeImg} onClick={likeHandler} alt="" />
+            <img className="likeIcon" src={heartImg} onClick={likeHandler} alt="" />
             <span className="postLikeCounter">{like} people like it</span>
           </div>
           <div className="postBottomRight">
@@ -99,10 +123,10 @@ export default function Post({ post }) {
                 <IosShareIcon fontSize="small" />
               </IconButton>
             </Box>
-      {openComment
+      {openComment 
         ? (
-
-          <Box
+          
+          <Box 
             borderTop="1px solid #ccc"
             padding={0.5}
           >
@@ -122,8 +146,8 @@ export default function Post({ post }) {
               comments?.map((c) => <Comment comment={c}/> )
             }
           </Box>
-
-
+          
+          
           )
         : null}
       </div>

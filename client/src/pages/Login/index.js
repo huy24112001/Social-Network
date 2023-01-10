@@ -36,7 +36,7 @@ const Login = () => {
             // console.log(' hai')
 
             setTimeout(()=>{
-            if(rs)  navigate("/home")
+            if(rs)  navigate("/")
             },2000);
 
 
@@ -51,7 +51,7 @@ const Login = () => {
             let rs = await handleSignup(username, password, email);
             // console.log('fdf')
             setTimeout(()=>{
-                if(rs)  navigate("/home")
+                if(rs)  navigate("/")
             },2000);
         }catch (error) {
             console.log(error.message())

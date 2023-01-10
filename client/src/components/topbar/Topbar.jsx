@@ -2,7 +2,6 @@ import "./topbar.css";
 import { Search, Person, Chat, Notifications } from "@material-ui/icons";
 import {useContext, useState} from "react";
 import {searchUser} from "../../service/authenService";
-import Select from "react-select/base";
 import Context from "../../store/context";
 export default function Topbar() {
   const [textSearch,setTextSearch] = useState('');
@@ -13,14 +12,17 @@ export default function Topbar() {
     const rs = await searchUser({username: textSearch})
     if (rs.result) console.log('thanh cong');
     else
-    console.log(rs.result.length);
-
+    console.log(rs.result.length);  
   }
 
+  const handleSignOut = () => {
+    dispatch({type: 'SIGN_OUT'})
+  }
+  
   return (
       <div className="topbarContainer" >
         <div className="topbarLeft" >
-          <a href ="/home" style={{textDecoration: "none"}}>
+          <a href ="/" style={{textDecoration: "none"}}>
             <span className="logo"></span>
           </a>
         </div>
@@ -60,7 +62,7 @@ export default function Topbar() {
             <span style={{position: "relative"}} className="name">{state.infoUser.username}</span>
             <ul className="menu">
               <li className="itemMenu"><a href="/profile" style={{color : "#070707",textDecoration: "none",cursol : "pointer"}}>Trang cá nhân</a></li>
-              <li className="itemMenu"><a href="/" style={{color : "#131313",textDecoration: "none"}}>Đăng xuất</a></li>
+              <li className="itemMenu"><a href="/" style={{color : "#131313",textDecoration: "none"}} onClick={handleSignOut}>Đăng xuất</a></li>
             </ul>
           </div>
 
