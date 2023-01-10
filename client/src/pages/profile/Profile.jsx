@@ -3,8 +3,21 @@ import Topbar from "../../components/topbar/Topbar";
 import Sidebar from "../../components/sidebar/Sidebar";
 import Feed from "../../components/feed/Feed";
 import Rightbar from "../../components/rightbar/Rightbar";
+import axios from "axios";
+import { useParams } from "react-router";
+
 
 export default function Profile() {
+  const userId = useParams().userId;
+
+  // useEffect(() => {
+  //   const fetchUser = async () => {
+  //     const res = await axios.get(`/users?username=${username}`);
+  //     setUser(res.data);
+  //   };
+  //   fetchUser();
+  // }, [username]);
+
   return (
     <>
       <Topbar />
@@ -15,12 +28,12 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src="/assets/post/3.jpeg"
+                src="assets/post/3.jpeg"
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src="/assets/person/7.jpeg"
+                src="assets/person/7.jpeg"
                 alt=""
               />
             </div>

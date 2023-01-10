@@ -2,7 +2,10 @@ import { Grid, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
 // import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import noAvatar from "../../img/person/noAvatar.png"
 
 export default function Comment({ comment }) {
   return (
@@ -16,7 +19,7 @@ export default function Comment({ comment }) {
     >
       <Grid container flexWrap="nowrap">
         <Grid item sx={{ paddingRight: "1rem" }}>
-          <img src="/logo.png" alt="lgoog" width="50px" />
+          <img src={noAvatar} alt="lgoog" width="50px" />
         </Grid>
         <Grid item flexGrow="1">
           <Box>
@@ -58,7 +61,20 @@ export default function Comment({ comment }) {
               </Grid>
               <Grid item>
                 <IconButton>
-                  <MoreHorizIcon />
+                  {/* <MoreHorizIcon /> */}
+                  <Popup 
+                    trigger={
+                      <IconButton>
+                        <MoreHorizIcon />
+                      </IconButton>
+                    } 
+                    position="right center"
+                  >
+                    <div className={'popup'}>
+                        <li>Ẩn bình luận</li>
+                        <li>Ẩn bình luận</li>
+                    </div>
+                  </Popup>
                 </IconButton>
               </Grid>
             </Grid>
