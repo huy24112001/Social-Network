@@ -7,12 +7,14 @@ import {useContext, useEffect} from "react";
 import Context from "../../store/context";
 import axios from "axios";
 import { useParams } from "react-router";
+import noAvatar from "../../img/person/noAvatar.png"
+import noCover from "../../img/person/noBackground.jpg"
 
 export default function Profile() {
 
   const [state , dispatch] = useContext(Context)
   const userId = useParams().userId;
-  const user = state.infoUser
+  const infoUser = state.infoUser
 
   
 
@@ -35,12 +37,12 @@ export default function Profile() {
             <div className="profileCover">
               <img
                 className="profileCoverImg"
-                src="assets/post/3.jpeg"
+                src={!(infoUser.coverPicture === "") ? infoUser.coverPicture : noCover}
                 alt=""
               />
               <img
                 className="profileUserImg"
-                src="assets/person/7.jpeg"
+                src={!(infoUser.profilePicture === "") ? infoUser.profilePicture : noAvatar}
                 alt=""
               />
             </div>

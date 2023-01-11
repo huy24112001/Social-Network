@@ -3,9 +3,14 @@ import { Search, Person, Chat, Notifications } from "@material-ui/icons";
 import {useContext, useState} from "react";
 import {searchUser} from "../../service/authenService";
 import Context from "../../store/context";
+import { IconButton } from "@mui/material";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+
 export default function Topbar() {
   const [textSearch,setTextSearch] = useState('');
   const [state , dispatch] = useContext(Context)
+  const infoUser = state.infoUser
 
   async function handleSearch() {
 
@@ -15,15 +20,23 @@ export default function Topbar() {
     console.log(rs.result.length);  
   }
 
+  const [friendRequestNoti, setFriendRequestNoti] = useState(true)
+  const [messageNoti, setMessageNoti] = useState(true)
+  const [notification, setNotification] = useState(true)
+
   const handleSignOut = () => {
     dispatch({type: 'SIGN_OUT'})
+  }
+
+  const handleFriendNoti = () => {
+    setFriendRequestNoti(false)
   }
   
   return (
       <div className="topbarContainer" >
         <div className="topbarLeft" >
           <a href ="/" style={{textDecoration: "none"}}>
-            <span className="logo"></span>
+            <span className="logo">Social</span>
           </a>
         </div>
         <div className="topbarCenter">
@@ -41,17 +54,22 @@ export default function Topbar() {
             <span className="topbarLink">Timeline</span>
           </div>
           <div className="topbarIcons">
-            <div className="topbarIconItem">
+            <div className="topbarIconItem" onClick={handleFriendNoti}>
               <Person />
-              <span className="topbarIconBadge">1</span>
+              {
+                friendRequestNoti ? 
+                <span className="topbarIconBadge">1</span> : 
+                null
+              }
             </div>
-            <div className="topbarIconItem">
+                          
+            <div className="topbarIconItem" onClick={() => setMessageNoti(false)}>
               <Chat />
-              <span className="topbarIconBadge">2</span>
+              {messageNoti ? <span className="topbarIconBadge">2</span> : null}
             </div>
-            <div className="topbarIconItem">
+            <div className="topbarIconItem" onClick={() => setNotification(false)}>
               <Notifications />
-              <span className="topbarIconBadge">1</span>
+              {notification ? <span className="topbarIconBadge">1</span> : null}
             </div>
           </div>
 
@@ -61,7 +79,7 @@ export default function Topbar() {
                 src="/assets/person/1.jpeg" alt="" className="imgNav"/>
             <span style={{position: "relative"}} className="name">{state.infoUser.username}</span>
             <ul className="menu">
-              <li className="itemMenu"><a href="/profile" style={{color : "#070707",textDecoration: "none",cursol : "pointer"}}>Trang cá nhân</a></li>
+              <li className="itemMenu"><a href={`/profile/${infoUser._id}`} style={{color : "#070707",textDecoration: "none",cursor : "pointer"}}>Trang cá nhân</a></li>
               <li className="itemMenu"><a href="/" style={{color : "#131313",textDecoration: "none"}} onClick={handleSignOut}>Đăng xuất</a></li>
             </ul>
           </div>

@@ -1,12 +1,20 @@
+import {useContext, useEffect} from "react";
+import Context from "../../store/context";
 import "./share.css";
 import {PermMedia, Label,Room, EmojiEmotions} from "@material-ui/icons"
+import noAvatar from "../../img/person/noAvatar.png"
 
 export default function Share() {
+
+  const [state , dispatch] = useContext(Context)
+
+  const infoUser = state.infoUser
+
   return (
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src="/assets/person/1.jpeg" alt="" />
+          <img className="shareProfileImg" src={!(infoUser.profilePicture === "") ? infoUser.profilePicture : noAvatar} alt="" />
           <input
             placeholder="What's in your mind Safak?"
             className="shareInput"
