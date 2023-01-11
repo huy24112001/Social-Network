@@ -46,10 +46,10 @@ router.post("/login", async(req, res) => {
             return res.status(400).json({ message: "Invalid Credentials" })
         }
 
-        // const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, 'test')
+        const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, 'test')
         console.log(req.headers.authorization)
 
-        res.status(200).json({ result: existingUser })
+        res.status(200).json({ result: existingUser , token})
         // res.status(200).json(existingUser)
 
 

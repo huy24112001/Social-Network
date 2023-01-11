@@ -16,10 +16,10 @@ const initState = {
 
         case 'SIGN_OUT': 
             localStorage.removeItem("infoUser");
-            // return {
-            //     ...state,
-            //     infoUser: null
-            // }
+            return {
+                ...state,
+                infoUser: null
+            }
         default :
             throw  new Error('Invalid Action')
 

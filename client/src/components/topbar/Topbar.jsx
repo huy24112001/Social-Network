@@ -6,6 +6,7 @@ import Context from "../../store/context";
 import { IconButton } from "@mui/material";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
+import { Link, useNavigate } from "react-router-dom";
 
 export default function Topbar() {
   const [textSearch,setTextSearch] = useState('');
@@ -23,8 +24,10 @@ export default function Topbar() {
   const [friendRequestNoti, setFriendRequestNoti] = useState(true)
   const [messageNoti, setMessageNoti] = useState(true)
   const [notification, setNotification] = useState(true)
+  const navigate = useNavigate();
 
   const handleSignOut = () => {
+    navigate("/")
     dispatch({type: 'SIGN_OUT'})
   }
 
@@ -79,8 +82,9 @@ export default function Topbar() {
                 src="/assets/person/1.jpeg" alt="" className="imgNav"/>
             <span style={{position: "relative"}} className="name">{state.infoUser.username}</span>
             <ul className="menu">
-              <li className="itemMenu"><a href={`/profile/${infoUser._id}`} style={{color : "#070707",textDecoration: "none",cursor : "pointer"}}>Trang cá nhân</a></li>
-              <li className="itemMenu"><a href="/" style={{color : "#131313",textDecoration: "none"}} onClick={handleSignOut}>Đăng xuất</a></li>
+              <li className="itemMenu" style={{cursor : "pointer"}}><Link to={`/profile/${infoUser._id}`} style={{color : "#070707",textDecoration: "none"}}>Trang cá nhân</Link></li>
+              <li className="itemMenu" style={{cursor: "pointer"}}><div style={{color : "#131313",textDecoration: "none"}} onClick={handleSignOut}>Đăng xuất</div></li>
+              {/* <li className="itemMenu"><Link to="/" style={{color : "#131313",textDecoration: "none"}} onClick={handleSignOut}>Đăng xuất</Link></li> */}
             </ul>
           </div>
 

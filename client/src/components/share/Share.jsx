@@ -1,14 +1,23 @@
-import {useContext, useEffect} from "react";
+import {useContext, useEffect, useState} from "react";
 import Context from "../../store/context";
 import "./share.css";
 import {PermMedia, Label,Room, EmojiEmotions} from "@material-ui/icons"
 import noAvatar from "../../img/person/noAvatar.png"
+import service from "../../service";
 
 export default function Share() {
 
   const [state , dispatch] = useContext(Context)
-
   const infoUser = state.infoUser
+
+  const [post, setPost] = useState({
+    userId: infoUser._id,
+    desc: ""
+  })
+
+  const handleShare = async () => {
+    await service.postService.createPost({data: post, token: infoUser.token})
+  }
 
   return (
     <div className="share">
@@ -18,6 +27,7 @@ export default function Share() {
           <input
             placeholder="What's in your mind Safak?"
             className="shareInput"
+            onChange={(e) => setPost({...post, desc: e.target.value})}
           />
         </div>
         <hr className="shareHr"/>
@@ -40,7 +50,7 @@ export default function Share() {
                     <span className="shareOptionText">Feelings</span>
                 </div>
             </div>
-            <button className="shareButton">Share</button>
+            <button className="shareButton" onClick={handleShare}>Share</button>
         </div>
       </div>
     </div>

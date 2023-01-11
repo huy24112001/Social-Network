@@ -12,6 +12,7 @@ router.post('/', auth, async (req, res) => {
     try {
         const newPost = new Post(req.body)
         const savedPost = await newPost.save()
+        console.log(savedPost)
         res.status(200).json(savedPost)
     } catch (error) {
         res.status(500).json(error)
