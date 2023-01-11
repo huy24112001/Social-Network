@@ -16,8 +16,6 @@ export default function Profile() {
   const userId = useParams().userId;
   const infoUser = state.infoUser
 
-  
-
   // useEffect(() => {
   //   const fetchUser = async () => {
   //     const res = await axios.get(`/users?username=${username}`);
@@ -53,7 +51,7 @@ export default function Profile() {
           </div>
           <div className="profileRightBottom">
             <Rightbar profile />
-            <Feed />
+            <Feed userId={infoUser._id} />
 
           </div>
         </div>

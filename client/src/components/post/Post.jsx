@@ -24,12 +24,14 @@ import Comment from "../comment/Comment";
 import { Link } from "react-router-dom";
 import likeImg from "../../img/like.png"
 import heartImg from "../../img/heart.png"
+import noAvatar from "../../img/person/noAvatar.png"
 
 export default function Post({ post }) {
-  const comments = Comments.filter(comment => comment.postId === post.id)
+  // const comments = Comments.filter(comment => comment.postId === post.id)
+  const comments = post.comments
   // console.log(comments)
 
-  const [like,setLike] = useState(post.like)
+  const [like,setLike] = useState(post.likes.length)
   const [isLiked,setIsLiked] = useState(false)
   const [openComment, setOpenComment] = useState(false)
   const [commentText, setCommentText] = useState('')
@@ -55,14 +57,15 @@ export default function Post({ post }) {
             <Link to={`/profile/${post?.userId}`} >
               <img
                 className="postProfileImg"
-                src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
+                // src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
+                src={noAvatar}
                 alt=""
               />
             </Link>
             <span className="postUsername">
               <Link to={`/profile/${post?.userId}`} style={{color:'#000', textDecoration: 'none' }}>
               
-              {Users.filter((u) => u.id === post?.userId)[0].username}
+              {/* {Users.filter((u) => u.id === post?.userId)[0].username} */}
               </Link>
             </span>
             
@@ -97,7 +100,7 @@ export default function Post({ post }) {
             <span className="postLikeCounter">{like} people like it</span>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText" onClick={handleOpenComment}>{post.comment} comments</span>
+            <span className="postCommentText" onClick={handleOpenComment}>{post.comments.length} comments</span>
           </div>
         </div>
         <Box
