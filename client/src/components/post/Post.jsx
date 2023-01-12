@@ -63,7 +63,7 @@ export default function Post({ post }) {
               />
             </Link>
             <span className="postUsername">
-              <Link to={`/profile/${post?.userId}`} style={{color:'#000', textDecoration: 'none' }}>
+              <Link to={`/profile/${post?.userId._id}`} style={{color:'#000', textDecoration: 'none' }}>
               
               {/* {Users.filter((u) => u.id === post?.userId)[0].username} */}
               {post?.userId?.username}

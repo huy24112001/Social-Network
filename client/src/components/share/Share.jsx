@@ -56,6 +56,7 @@ export default function Share() {
           <input
             placeholder={`What's in your mind ${infoUser?.username}?`}
             className="shareInput"
+            value={post.desc}
             onChange={(e) => setPost({...post, desc: e.target.value})}
           />
         </div>
