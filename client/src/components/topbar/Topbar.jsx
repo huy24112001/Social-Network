@@ -4,18 +4,31 @@ import {useContext, useState} from "react";
 import {searchUser} from "../../service/authenService";
 import Select from "react-select/base";
 import Context from "../../store/context";
+import {useNavigate, useNavigation} from "react-router-dom";
 export default function Topbar() {
   const [textSearch,setTextSearch] = useState('');
+  const [rsFriend,setRsFriend] = useState(false);
   const [state , dispatch] = useContext(Context)
+  const navigate = useNavigate()
+
 
   async function handleSearch() {
 
     const rs = await searchUser({username: textSearch})
-    if (rs.result) console.log('thanh cong');
-    else
-    console.log(rs.result.length);
+    if (rs.result)
+      setRsFriend(true)
+      // navigate(`/profile/${rs.result[0]._id}`, {state: { profile :  rs.result[0] }}  )
+
+
+    // console.log(rs.result);
 
   }
+
+  const handleSignOut = () => {
+    navigate('/')
+    dispatch({type: 'SIGN_OUT'})
+  }
+
 
   return (
       <div className="topbarContainer" >
@@ -28,9 +41,11 @@ export default function Topbar() {
           <div className="searchbar">
             <Search className="searchIcon" />
             <input
-                placeholder="Search for friend, post or video"
-                className="searchInput"
+                placeholder="Tìm kiếm bạn bè"
+                className="searchInput" value={textSearch} onChange={(e)=>setTextSearch(e.target.value)}
             />
+            { rsFriend ? <div className="menu"><p>huy</p></div> : null}
+            <button onClick={handleSearch}>Tìm kiếm</button>
           </div>
         </div>
         <div className="topbarRight">
@@ -59,8 +74,8 @@ export default function Topbar() {
                 src="/assets/person/1.jpeg" alt="" className="imgNav"/>
             <span style={{position: "relative"}} className="name">{state.infoUser.username}</span>
             <ul className="menu">
-              <li className="itemMenu"><a href="/profile" style={{color : "#070707",textDecoration: "none",cursol : "pointer"}}>Trang cá nhân</a></li>
-              <li className="itemMenu"><a href="/" style={{color : "#131313",textDecoration: "none"}}>Đăng xuất</a></li>
+              <li className="itemMenu" style={{cursor:'pointer'}}><div onClick={()=> navigate(`/profile/${state.infoUser._id}`,{state: {profile : state.infoUser}})}  style={{color : "#070707",textDecoration: "none",cursol : "pointer"}}>Trang cá nhân</div></li>
+              <li className="itemMenu" style={{cursor:'pointer'}}><div style={{color : "#131313",textDecoration: "none"}} onClick={handleSignOut}>Đăng xuất</div></li>
             </ul>
           </div>
 

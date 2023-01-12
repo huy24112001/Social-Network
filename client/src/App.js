@@ -5,6 +5,7 @@ import Home from "../src/pages/home/Home";
 import Profile from "./pages/profile/Profile";
 
 
+
 function App() {
 
   return (
@@ -14,9 +15,9 @@ function App() {
 
 
           <>
-            <Route path="/" element={<Login />} />
-            <Route path="/home" element={<Home/>}/>
-              <Route path="/profile" element={<Profile/>}/>
+                <Route path="/" element={<Login />} />
+                <Route path="/home" element={<Home/>}/>
+                <Route path="/profile/:userid" element={<Profile/>}/>
 
 
 

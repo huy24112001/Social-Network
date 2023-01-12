@@ -5,8 +5,8 @@ import {useContext} from "react";
 import Context from "../../store/context";
 
 export default function Rightbar({profile}) {
-  const [state , dispatch] = useContext(Context)
-  console.log(state)
+
+
   const HomeRightbar = () => {
     return (
       <>
@@ -29,24 +29,31 @@ export default function Rightbar({profile}) {
 
   const ProfileRightbar = () => {
     return (
-      <>
-        <h4 className="rightbarTitle">User information</h4>
+        <>
+      <div className='leftBar'>
+        <h4 className="rightbarTitle">Giới thiệu</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">City:</span>
-            <span className="rightbarInfoValue">{state.infoUser.city}</span>
+            <span className="rightbarInfoKey">Sống tại</span>
+            <span className="rightbarInfoValue">{profile.city}</span>
           </div>
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">From:</span>
-            <span className="rightbarInfoValue">{state.infoUser.from}</span>
+            <span className="rightbarInfoKey">Đến từ</span>
+            <span className="rightbarInfoValue">{profile.from}</span>
           </div>
           <div className="rightbarInfoItem">
-            <span className="rightbarInfoKey">Relationship:</span>
-            <span className="rightbarInfoValue">{state.infoUser.relationship === 1 ? "Độc thân" :
-                state.infoUser.relationship === 2 ? "Hẹn hò" : "Không có thông tin"  }</span>
+            <span className="rightbarInfoKey">Đã học tại</span>
+            <span className="rightbarInfoValue">{profile.study}</span>
+          </div>
+          <div className="rightbarInfoItem">
+            <span className="rightbarInfoKey">Mối quan hệ</span>
+            <span className="rightbarInfoValue">{profile.relationship === 1 ? "Độc thân" :
+                profile.relationship === 2 ? "Hẹn hò" : "Không có thông tin"  }</span>
           </div>
         </div>
-        <h4 className="rightbarTitle">User friends</h4>
+      </div>
+          <div className='leftBar'>
+        <h4 className="rightbarTitle">Bạn Bè</h4>
         <div className="rightbarFollowings">
           <div className="rightbarFollowing">
             <img
@@ -97,6 +104,7 @@ export default function Rightbar({profile}) {
             <span className="rightbarFollowingName">John Carter</span>
           </div>
         </div>
+          </div>
       </>
     );
   };
