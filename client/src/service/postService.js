@@ -26,3 +26,11 @@ export async function getProfilePost(userId) {
   console.log(response)
   return response?.data || []
 }
+
+export async function createComment(data) {
+  const url = REACT_APP_BACK_END + '/api/comments/create'
+//   console.log(url)
+  const response = await api.postRequests.createPost(url, data)
+  console.log(response)
+//   return response?.data || []
+}

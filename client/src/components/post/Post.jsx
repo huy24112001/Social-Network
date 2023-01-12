@@ -19,15 +19,20 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
 import IosShareIcon from "@mui/icons-material/IosShare";
 import { Comments, Users } from "../../dummyData";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Comment from "../comment/Comment";
 import { Link } from "react-router-dom";
 import likeImg from "../../img/like.png"
 import heartImg from "../../img/heart.png"
 import noAvatar from "../../img/person/noAvatar.png"
+import { display } from "@mui/system";
+import Context from "../../store/context";
+import service from "../../service";
 
 export default function Post({ post }) {
   // const comments = Comments.filter(comment => comment.postId === post.id)
+  const [state , dispatch] = useContext(Context)
+  const infoUser = state.infoUser
   const comments = post.comments
   // console.log(comments)
 
@@ -41,9 +46,25 @@ export default function Post({ post }) {
     setOpenComment(!openComment)
   }
 
+  const userAvatar = (post?.userId?.profilePicture === "") ? noAvatar : post?.userId?.profilePicture
+
   const handleOpenMenuPost = () => {
     setPopup(true)
   }
+
+  const handleKeyPress = async (e) => {
+    if (!e.shiftKey && e.key === 'Enter') {
+      e.preventDefault();
+      // handleSendMessage();
+      console.log(commentText)
+      await service.postService.createComment({data: {
+        user: infoUser._id,
+        post: post._id,
+        content: commentText
+      }, token: infoUser.token})
+      setCommentText('')
+    }
+  };
 
   const likeHandler =()=>{
     setLike(isLiked ? like-1 : like+1)
@@ -58,7 +79,7 @@ export default function Post({ post }) {
               <img
                 className="postProfileImg"
                 // src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
-                src={(post?.userId?.profilePicture === "") ? noAvatar : post?.userId?.profilePicture}
+                src={userAvatar}
                 alt=""
               />
             </Link>
@@ -129,29 +150,49 @@ export default function Post({ post }) {
             </Box>
       {openComment 
         ? (
-          
           <Box 
-            borderTop="1px solid #ccc"
-            padding={0.5}
+            sx = {{
+              borderTop:"1px solid #ccc",
+              padding:'0.5',
+            }}
           >
-            <Box padding="0.1rem 0.5rem" border="1px solid #ccc" borderRadius={18}>
-              <Input
-                onChange={(e) => setCommentText(e.target.value)}
-                value={commentText}
-                multiline
-                rows="1"
-                disableUnderline
-                type="text"
-                placeholder="Post your comment"
-                sx={{ width: "100%" }}
+            <Box
+              sx={{
+                display: 'flex',
+                paddingTop: '2px'
+              }}
+            >
+
+              <Box
+                component="img"
+                sx={{
+                  height: 32,
+                  width: 32,
+                  borderRadius:'50%',
+                  marginRight:'5px'
+                }}
+                alt="avatar"
+                src={userAvatar}
+
               />
+              <Box padding="0.1rem 0.5rem" border="1px solid #ccc" borderRadius={18} width='100%'>
+                <Input
+                  onChange={(e) => setCommentText(e.target.value)}
+                  value={commentText}
+                  multiline
+                  rows="1"
+                  disableUnderline
+                  type="text"
+                  placeholder="Post your comment"
+                  sx={{ width: "100%" }}
+                  onKeyDown={handleKeyPress}
+                />
+              </Box>
             </Box>
             {
-              comments?.map((c) => <Comment comment={c}/> )
+              comments?.map((c) => <Comment key={c._id} comment={c}/> )
             }
           </Box>
-          
-          
           )
         : null}
       </div>
