@@ -19,7 +19,7 @@ export default function Feed({ userId }) {
       // const res = username
       //   ? await axios.get("/posts/profile/" + username)
       //   : await axios.get("posts/timeline/" + user._id);
-      const res = userId ? await service.postService.getProfilePost(userId) : await service.postService.getProfilePost(infoUser._id)
+      const res = userId ? await service.postService.getProfilePost(userId) : await service.postService.getTimelinePost(infoUser._id)
       console.log(res)
       setPosts(
         res?.sort((p1, p2) => {
@@ -36,7 +36,7 @@ export default function Feed({ userId }) {
       <div className="feedWrapper">
         <Share />
         {posts.map((p) => (
-          <Post key={p.id} post={p} />
+          <Post key={p._id} post={p} />
         ))}
         {/* {Posts.map((p) => (
           <Post key={p.id} post={p} />

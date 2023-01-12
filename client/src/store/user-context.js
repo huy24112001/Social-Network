@@ -3,7 +3,8 @@ import Context from "./context";
 
 
 const initState = {
-    infoUser: JSON.parse(localStorage.getItem("infoUser")) || null
+    infoUser: JSON.parse(localStorage.getItem("infoUser")) || null,
+    socket: null
 }
 
  function reducer(state, action){
@@ -19,6 +20,12 @@ const initState = {
             return {
                 ...state,
                 infoUser: null
+            }
+
+        case 'CONNECT_SOCKET': 
+            return {
+                ...state,
+                socket: action.payload
             }
         default :
             throw  new Error('Invalid Action')

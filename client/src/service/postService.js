@@ -27,6 +27,14 @@ export async function getProfilePost(userId) {
   return response?.data || []
 }
 
+export async function getTimelinePost(userId) {
+  const url = REACT_APP_BACK_END + `/api/posts/timeline/${userId}`
+//   console.log(url)
+  const response = await api.postRequests.getTimelinePost(url)
+  console.log(response)
+  return response?.data || []
+}
+
 export async function createComment(data) {
   const url = REACT_APP_BACK_END + '/api/comments/create'
 //   console.log(url)

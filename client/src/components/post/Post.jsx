@@ -19,7 +19,7 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 
 import IosShareIcon from "@mui/icons-material/IosShare";
 import { Comments, Users } from "../../dummyData";
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Comment from "../comment/Comment";
 import { Link } from "react-router-dom";
 import likeImg from "../../img/like.png"
@@ -28,17 +28,23 @@ import noAvatar from "../../img/person/noAvatar.png"
 import { display } from "@mui/system";
 import Context from "../../store/context";
 import service from "../../service";
+import { formatDistance} from 'date-fns';
+import { useSelector } from 'react-redux'
 
 export default function Post({ post }) {
   // const comments = Comments.filter(comment => comment.postId === post.id)
   const [state , dispatch] = useContext(Context)
+  const socket = state.socket
   const infoUser = state.infoUser
-  const comments = post.comments
   // console.log(comments)
+
+  const timestamp = post.createdAt ? new Date(post.createdAt) : '';
 
   const [like,setLike] = useState(post.likes.length)
   const [isLiked,setIsLiked] = useState(false)
   const [openComment, setOpenComment] = useState(false)
+  const [comments, setComments] = useState([])
+  const [oldComments, setOldComments] = useState(post.comments)
   const [commentText, setCommentText] = useState('')
   const [popup, setPopup] = useState(false)
 
@@ -56,7 +62,12 @@ export default function Post({ post }) {
     if (!e.shiftKey && e.key === 'Enter') {
       e.preventDefault();
       // handleSendMessage();
-      console.log(commentText)
+      // console.log(commentText)
+      socket.emit('comment', {
+        user: infoUser,
+        post: post._id,
+        content: commentText
+      })
       await service.postService.createComment({data: {
         user: infoUser._id,
         post: post._id,
@@ -65,6 +76,25 @@ export default function Post({ post }) {
       setCommentText('')
     }
   };
+
+  // useEffect(() => {
+  //   if(socket){
+  //       socket.emit('joinRoom', post._id)
+  //   }
+  // },[socket, post._id])
+
+  useEffect(() => {
+    socket.on('replyComment', (data) => {
+      if(data.post === post._id){
+        setComments([...comments, data])
+      }
+      // console.log(data)
+    })
+
+  }, [socket, comments])
+  
+
+  
 
   const likeHandler =()=>{
     setLike(isLiked ? like-1 : like+1)
@@ -91,7 +121,10 @@ export default function Post({ post }) {
               </Link>
             </span>
             
-            <span className="postDate">{post.date}</span>
+            <span className="postDate">
+            {formatDistance(Date.now(), timestamp, {addSuffix: true})}{" "}
+  
+            </span>
           </div>
             <div className="postTopRight">
               {/* <MoreVert onClick={() => setPopup(true)} /> */}
@@ -113,7 +146,7 @@ export default function Post({ post }) {
         </div>
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImg" src={post.img} alt="" />
+          <img className="postImg" src={post?.img} alt="" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
@@ -122,7 +155,7 @@ export default function Post({ post }) {
             <span className="postLikeCounter">{like} people like it</span>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText" onClick={handleOpenComment}>{post.comments.length} comments</span>
+            <span className="postCommentText" onClick={handleOpenComment}>{post?.comments?.length + comments.length} comments</span>
           </div>
         </div>
         <Box
@@ -189,6 +222,9 @@ export default function Post({ post }) {
                 />
               </Box>
             </Box>
+            {
+              oldComments?.map((c) => <Comment key={c._id} comment={c}/> )
+            }
             {
               comments?.map((c) => <Comment key={c._id} comment={c}/> )
             }

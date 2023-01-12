@@ -10,14 +10,30 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import Context from "./store/context";
+import { io } from "socket.io-client";
+
 
 function App() {
   const [state , dispatch] = useContext(Context)
   const user = state.infoUser
   
-
+  useEffect(() => {
+    const socket = io("ws://localhost:5000");
+    // socket.on("connection", (data) => {
+    //   setArrivalMessage({
+    //     sender: data.senderId,
+    //     text: data.text,
+    //     createdAt: Date.now(),
+    //   });
+    // });
+    dispatch({
+      type: 'CONNECT_SOCKET',
+      payload: socket
+    })
+    return () =>  socket.close()
+  }, []);
 
 
   return (
