@@ -21,10 +21,11 @@ router.post("/register", async(req, res) => {
         })
         const user = await newUser.save()
         console.log(user)
-        // const token = jwt.sign({ email: user.email, id: user._id }, 'test')
-        res.status(200).json({ result: user })
+        const token = jwt.sign({ email: user.email, id: user._id }, 'test')
+        res.status(200).json({ result: user , token})
     } catch (error) {
         console.log(error)
+        res.status(500).json({ message: "Something went wrong. Try different name or email" })
     }
 
 })

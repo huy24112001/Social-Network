@@ -108,6 +108,17 @@ router.get("/timeline/all", async (req,res) => {
     }
 })
 
+//get user's all posts
+router.get("/profile/:userId", async (req, res) => {
+    try {
+      const user = await User.findOne({ userId: req.params.userId });
+      const posts = await Post.find({ userId: user._id }).populate('userId').populate('comments');
+      res.status(200).json(posts);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
+
 router.get('/', (req, res) => {
     console.log("post page")
     res.send("Post page")

@@ -58,7 +58,7 @@ export default function Post({ post }) {
               <img
                 className="postProfileImg"
                 // src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
-                src={noAvatar}
+                src={(post?.userId?.profilePicture === "") ? noAvatar : post?.userId?.profilePicture}
                 alt=""
               />
             </Link>
@@ -66,6 +66,7 @@ export default function Post({ post }) {
               <Link to={`/profile/${post?.userId}`} style={{color:'#000', textDecoration: 'none' }}>
               
               {/* {Users.filter((u) => u.id === post?.userId)[0].username} */}
+              {post?.userId?.username}
               </Link>
             </span>
             
@@ -91,7 +92,7 @@ export default function Post({ post }) {
         </div>
         <div className="postCenter">
           <span className="postText">{post?.desc}</span>
-          <img className="postImg" src={post.photo} alt="" />
+          <img className="postImg" src={post.img} alt="" />
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
