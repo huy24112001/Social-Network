@@ -87,21 +87,25 @@ router.get("/:id", async(req, res) => {
         res.status(500).json(error)
     }
 })
+
+
 // get timeline posts
-router.get("/timeline/all", async (req,res) => {
-    const userId = req.body.userId
+router.get("/timeline/:userId", async (req,res) => {
+    const userId = req.params.userId
     try {
         const currentUser = await User.findById(userId)
         // console.log(currentUser)
-        const userPosts = await Post.find({userId: currentUser._id})
-        console.log(userPosts)
+        const userPosts = await Post.find({userId: currentUser._id}).populate('userId').populate('comments')
+        // console.log(userPosts)
         // const userPosts = await Post.find({userId: userId})
         const friendPosts = await Promise.all(
             currentUser.followings.map((friendId) => {
-                return Post.find({userId: friendId})
+                return Post.find({userId: friendId}).populate('userId').populate('comments')
             })
         )
-        console.log(friendPosts)
+        console.log(friendPosts.length)
+        console.log(userPosts.length)
+
         res.json(userPosts.concat(...friendPosts))
     } catch (error) {
         res.status(500).json(error)
@@ -112,7 +116,10 @@ router.get("/timeline/all", async (req,res) => {
 router.get("/profile/:userId", async (req, res) => {
     try {
       const user = await User.findOne({ userId: req.params.userId });
-      const posts = await Post.find({ userId: user._id }).populate('userId').populate('comments')
+      const posts = await Post.find({ userId: user._id }).populate('userId').populate({path:'comments', populate: {
+        path: 'user',
+        select: 'username'
+      } })
     //   const posts = await Post.find({ userId: user._id }).populate('userId').populate('comments').exec((err, comments) => {
     //     comments.map((comment) => console.log(comment))
     //   });
