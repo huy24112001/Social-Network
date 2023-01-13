@@ -42,3 +42,10 @@ export async function createComment(data) {
   console.log(response)
 //   return response?.data || []
 }
+
+export async function likePost(data) {
+  const {id, token} = data
+  const url = REACT_APP_BACK_END + `/api/posts/${id}/like`
+  const response = await api.postRequests.likePost(url, token)
+//   return response?.data || []
+}

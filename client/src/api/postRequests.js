@@ -123,3 +123,28 @@ export async function createComment(url, {token, data}) {
     };
   }
 }
+
+
+export async function likePost(url, token) {
+  try {
+    const headers =  {
+      "Content-Type": "application/json; charset=UTF-8",
+      "Authorization": `Bearer ${token}`,
+    }
+    return await Axios.put(
+      url,{},
+      {
+        headers: headers,
+      },
+    );
+  } catch (ex) {
+    const { status = 400, data = {} } = ex.response || {};
+    const error = data?.errors || [];
+    return {
+      status,
+      data: {},
+      message: error[0]?.message || "",
+      code: error[0]?.code || 0,
+    };
+  }
+}

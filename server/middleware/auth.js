@@ -26,7 +26,7 @@ const User = require('../models/User')
 
 const auth = async(req, res, next) => {
     try {
-        // console.log(req.headers)
+        console.log(req.headers.authorization)
         const token = req.headers.authorization.split(' ')[1]
 
         const isCustomAuth = token.length < 500

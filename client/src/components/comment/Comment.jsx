@@ -73,8 +73,18 @@ export default function Comment({ comment }) {
                     position="right center"
                   >
                     <div className={'popup'}>
-                        <li>Ẩn bình luận</li>
-                        <li>Ẩn bình luận</li>
+                      <div className="popupList">
+                        <li className="popupItem">
+                          Xóa bình luận
+                        </li>
+                        <li className="popupItem">
+                          Ẩn bình luận
+                        </li>
+                        <li className="popupItem">
+                          Báo cáo bình luận
+                        </li>
+                        
+                      </div>
                     </div>
                   </Popup>
                 {/* </IconButton> */}

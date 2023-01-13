@@ -9,7 +9,10 @@ import {
 } from "@mui/material";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-
+import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
+import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
+import NotificationsOffOutlinedIcon from '@mui/icons-material/NotificationsOffOutlined';
+import CancelOutlinedIcon from '@mui/icons-material/CancelOutlined';
 import ThumbUp from "@mui/icons-material/ThumbUp"
 import ThumbUpOutlinedIcon from '@mui/icons-material/ThumbUpOutlined';
 import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
@@ -108,11 +111,17 @@ export default function Post({ post }) {
 
   }, [socket, like])
 
-  const likeHandler =()=>{
+  const likeHandler = async ()=>{
     socket.emit('sendLike', {
       post: post._id,
       isLiked: !isLiked
     })
+
+    await service.postService.likePost({
+      id: post._id,
+      token: infoUser.token
+    })
+
     setLike(isLiked ? like-1 : like+1)
     setIsLiked(!isLiked)
   }
@@ -156,9 +165,30 @@ export default function Post({ post }) {
               >
                 <div className={'popup'}>
                   <div className="popupList">
-                    <li>Chỉnh sửa bài viết</li>
-                    <li>Ẩn bài viết</li>
-                    <li>Xóa bài viết</li>
+                    <li className="popupItem">
+                      <ModeEditOutlinedIcon style={{marginRight: 5}}/>
+                      Chỉnh sửa bài viết
+                    </li>
+                    <li className="popupItem">
+                      <NotificationsOffOutlinedIcon style={{marginRight: 5}}/>
+                      Tắt thông báo về bài viết này
+                    </li>
+                    {
+                      post?.userId?._id === infoUser._id 
+                      ?  (
+                        <li className="popupItem">
+                          <DeleteForeverOutlinedIcon style={{marginRight: 5}}/> 
+                          Xóa bài viết
+                        </li>
+                      )
+                      : (
+                        <li className="popupItem">
+                          <CancelOutlinedIcon style={{marginRight: 5}}/> 
+                          Ẩn bài viết
+                        </li>
+                      )
+                    }
+                    
                   </div>
                 </div>
               </Popup>

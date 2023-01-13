@@ -54,10 +54,11 @@ router.delete("/:id", async(req, res) => {
 })
 
 // like a post
-router.put("/:id/like", async (req, res) => {
+router.put("/:id/like", auth ,async (req, res) => {
     try {
         const postId = req.params.id
-        const likerId = req.body.userId
+        const likerId = req.user._id
+        console.log(likerId)
         const post = await Post.findById(postId)
         if(!post.likes.includes(likerId)) {
             await post.updateOne({
