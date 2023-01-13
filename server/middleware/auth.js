@@ -26,7 +26,7 @@ const User = require('../models/User')
 
 const auth = async(req, res, next) => {
     try {
-        console.log(req.headers)
+        // console.log(req.headers)
         const token = req.headers.authorization.split(' ')[1]
 
         const isCustomAuth = token.length < 500
@@ -35,7 +35,7 @@ const auth = async(req, res, next) => {
 
         if (token && isCustomAuth) {
             decodedData = jwt.verify(token, 'test')
-            console.log(decodedData)
+            // console.log(decodedData)
             const user = await User.findById(decodedData.id)
             if(!user) {
                 throw new Error()

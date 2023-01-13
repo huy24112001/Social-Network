@@ -95,18 +95,24 @@ router.get("/timeline/:userId", async (req,res) => {
     try {
         const currentUser = await User.findById(userId)
         // console.log(currentUser)
-        const userPosts = await Post.find({userId: currentUser._id}).populate('userId').populate('comments')
+        const userPosts = await Post.find({userId: currentUser._id}).populate('userId').populate({path:'comments', populate: {
+            path: 'user',
+            select: 'username'
+          } })
         // console.log(userPosts)
         // const userPosts = await Post.find({userId: userId})
         const friendPosts = await Promise.all(
             currentUser.followings.map((friendId) => {
-                return Post.find({userId: friendId}).populate('userId').populate('comments')
+                return Post.find({userId: friendId}).populate('userId').populate({path:'comments', populate: {
+                    path: 'user',
+                    select: 'username'
+                  } })
             })
         )
-        console.log(friendPosts.length)
-        console.log(userPosts.length)
+        // console.log(friendPosts.length)
+        // console.log(userPosts.length)
 
-        res.json(userPosts.concat(...friendPosts))
+        res.status(200).json(userPosts.concat(...friendPosts))
     } catch (error) {
         res.status(500).json(error)
     }
@@ -115,11 +121,12 @@ router.get("/timeline/:userId", async (req,res) => {
 //get user's all posts
 router.get("/profile/:userId", async (req, res) => {
     try {
-      const user = await User.findOne({ userId: req.params.userId });
-      const posts = await Post.find({ userId: user._id }).populate('userId').populate({path:'comments', populate: {
-        path: 'user',
-        select: 'username'
-      } })
+        const user = await User.findOne({ _id: req.params.userId });
+        console.log(user)
+        const posts = await Post.find({ userId: user._id }).populate('userId').populate({path:'comments', populate: {
+            path: 'user',
+            select: 'username'
+        } })
     //   const posts = await Post.find({ userId: user._id }).populate('userId').populate('comments').exec((err, comments) => {
     //     comments.map((comment) => console.log(comment))
     //   });

@@ -38,10 +38,10 @@ export default function Post({ post }) {
   const infoUser = state.infoUser
   // console.log(comments)
 
-  const timestamp = post.createdAt ? new Date(post.createdAt) : '';
+  const timestamp = post?.createdAt ? new Date(post?.createdAt) : '';
 
-  const [like,setLike] = useState(post.likes.length)
-  const [isLiked,setIsLiked] = useState(false)
+  const [like,setLike] = useState(post?.likes?.length)
+  const [isLiked,setIsLiked] = useState(post?.likes.some(userId => userId === infoUser._id))
   const [openComment, setOpenComment] = useState(false)
   const [comments, setComments] = useState([])
   const [oldComments, setOldComments] = useState(post.comments)
@@ -84,22 +84,40 @@ export default function Post({ post }) {
   // },[socket, post._id])
 
   useEffect(() => {
-    socket.on('replyComment', (data) => {
-      if(data.post === post._id){
-        setComments([...comments, data])
-      }
-      // console.log(data)
-    })
+    if (socket){
+      socket.on('replyComment', (data) => {
+        if(data.post === post._id){
+          setComments([...comments, data])
+        }
+        // console.log(data)
+      })
+    }
 
   }, [socket, comments])
-  
 
-  
+  useEffect(() => {
+    if (socket){
+
+      socket.once('like', (data) => {
+        if(data.post === post._id){
+          setLike(data.isLiked ? like+1 : like-1)
+          console.log(data)
+        }
+      })
+    }
+
+  }, [socket, like])
 
   const likeHandler =()=>{
+    socket.emit('sendLike', {
+      post: post._id,
+      isLiked: !isLiked
+    })
     setLike(isLiked ? like-1 : like+1)
     setIsLiked(!isLiked)
   }
+
+
   return (
     <div className="post">
       <div className="postWrapper">
@@ -137,9 +155,11 @@ export default function Post({ post }) {
                 position="bottom right"
               >
                 <div className={'popup'}>
+                  <div className="popupList">
                     <li>Chỉnh sửa bài viết</li>
                     <li>Ẩn bài viết</li>
                     <li>Xóa bài viết</li>
+                  </div>
                 </div>
               </Popup>
             </div>

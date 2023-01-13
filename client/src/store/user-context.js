@@ -19,7 +19,8 @@ const initState = {
             localStorage.removeItem("infoUser");
             return {
                 ...state,
-                infoUser: null
+                infoUser: null,
+                socket: null,
             }
 
         case 'CONNECT_SOCKET': 
