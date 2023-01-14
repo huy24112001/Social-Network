@@ -1,0 +1,79 @@
+.messengerSideBar{
+    display: flex;
+}
+
+.messengerSideBarMenu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 200px;
+    border-right: 1px solid rgba(228, 222, 222, 0.68);
+}
+
+.messengerSideBarCategory {
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    /* border-bottom: 1px solid rgba(228, 222, 222, 0.68); */
+}
+
+.messengerCategoryItem {
+    display: flex;
+    align-items: center;
+    padding: 0.25rem;
+    /* line-height: 30px; */
+    gap: 0.5rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.messengerCategoryItemIcon {
+    padding: 5px;
+}
+
+
+.messengerCategoryItem:hover {
+    background-color: rgba(228, 222, 222, 0.68);
+}
+
+.messengerSideBarAccount {
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+
+}
+
+.messengerSideBarAvatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}
+
+.messageSideBarContent {
+    display: flex;
+    flex-direction: column;
+    padding: 5px;
+    width: 300px;
+    border-right: 1px solid rgba(228, 222, 222, 0.68);
+}
+
+.messengerSideBarTop {
+    font-size: 24px;
+    font-weight: bold;
+    font-family: Helvetica, Arial, sans-serif;
+    margin-bottom: 12px;
+    margin-top: 10px;
+    margin-left: 10px;
+    margin-right: 16px;
+}
+
+.messengerSideBarSearch {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-bottom: 10px;
+}

@@ -2,9 +2,14 @@ import { Grid, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import React from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
-// import formatDistanceToNow from "date-fns/formatDistanceToNow";
+import Popup from 'reactjs-popup';
+import 'reactjs-popup/dist/index.css';
+import { formatDistance} from 'date-fns';
+import noAvatar from "../../img/person/noAvatar.png"
 
 export default function Comment({ comment }) {
+  const timestamp = comment.createdAt ? new Date(comment.createdAt) : '';
+
   return (
     <Box
       padding="1rem"
@@ -16,7 +21,7 @@ export default function Comment({ comment }) {
     >
       <Grid container flexWrap="nowrap">
         <Grid item sx={{ paddingRight: "1rem" }}>
-          <img src="/logo.png" alt="lgoog" width="50px" />
+          <img src={noAvatar} alt="lgoog" width="50px" />
         </Grid>
         <Grid item flexGrow="1">
           <Box>
@@ -31,23 +36,23 @@ export default function Comment({ comment }) {
                   <Typography
                     sx={{ fontSize: "16px", fontWeight: 500, mr: "6px" }}
                   >
-                    {comment.userId}
+                    {comment.user.username}
                   </Typography>
-                  <Typography
+                  {/* <Typography
                     sx={{ fontSize: "15px", mr: "6px", color: "#555" }}
                   >
-                    {/* @{comment.author.handle} */}
+                    @{comment.author.handle}
                     "ABC"
                   </Typography>
                   <Typography
                     sx={{ fontSize: "15px", mr: "6px", color: "#555" }}
                   >
                     .
-                  </Typography>
+                  </Typography> */}
                   <Typography
                     sx={{ fontSize: "15px", mr: "6px", color: "#555" }}
                   >
-                    {/* {formatDistanceToNow(new Date(comment.createdAt))}{" "} */}
+                    {formatDistance(Date.now(), timestamp, {addSuffix: true})}{" "}
                   </Typography>
                 </Box>
                 <Box>
@@ -57,9 +62,32 @@ export default function Comment({ comment }) {
                 </Box>
               </Grid>
               <Grid item>
-                <IconButton>
-                  <MoreHorizIcon />
-                </IconButton>
+                {/* <IconButton> */}
+                  {/* <MoreHorizIcon /> */}
+                  <Popup 
+                    trigger={
+                      <IconButton>
+                        <MoreHorizIcon />
+                      </IconButton>
+                    } 
+                    position="right center"
+                  >
+                    <div className={'popup'}>
+                      <div className="popupList">
+                        <li className="popupItem">
+                          Xóa bình luận
+                        </li>
+                        <li className="popupItem">
+                          Ẩn bình luận
+                        </li>
+                        <li className="popupItem">
+                          Báo cáo bình luận
+                        </li>
+                        
+                      </div>
+                    </div>
+                  </Popup>
+                {/* </IconButton> */}
               </Grid>
             </Grid>
           </Box>

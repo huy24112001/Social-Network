@@ -12,6 +12,7 @@ router.post('/', auth, async (req, res) => {
     try {
         const newPost = new Post(req.body)
         const savedPost = await newPost.save()
+        console.log(savedPost)
         res.status(200).json(savedPost)
     } catch (error) {
         res.status(500).json(error)
@@ -53,10 +54,11 @@ router.delete("/:id", async(req, res) => {
 })
 
 // like a post
-router.put("/:id/like", async (req, res) => {
+router.put("/:id/like", auth ,async (req, res) => {
     try {
         const postId = req.params.id
-        const likerId = req.body.userId
+        const likerId = req.user._id
+        // console.log(likerId)
         const post = await Post.findById(postId)
         if(!post.likes.includes(likerId)) {
             await post.updateOne({
@@ -86,26 +88,60 @@ router.get("/:id", async(req, res) => {
         res.status(500).json(error)
     }
 })
+
+
 // get timeline posts
-router.get("/timeline/all", async (req,res) => {
-    const userId = req.body.userId
+router.get("/timeline/:userId", async (req,res) => {
+    const userId = req.params.userId
     try {
         const currentUser = await User.findById(userId)
         // console.log(currentUser)
-        const userPosts = await Post.find({userId: currentUser._id})
-        console.log(userPosts)
+        const userPosts = await Post.find({userId: currentUser._id}).populate('userId').populate({path:'comments', populate: {
+            path: 'user',
+            select: 'username'
+          } })
+        // console.log(userPosts)
         // const userPosts = await Post.find({userId: userId})
         const friendPosts = await Promise.all(
             currentUser.followings.map((friendId) => {
-                return Post.find({userId: friendId})
+                return Post.find({userId: friendId}).populate('userId').populate({path:'comments', populate: {
+                    path: 'user',
+                    select: 'username'
+                  } })
             })
         )
-        console.log(friendPosts)
-        res.json(userPosts.concat(...friendPosts))
+        // console.log(friendPosts.length)
+        // console.log(userPosts.length)
+
+        res.status(200).json(userPosts.concat(...friendPosts))
     } catch (error) {
         res.status(500).json(error)
     }
 })
+
+//get user's all posts
+router.get("/profile/:userId", async (req, res) => {
+    try {
+        const user = await User.findOne({ _id: req.params.userId });
+        console.log(user)
+        const posts = await Post.find({ userId: user._id }).populate('userId').populate({path:'comments', populate: {
+            path: 'user',
+            select: 'username'
+        } })
+    //   const posts = await Post.find({ userId: user._id }).populate('userId').populate('comments').exec((err, comments) => {
+    //     comments.map((comment) => console.log(comment))
+    //   });
+    //   posts.map((post) => {
+    //     const comments = post.comments
+    //     comments.map((comment) => {
+            
+    //     })
+    //   })
+      res.status(200).json(posts);
+    } catch (err) {
+      res.status(500).json(err);
+    }
+  });
 
 router.get('/', (req, res) => {
     console.log("post page")

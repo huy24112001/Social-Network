@@ -16,6 +16,10 @@ import {
     TextField
 } from "@mui/material";
 import {Close, Send} from "@mui/icons-material";
+import axios from "axios";
+import { useParams } from "react-router";
+import noAvatar from "../../img/person/noAvatar.png"
+import noCover from "../../img/person/noBackground.jpg"
 
 export default function Profile() {
     const [state,dispatch] = useContext(Context)
@@ -24,6 +28,8 @@ export default function Profile() {
     // const statusFriend = location.state.statusFriend
     const [statusFriend,setStatusFriend] = useState()
     const [showEditProfile,setShowEditProfile] = useState(false)
+    const {userId} = useParams()
+    console.log(userId)
 
     useEffect(async () => {
         if(state.infoUser._id !== profile._id) {

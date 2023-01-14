@@ -7,11 +7,11 @@ const auth = require("../middleware/auth")
 router.post('/create', auth, async(req, res) => {
     
     try {
-        const post = await Post.findById(req.body.postId)
+        const post = await Post.findById(req.body.post)
         if(post) {
             const comment = new Comment({
                 ...req.body, 
-                userId: req.user._id
+                user: req.user._id
             })
 
             await comment.save()

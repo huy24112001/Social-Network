@@ -3,7 +3,8 @@ import Context from "./context";
 
 
 const initState = {
-    infoUser: JSON.parse(localStorage.getItem("infoUser")) || null
+    infoUser: JSON.parse(localStorage.getItem("infoUser")) || null,
+    socket: null
 }
 
 function reducer(state, action){
@@ -14,12 +15,19 @@ function reducer(state, action){
                 infoUser : action.payload,
             }
 
-        case 'SIGN_OUT':
+        case 'SIGN_OUT': 
             localStorage.removeItem("infoUser");
-        return {
-            ...state,
-            infoUser: null
-        }
+            return {
+                ...state,
+                infoUser: null,
+                socket: null,
+            }
+
+        case 'CONNECT_SOCKET': 
+            return {
+                ...state,
+                socket: action.payload
+            }
         default :
             throw  new Error('Invalid Action')
 
@@ -35,7 +43,7 @@ function Provider({children}){
         if(state.infoUser === null) {
             localStorage.removeItem("infoUser");
         }
-    },[state.infoUser])
+      },[state.infoUser])
 
     return(
         <Context.Provider value={[state , dispatch]}>

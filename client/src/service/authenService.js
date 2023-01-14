@@ -1,4 +1,4 @@
-import {deleteAsyncWithToken, getAsync, getAsyncWithToken, postAsync} from "../constant/request";
+import {deleteAsyncWithToken, getAsync, getAsyncWithToken, postAsync} from "../api/request";
 import {REACT_APP_BACK_END} from "../constant/backend";
 
 

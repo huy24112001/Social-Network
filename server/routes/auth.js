@@ -2,11 +2,21 @@ const router = require("express").Router();
 const User = require("../models/User")
 const bcrypt = require("bcrypt")
 const jwt = require("jsonwebtoken")
+var fs = require('fs');
+
+// function to encode file data to base64 encoded string
+function base64_encode(file) {
+    // read binary data
+    var bitmap = fs.readFileSync(file);
+    // convert binary data to base64 encoded string
+    return new Buffer(bitmap).toString('base64');
+}
 
 // Register
 router.post("/register", async(req, res) => {
     const {username, email, password} = req.body
-
+    var defaultAvatarBase64 = base64_encode('/home/edkl/project/reactjs_nodejs/social-network-btl/server/assets/noAvatar.png');
+    var defaultCoverBase64 = base64_encode('/home/edkl/project/reactjs_nodejs/social-network-btl/server/assets/noCover.jpg');
 
     try {
 
@@ -17,14 +27,17 @@ router.post("/register", async(req, res) => {
         const newUser = new User({
             username: username,
             email: email,
-            password: hashedPassword
+            password: hashedPassword,
+            profilePicture: defaultAvatarBase64,
+            coverPicture: defaultCoverBase64
         })
         const user = await newUser.save()
         console.log(user)
-        // const token = jwt.sign({ email: user.email, id: user._id }, 'test')
-        res.status(200).json({ result: user })
+        const token = jwt.sign({ email: user.email, id: user._id }, 'test')
+        res.status(200).json({ result: user , token})
     } catch (error) {
         console.log(error)
+        res.status(500).json({ message: "Something went wrong. Try different name or email" })
     }
 
 })
@@ -46,10 +59,10 @@ router.post("/login", async(req, res) => {
             return res.status(400).json({ message: "Invalid Credentials" })
         }
 
-        // const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, 'test')
+        const token = jwt.sign({ email: existingUser.email, id: existingUser._id }, 'test')
         console.log(req.headers.authorization)
 
-        res.status(200).json({ result: existingUser })
+        res.status(200).json({ result: existingUser , token})
         // res.status(200).json(existingUser)
 
 
