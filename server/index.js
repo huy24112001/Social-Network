@@ -37,7 +37,7 @@ app.get("/", (req, res) => {
 })
 
 
-mongoose.set('strictQuery', true).connect("mongodb://127.0.0.1:27017/SocialNetworking", {})
+mongoose.set('strictQuery', true).connect(process.env.MONGO_URI, {})
     .then(() => app.listen(PORT, () => console.log(`Server running on port: ${PORT}`)))
     .catch((error) => console.log(error.message))
 

@@ -1,7 +1,7 @@
 const router = require("express").Router();
 const User = require("../models/User")
 const auth = require('../middleware/auth.js')
-const Friend = require('../models/friend.js')
+const Friend = require('../models/Friend')
 const bodyParser = require("body-parser")
 router.use(bodyParser.urlencoded({ extended: true }));
 
