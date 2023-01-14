@@ -1,24 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="59d312ce-c2f0-4df9-ab94-491185648942" name="Changes" comment="lan1">
-      <change afterPath="$PROJECT_DIR$/client/src/components/dialogprofile/DialogProfile.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/liveSearch/LiveSearch.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/components/uploadImage/UploadImage.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/topbar/Topbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/topbar/Topbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/topbar/topbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/topbar/topbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/constant/request.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/constant/request.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/profile/profile.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/profile/profile.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/service/authenService.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/service/authenService.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/Friend.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/Friend.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/models/User.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/models/User.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/friend.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/friend.js" afterDir="false" />
-    </list>
+    <list default="true" id="59d312ce-c2f0-4df9-ab94-491185648942" name="Changes" comment="lan1" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -125,7 +108,7 @@
       <workItem from="1673582968990" duration="161000" />
       <workItem from="1673586900072" duration="16749000" />
       <workItem from="1673665861233" duration="7191000" />
-      <workItem from="1673691655580" duration="2453000" />
+      <workItem from="1673691655580" duration="3104000" />
     </task>
     <task id="LOCAL-00001" summary="lan1">
       <created>1673155690850</created>
