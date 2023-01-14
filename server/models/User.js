@@ -27,6 +27,10 @@ const UserSchema = new mongoose.Schema({
         type: String,
         default: ""
     },
+    friends: {
+        type:Array,
+        default: []
+    },
     followers: {
         type:Array,
         default: []
@@ -57,6 +61,11 @@ const UserSchema = new mongoose.Schema({
         type: Number,
         enum: [1, 2, 3],
         default: 1
+    },
+    study: {
+        type: String,
+        max: 50,
+        default: 'Khong co thong tin'
     }
 },
     {

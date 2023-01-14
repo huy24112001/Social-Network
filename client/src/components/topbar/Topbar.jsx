@@ -1,54 +1,82 @@
 import "./topbar.css";
 import { Search, Person, Chat, Notifications } from "@material-ui/icons";
-import {useContext, useState} from "react";
-import {searchUser} from "../../service/authenService";
+import {useContext, useEffect, useState} from "react";
+import {searchUser, statusFriendUser} from "../../service/authenService";
+
 import Context from "../../store/context";
+import {useNavigate} from "react-router-dom";
 import { IconButton } from "@mui/material";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import { Link, useNavigate } from "react-router-dom";
 
 export default function Topbar() {
   const [textSearch,setTextSearch] = useState('');
+  const [rsFriend,setRsFriend] = useState(false);
+  const [results, setResults] = useState([]);
+  const [showResults, setShowResults] = useState(false);
+
   const [state , dispatch] = useContext(Context)
+  const navigate = useNavigate()
   const infoUser = state.infoUser
 
-  async function handleSearch() {
 
+  useEffect( async ()=>{
     const rs = await searchUser({username: textSearch})
-    if (rs.result) console.log('thanh cong');
+    // console.log(rs.result)
+    if(textSearch === '') {
+      setResults([])
+    }
     else
-    console.log(rs.result.length);  
-  }
+    setResults(rs.result);
+  }, [textSearch])
+
+  useEffect(() => {
+    if (results.length > 0 && !showResults ) setShowResults(true);
+
+    if (results.length <= 0 || textSearch === '') setShowResults(false);
+  }, [results,textSearch]);
+
 
   const [friendRequestNoti, setFriendRequestNoti] = useState(true)
   const [messageNoti, setMessageNoti] = useState(true)
   const [notification, setNotification] = useState(true)
-  const navigate = useNavigate();
 
   const handleSignOut = () => {
     navigate("/")
     dispatch({type: 'SIGN_OUT'})
   }
 
-  const handleFriendNoti = () => {
-    setFriendRequestNoti(false)
-  }
-  
   return (
       <div className="topbarContainer" >
         <div className="topbarLeft" >
-          <a href ="/" style={{textDecoration: "none"}}>
-            <span className="logo">Social</span>
-          </a>
+          <div onClick={()=> navigate('/')} style={{textDecoration: "none"}}>
+            <span className="logo">Home</span>
+          </div>
         </div>
         <div className="topbarCenter">
           <div className="searchbar">
             <Search className="searchIcon" />
-            <input
-                placeholder="Search for friend, post or video"
-                className="searchInput"
-            />
+            <input placeholder="Tìm kiếm bạn bè"
+                className="searchInput" value={textSearch} onChange={(e)=>setTextSearch(e.target.value)}/>
+
+            {showResults && (
+                <div className="resultSearch">
+                  {results.map((item, index) => {
+                    return (
+                        <div
+                            key={index}
+                            onMouseDown={async () => {
+
+                              navigate(`/profile/${results[index]._id}`, {state: {profile: results[index]  }})
+                            }}
+                            className="itemSearch">
+                          <Search className="searchIcon" />
+                          <p style={{marginLeft:10}}>{item.username}</p>
+                        </div>
+                    );
+                  })}
+                </div>
+            )   }
           </div>
         </div>
         <div className="topbarRight">
@@ -57,7 +85,7 @@ export default function Topbar() {
             <span className="topbarLink">Timeline</span>
           </div>
           <div className="topbarIcons">
-            <div className="topbarIconItem" onClick={handleFriendNoti}>
+            <div className="topbarIconItem" onClick={() => setFriendRequestNoti(false)}>
               <Person />
               {
                 friendRequestNoti ? 
@@ -82,9 +110,8 @@ export default function Topbar() {
                 src="/assets/person/1.jpeg" alt="" className="imgNav"/>
             <span style={{position: "relative"}} className="name">{state.infoUser.username}</span>
             <ul className="menu">
-              <li className="itemMenu" style={{cursor : "pointer"}}><Link to={`/profile/${infoUser._id}`} style={{color : "#070707",textDecoration: "none"}}>Trang cá nhân</Link></li>
-              <li className="itemMenu" style={{cursor: "pointer"}}><div style={{color : "#131313",textDecoration: "none"}} onClick={handleSignOut}>Đăng xuất</div></li>
-              {/* <li className="itemMenu"><Link to="/" style={{color : "#131313",textDecoration: "none"}} onClick={handleSignOut}>Đăng xuất</Link></li> */}
+              <li className="itemMenu" style={{cursor:'pointer'}}><div onClick={()=> navigate(`/profile/${state.infoUser._id}`,{state: {profile : state.infoUser }})}  style={{color : "#070707",textDecoration: "none",cursol : "pointer"}}>Trang cá nhân</div></li>
+              <li className="itemMenu" style={{cursor:'pointer'}}><div style={{color : "#131313",textDecoration: "none"}} onClick={handleSignOut}>Đăng xuất</div></li>
             </ul>
           </div>
 
