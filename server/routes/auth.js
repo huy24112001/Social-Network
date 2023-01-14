@@ -21,10 +21,11 @@ router.post("/register", async(req, res) => {
         // const salt = await bcrypt.genSalt(process.env.SALT_TOKEN)
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)
-        // const userExist = User.findOne({email})
-        // if (userExist) {
-        //     return res.status(500).json({ message: "Email have been used" })
-        // }
+        const userExist = await User.findOne({email})
+        if (userExist) {
+            console.log(userExist)
+            return res.status(500).json({ message: "Email have been used" })
+        }
 
         const newUser = new User({
             username: username,
