@@ -15,7 +15,7 @@ const friendSchema = new mongoose.Schema({
     },
     friends: {
         type: Boolean,
-        dafault: false,
+        default: false,
         required: true
     }
 }, {timestamps: true});

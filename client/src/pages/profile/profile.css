@@ -4,6 +4,7 @@
 
 .profileRight{
     flex: 9;
+    background-color: #f0f2f5;
 }
 
 .profileCover{
@@ -17,7 +18,7 @@
     justify-content: center;
 }
  .profileRightTop{
-
+background-color: white;
  }
 
 .profileCoverImg{
@@ -27,8 +28,8 @@
 }
 
 .profileUserImg{
-    width: 200px;
-    height: 200px;
+    width: 185px;
+    height: 185px;
     border-radius: 50%;
     object-fit: cover;
     position: absolute;
@@ -45,8 +46,8 @@
     position: absolute;
     /*align-items: center;*/
     /*justify-content: center;*/
-    top: 440px;
-    left: 400px;
+    top: 430px;
+    left: 370px;
 }
 
 .profileInfoName{
