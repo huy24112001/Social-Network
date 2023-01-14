@@ -20,40 +20,54 @@ import axios from "axios";
 import { useParams } from "react-router";
 import noAvatar from "../../img/person/noAvatar.png"
 import noCover from "../../img/person/noBackground.jpg"
+import service from "../../service";
 
 export default function Profile() {
     const [state,dispatch] = useContext(Context)
     const location = useLocation()
-    const profile = location.state.profile;
+    const profile = location?.state?.profile;
+    const [profileState, setProfileState] = useState(profile ? profile : null)
     // const statusFriend = location.state.statusFriend
     const [statusFriend,setStatusFriend] = useState()
     const [showEditProfile,setShowEditProfile] = useState(false)
     const {userId} = useParams()
     console.log(userId)
 
+    useEffect( async () => {
+      const resProfile = await service.authenService.getUserInfo({userId})
+    //   window.location.reload(false);
+        console.log("reload")
+        window.scrollTo(0, 0)
+      setProfileState(resProfile)
+    }, [userId])
+
     useEffect(async () => {
-        if(state.infoUser._id !== profile._id) {
-            const rsStatusFriend = await statusFriendUser({user_id: state.infoUser._id, user_query_id: profile._id});
-            setStatusFriend(rsStatusFriend.result)
+        if (profileState){
+            if(state.infoUser._id !== profileState._id) {
+                const rsStatusFriend = await statusFriendUser({user_id: state.infoUser._id, user_query_id: profileState._id});
+                setStatusFriend(rsStatusFriend.result)
+            }
+            else
+                setStatusFriend(-1)
         }
-        else
-            setStatusFriend(-1)
     },[profile])
+
+    
 
     async function handleRequestFriend() {
 
         if (statusFriend === 1) {
-            const rs = await removeInviteFriend({user_id: state.infoUser._id, user_query_id: profile._id})
+            const rs = await removeInviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id})
             // console.log(rs.result)
             if (rs.result === 0 ) setStatusFriend(0);
 
         } else if (statusFriend === 3) {
 
-            const rs = await removeFriend({user_id: state.infoUser._id, user_query_id: profile._id})
+            const rs = await removeFriend({user_id: state.infoUser._id, user_query_id: profileState._id})
             if (rs) setStatusFriend(0)
 
         } else if (statusFriend === 0) {
-            const rs = await inviteFriend({user_id: state.infoUser._id, user_query_id: profile._id})
+            const rs = await inviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id})
             // console.log(rs.result)
             if (rs.result === 1) setStatusFriend(1)
         }
@@ -69,6 +83,8 @@ export default function Profile() {
 
     return (
         <>
+            {profileState ? (
+            <>
             <Dialog   onClose={()=> setShowEditProfile(false)} open={showEditProfile}>
                 <DialogTitle >
                     Thông tin cá nhân
@@ -130,17 +146,17 @@ export default function Profile() {
                         <div className="profileCover">
                             <img
                                 className="profileCoverImg"
-                                src="../assets/post/3.jpeg"
+                                src={profileState.coverPicture}
                                 alt=""
                             />
                             <img
                                 className="profileUserImg"
-                                src="../assets/person/7.jpeg"
+                                src={profileState.profilePicture}
                                 alt=""
                             />
                         </div>
                         <div className="profileInfo">
-                            <h4 className="profileInfoName">{profile.username}</h4>
+                            <h4 className="profileInfoName">{profileState.username}</h4>
                             <span className="profileInfoDesc">Hello my friends!</span>
                         </div>
                         {
@@ -156,12 +172,17 @@ export default function Profile() {
 
                     </div>
                     <div className="profileRightBottom">
-                        <Rightbar profile = {profile} />
+                        <Rightbar profile = {profileState} />
                         <Feed />
 
                     </div>
                 </div>
             </div>
+            
+            </>
+            ) : (
+                null
+            )}
         </>
     );
 

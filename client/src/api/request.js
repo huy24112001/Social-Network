@@ -56,17 +56,9 @@ export async function postAsyncWithHeader(url, params = {}, header = {}) {
   }
 }
 
-export async function getAsyncWithToken(url, param) {
+export async function getAsyncWithToken(url) {
   try {
-    return await Axios.get(url, {
-      headers: {
-        'Authorization': 'Bearer ',
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-        'Cache-Control': 'no-cache'
-      },
-      params: param
-    });
+    return await Axios.get(url);
   } catch (ex) {
     const { status = 400, data = {} } = ex?.response || {};
     const error = data?.errors || [];

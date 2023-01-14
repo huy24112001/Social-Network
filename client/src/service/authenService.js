@@ -16,8 +16,8 @@ export async function signup(data) {
   console.log(response);
   return response?.data || []
 }
-export async function getUserInfo() {
-  const url = REACT_APP_BACK_END + '/users/currentuser'
+export async function getUserInfo({userId}) {
+  const url = REACT_APP_BACK_END + `/api/users/${userId}`
   const response = await getAsyncWithToken(url)
   return response?.data || []
 }
