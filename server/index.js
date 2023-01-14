@@ -22,6 +22,7 @@ const authRoute = require("./routes/auth")
 const postRoute = require("./routes/posts")
 const commentRoute = require("./routes/comments")
 const friendRoute = require("./routes/friend")
+const conversationRoute = require("./routes/conversations")
 const cookies = require("cookie-parser");
 const bodyParser = require("body-parser")
 
@@ -47,6 +48,7 @@ app.use("/api/posts", postRoute)
 app.use("/api/auth", authRoute)
 app.use("/api/comments", commentRoute)
 app.use("/api/friends", friendRoute)
+app.use("/api/conversations", conversationRoute)
 /************************************************************/
 
 

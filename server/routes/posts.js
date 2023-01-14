@@ -58,7 +58,7 @@ router.put("/:id/like", auth ,async (req, res) => {
     try {
         const postId = req.params.id
         const likerId = req.user._id
-        console.log(likerId)
+        // console.log(likerId)
         const post = await Post.findById(postId)
         if(!post.likes.includes(likerId)) {
             await post.updateOne({

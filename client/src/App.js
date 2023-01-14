@@ -13,6 +13,7 @@ import {
 import { useContext, useEffect } from "react";
 import Context from "./store/context";
 import { io } from "socket.io-client";
+import Messenger from "./pages/messenger/Messenger";
 
 
 function App() {
@@ -57,6 +58,8 @@ function App() {
         <Route path="/profile/:userId" element={<Profile />}>
           {/* <Profile /> */}
         </Route>
+
+        <Route path="/messenger" element={<Messenger />} />
       </Routes>
     </Router>
   );
