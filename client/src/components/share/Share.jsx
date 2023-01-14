@@ -52,7 +52,7 @@ export default function Share() {
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src={!(infoUser.profilePicture === "") ? infoUser.profilePicture : noAvatar} alt="" />
+          <img className="shareProfileImg" src={infoUser.profilePicture} alt="avatar" />
           <input
             placeholder={`What's in your mind ${infoUser?.username}?`}
             className="shareInput"

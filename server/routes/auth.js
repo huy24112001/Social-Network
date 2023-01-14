@@ -15,24 +15,24 @@ function base64_encode(file) {
 // Register
 router.post("/register", async(req, res) => {
     const {username, email, password} = req.body
-    var defaultAvatarBase64 = base64_encode('/home/edkl/project/reactjs_nodejs/social-network-btl/server/assets/noAvatar.png');
-    var defaultCoverBase64 = base64_encode('/home/edkl/project/reactjs_nodejs/social-network-btl/server/assets/noCover.jpg');
 
     try {
 
         // const salt = await bcrypt.genSalt(process.env.SALT_TOKEN)
         const salt = await bcrypt.genSalt(10)
         const hashedPassword = await bcrypt.hash(password, salt)
+        const userExist = User.findOne({email})
+        if (userExist) {
+            return res.status(500).json({ message: "Email have been used" })
+        }
 
         const newUser = new User({
             username: username,
             email: email,
             password: hashedPassword,
-            profilePicture: defaultAvatarBase64,
-            coverPicture: defaultCoverBase64
         })
         const user = await newUser.save()
-        console.log(user)
+        // console.log(user)
         const token = jwt.sign({ email: user.email, id: user._id }, 'test')
         res.status(200).json({ result: user , token})
     } catch (error) {
@@ -47,7 +47,7 @@ router.post("/login", async(req, res) => {
     const { email, password } = req.body
     try {
         const existingUser = await User.findOne({ email })
-        console.log(existingUser)
+        // console.log(existingUser)
         if (!existingUser) {
             return res.status(404).json({ message: "User does not exist" })
         }
