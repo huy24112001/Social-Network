@@ -1,0 +1,85 @@
+.messengerConversation {
+    flex: 5.5;
+}
+
+.messengerNoConversation {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 50px;
+    color: rgb(224, 220, 220);
+    cursor: default;
+}
+
+.messengerConversationTop {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+}
+
+.messengerConversationTopInfo {
+    display: flex;
+    align-items: center;
+}
+
+.messengerConversationChatAvatar {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    padding: 7px;
+}
+
+.messengerConversationTopIcon {
+    display: flex;
+}
+
+.messengerTopIcon {
+    padding: 10px;
+    color: rgb(74, 122, 211);
+    /* margin: 20px; */
+    width: 50px;
+    font-size: 30px;
+}
+
+.messengerConversationBody {
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    position: relative;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.messengerConversationInput {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 10px;
+    /* position: fixed;
+    bottom: 0;
+    width: 70%; */
+}
+
+.messengerConversationTextInput {
+    flex: 1;
+}
+
+.messengerConversationIconWrap {
+    margin: 0 10px;
+    
+  }
+.icon {
+    cursor: pointer;
+    /* padding: 5px; */
+}
+.iconStop {
+    cursor: pointer;
+    padding: 5px;
+    border-radius: 50%;
+    color: #FFFFFF;
+    background-color: #E32B2B
+}
