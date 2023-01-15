@@ -75,7 +75,7 @@ const CurrentConversationInput = () => {
       data={data}
       emoji="point_up"
       // color={FEATURE_COLOR.primary}
-      onSelect={(emoji) => {
+      onEmojiSelect={(emoji) => {
         setText(text + emoji.native);
       }}
     />
@@ -89,7 +89,7 @@ const CurrentConversationInput = () => {
         variant="outlined"
         className="messengerConversationTextInput"
         value={text}
-        // onChange={(e) => setText(e.target.value)}
+        onChange={(e) => setText(e.target.value)}
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
