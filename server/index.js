@@ -23,6 +23,7 @@ const postRoute = require("./routes/posts")
 const commentRoute = require("./routes/comments")
 const friendRoute = require("./routes/friend")
 const conversationRoute = require("./routes/conversations")
+const messageRoute = require("./routes/messages")
 const cookies = require("cookie-parser");
 const bodyParser = require("body-parser")
 const NotificationRoute = require("./routes/notification")
@@ -51,6 +52,7 @@ app.use("/api/comments", commentRoute)
 app.use("/api/friends", friendRoute)
 app.use("/api/conversations", conversationRoute)
 app.use("/api/notification", NotificationRoute)
+app.use("/api/messages", messageRoute)
 /************************************************************/
 
 
@@ -59,6 +61,19 @@ app.use("/api/notification", NotificationRoute)
 // Socket
 /************************************************************/
 
+let users = [];
+const addUser = (userId, socketId) => {
+    !users.some((user) => user.userId === userId) &&
+      users.push({ userId, socketId });
+  };
+
+const getUser = (userId) => {
+    return users.find((user) => user.userId === userId);
+};
+
+const removeUser = (socketId) => {
+    users = users.filter((user) => user.socketId !== socketId);
+};
 io.on('connection', (socket) => {
     console.log('user connected');
     socket.on('joinRoom', id => {
@@ -83,8 +98,38 @@ io.on('connection', (socket) => {
         })
     })
 
+    socket.on("addUser", (userId) => {
+        addUser(userId, socket.id);
+        // console.log(users)
+        // io.emit("getUsers", users);
+      });
+    
+    socket.on('sendMessageToServer', (message) => {
+        // socket.broadcast.emit('like', data)
+        // console.log(message)
+        const {senderId, receiverId, data} = message
+        const sender = getUser(senderId);
+        // console.log(sender)
+        const receiver = getUser(receiverId);
+        if (receiver){
+            io.to(receiver.socketId).to(sender.socketId).emit("getMessageFromServer", {
+                senderId,
+                data,
+            });
+        }
+        else {
+            io.to(sender.socketId).emit("getMessageFromServer", {
+                senderId,
+                data,
+            });
+        }
+
+    })
+
     socket.on('disconnect', function () {
         console.log('user disconnected');
+        removeUser(socket.id);
+
     });
 })
 /************************************************************/
