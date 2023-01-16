@@ -1,0 +1,18 @@
+.conversation {
+    display: flex;
+    gap: 0.5rem;
+    padding: 0.5rem;
+    align-items: center;
+    background-color: white;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.conversation:hover {
+    background-color: rgba(228, 222, 222, 0.68);
+}
+
+.conversationAvatar {
+    width: 2.5rem;
+    height: 2.5rem;
+    border-radius: 50%;
+}

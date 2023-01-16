@@ -33,7 +33,9 @@ export default function Share() {
   const handleShare = async (e) => {
     e.preventDefault();
     // console.log(post)
-    
+    if (!post){
+      return
+    }
     await service.postService.createPost({data: post, token: infoUser.token})
     setFile(null)
     setPost(initialPost)
