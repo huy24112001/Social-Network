@@ -60,6 +60,7 @@ function App() {
         </Route>
 
         <Route path="/messenger" element={<Messenger />} />
+        <Route path="/messenger/:conversationId" element={<Messenger />} />
       </Routes>
     </Router>
   );

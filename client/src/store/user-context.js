@@ -4,7 +4,10 @@ import Context from "./context";
 
 const initState = {
     infoUser: JSON.parse(localStorage.getItem("infoUser")) || null,
-    socket: null
+    socket: null,
+    conversations: null,
+    conversationSelect: null,
+    conversationSelectReceiver: null
 }
 
 function reducer(state, action){
@@ -21,12 +24,31 @@ function reducer(state, action){
                 ...state,
                 infoUser: null,
                 socket: null,
+                conversations: null
             }
 
         case 'CONNECT_SOCKET': 
             return {
                 ...state,
                 socket: action.payload
+            }
+
+        case 'GET_CONVERSATIONS': 
+            return {
+                ...state,
+                conversations: action.payload
+            }
+
+        case 'CHOOSE_CONVERSATION': 
+            return {
+                ...state,
+                conversationSelect: action.payload
+            }
+        
+        case 'SET_RECEIVER': 
+            return {
+                ...state,
+                conversationSelectReceiver: action.payload
             }
         default :
             throw  new Error('Invalid Action')

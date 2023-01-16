@@ -59,6 +59,19 @@ app.use("/api/messages", messageRoute)
 // Socket
 /************************************************************/
 
+let users = [];
+const addUser = (userId, socketId) => {
+    !users.some((user) => user.userId === userId) &&
+      users.push({ userId, socketId });
+  };
+
+const getUser = (userId) => {
+    return users.find((user) => user.userId === userId);
+};
+
+const removeUser = (socketId) => {
+    users = users.filter((user) => user.socketId !== socketId);
+};
 io.on('connection', (socket) => {
     console.log('user connected');
 
@@ -79,8 +92,38 @@ io.on('connection', (socket) => {
 
     })
 
+    socket.on("addUser", (userId) => {
+        addUser(userId, socket.id);
+        // console.log(users)
+        // io.emit("getUsers", users);
+      });
+    
+    socket.on('sendMessageToServer', (message) => {
+        // socket.broadcast.emit('like', data)
+        // console.log(message)
+        const {senderId, receiverId, data} = message
+        const sender = getUser(senderId);
+        // console.log(sender)
+        const receiver = getUser(receiverId);
+        if (receiver){
+            io.to(receiver.socketId).to(sender.socketId).emit("getMessageFromServer", {
+                senderId,
+                data,
+            });
+        }
+        else {
+            io.to(sender.socketId).emit("getMessageFromServer", {
+                senderId,
+                data,
+            });
+        }
+
+    })
+
     socket.on('disconnect', function () {
         console.log('user disconnected');
+        removeUser(socket.id);
+
     });
 })
 /************************************************************/

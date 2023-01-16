@@ -6,6 +6,9 @@
     background-color: white;
     border-radius: 0.5rem;
     cursor: pointer;
+    text-decoration: none;
+    color:black;
+
     /* height: 60px; */
 }
 .conversation:hover {
@@ -40,4 +43,8 @@
 .conversationNoti__noti {
     font-size: 13px;
     font-weight: bold;
+}
+
+.conversation.select {
+    background-color: rgba(228, 222, 222, 0.68);
 }

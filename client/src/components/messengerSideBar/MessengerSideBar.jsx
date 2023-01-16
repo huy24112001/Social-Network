@@ -9,6 +9,7 @@ import noAvatar from '../../img/person/noAvatar.png'
 import {TextField} from "@mui/material";
 import {Conversations} from "./dummyData"
 import Conversation from '../conversations/Conversation';
+import generateKey from '../../utils/generate-key';
 
 
 const categories = [
@@ -47,7 +48,7 @@ const MessengerSideBarMenu = () => {
                     //   onClick={handleCloseSidebar}
                     //   key={category.name}
                     // >
-                    <div className="messengerCategoryItem">
+                    <div className="messengerCategoryItem" key={generateKey()}>
                         <div className='messengerCategoryItemIcon'>
                             {category.icon}
                         </div>
@@ -69,7 +70,10 @@ const MessengerSideBarMenu = () => {
 }
 
 const MessengerSideBarContent = () => {
-    console.log(Conversations)
+    const [state, dispatch] = useContext(Context)
+    const infoUser = state.infoUser
+    const conversations = state.conversations
+    // console.log(conversations)
     return (
         <div className='messageSideBarContent'>
             <div className='messengerSideBarTop'>
@@ -84,7 +88,7 @@ const MessengerSideBarContent = () => {
                 />
             </div>
             {
-                Conversations.sort((p1, p2) => {
+                conversations?.sort((p1, p2) => {
                     return new Date(p2.createdAt) - new Date(p1.createdAt);
                   }).map((conversation) => (
                     <Conversation key={conversation._id} conversation={conversation} />

@@ -1,10 +1,12 @@
 const router = require("express").Router();
 const Conversation = require("../models/Conversation")
+const auth = require("../middleware/auth");
 
 // new conversation
-router.post('/', async (req, res) => {
+router.post('/', auth, async (req, res) => {
+    const sender = req.user
     const newConversation = new Conversation({
-        members: [req.body.senderId, req.body.receiverId]
+        members: [sender._id, req.body.receiverId]
     })
     try {
         const savedConversation = await newConversation.save();
@@ -14,8 +16,19 @@ router.post('/', async (req, res) => {
     }
 })
 
+// get conversation
+router.get('/:conversationId', async (req, res) => {
+    try {
+        const conversationId = req.params.conversationId
+        const conversation = await Conversation.findById(conversationId).populate({path:'members', select: ['username', 'profilePicture']})
+        res.status(200).json(conversation)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
 // get conversations from a user
-router.get("/:userId", async(req, res) => {
+router.get("/user/:userId", async(req, res) => {
     try {
         const conversations = await Conversation.find({
             members:{
