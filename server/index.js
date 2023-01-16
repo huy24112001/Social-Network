@@ -25,6 +25,7 @@ const friendRoute = require("./routes/friend")
 const conversationRoute = require("./routes/conversations")
 const cookies = require("cookie-parser");
 const bodyParser = require("body-parser")
+const NotificationRoute = require("./routes/notification")
 
 const PORT = process.env.PORT || 5000
 /************************************************************/
@@ -49,6 +50,7 @@ app.use("/api/auth", authRoute)
 app.use("/api/comments", commentRoute)
 app.use("/api/friends", friendRoute)
 app.use("/api/conversations", conversationRoute)
+app.use("/api/notification", NotificationRoute)
 /************************************************************/
 
 
@@ -59,11 +61,9 @@ app.use("/api/conversations", conversationRoute)
 
 io.on('connection', (socket) => {
     console.log('user connected');
-
     socket.on('joinRoom', id => {
         console.log(`join ${id}`)
         socket.join(id)
-        
     })
 
     socket.on('comment', (data) => {
@@ -75,6 +75,12 @@ io.on('connection', (socket) => {
     socket.on('sendLike', (data) => {
         socket.broadcast.emit('like', data)
 
+    })
+    socket.on('notification',(data)=>{
+        console.log(`rep${data.id}`)
+        io.emit(`rep${data.id}`,{
+            notification : true
+        })
     })
 
     socket.on('disconnect', function () {

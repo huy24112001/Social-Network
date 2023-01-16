@@ -28,7 +28,6 @@ import { Link } from "react-router-dom";
 import likeImg from "../../img/like.png"
 import heartImg from "../../img/heart.png"
 import noAvatar from "../../img/person/noAvatar.png"
-import { display } from "@mui/system";
 import Context from "../../store/context";
 import service from "../../service";
 import { formatDistance} from 'date-fns';
@@ -77,7 +76,20 @@ export default function Post({ post }) {
         content: commentText
       }, token: infoUser.token})
       setCommentText('')
-    }
+////////////////////////////////////
+      await service.notification.postNotification({
+        userId : post.userId,
+        username : infoUser.username,
+        status : false,
+        action: "comment",
+        userId2: infoUser._id,
+        post : post._id
+      })
+  
+      socket.emit('notification',{
+        id : state.infoUser._id,
+      })
+    } 
   };
 
   // useEffect(() => {
@@ -95,7 +107,6 @@ export default function Post({ post }) {
         // console.log(data)
       })
     }
-
   }, [socket, comments])
 
   useEffect(() => {
@@ -121,11 +132,24 @@ export default function Post({ post }) {
       id: post._id,
       token: infoUser.token
     })
+    if(!isLiked){
+      await service.notification.postNotification({
+        userId : post.userId,
+        username : infoUser.username,
+        status : false,
+        action: "like",
+        userId2: infoUser._id,
+        post : post._id
+      })
+  
+      socket.emit('notification',{
+        id : state.infoUser._id,
+      })
+    }
 
     setLike(isLiked ? like-1 : like+1)
     setIsLiked(!isLiked)
   }
-
 
   return (
     <div className="post">
@@ -200,7 +224,7 @@ export default function Post({ post }) {
         </div>
         <div className="postBottom">
           <div className="postBottomLeft">
-            <img className="likeIcon" src={likeImg} onClick={likeHandler} alt="" />
+            <img className="likeIcon" src={likeImg}  alt="" />
             <img className="likeIcon" src={heartImg} onClick={likeHandler} alt="" />
             <span className="postLikeCounter">{like} people like it</span>
           </div>

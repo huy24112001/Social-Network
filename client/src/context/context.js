@@ -4,11 +4,6 @@ import { login, signup } from "../service/authenService";
 
 import 'react-toastify/dist/ReactToastify.css';
 import Context from "../store/context";
-
-
-
-
-
 export const LoginContext = createContext()
 
 

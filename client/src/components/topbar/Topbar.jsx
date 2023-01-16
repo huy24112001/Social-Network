@@ -1,17 +1,22 @@
 import "./topbar.css";
 import { Search, Person, Chat, Notifications } from "@material-ui/icons";
-import {useContext, useState} from "react";
+import {useContext, useState,useEffect} from "react";
 import {searchUser} from "../../service/authenService";
 import Context from "../../store/context";
 import { IconButton } from "@mui/material";
-import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { Link, useNavigate } from "react-router-dom";
+import service from "../../service";
+import queryString from 'query-string';
+import io from 'socket.io-client';
+const socket = io();
+
 
 export default function Topbar() {
   const [textSearch,setTextSearch] = useState('');
   const [state , dispatch] = useContext(Context)
   const infoUser = state.infoUser
+  const socket = state.socket
 
   async function handleSearch() {
 
@@ -24,6 +29,7 @@ export default function Topbar() {
   const [friendRequestNoti, setFriendRequestNoti] = useState(true)
   const [messageNoti, setMessageNoti] = useState(true)
   const [notification, setNotification] = useState(true)
+
   const navigate = useNavigate();
 
   const handleSignOut = () => {
@@ -34,7 +40,72 @@ export default function Topbar() {
   const handleFriendNoti = () => {
     setFriendRequestNoti(false)
   }
+
+
+  // Hàm này dùng để hiện thông báo active notice
+  const [notice, set_notice] = useState(false)
+  const handler_Click_Notice = () =>{
+    set_notice(!notice)
   
+    const fetchData = async ()=>{
+      const params={
+        id_user : state.infoUser._id
+      }
+      const query = '?' + queryString.stringify(params)
+      const response = await service.notification.putNotification(params.id_user)
+      console.log(response)  
+    }
+    fetchData();
+    set_load_notification(true)
+    set_count_notification(0)
+  }
+
+    // state list hiện danh sách thông báo
+    const [notifications, set_notifications] = useState([])
+
+    const [count_notification, set_count_notification] = useState(0)
+  
+    const [load_notification, set_load_notification] = useState(true)
+
+  // Hàm này dùng để gọi API lấy dữ liệu notification hiện thông báo
+  useEffect(()=>{
+    if(load_notification){
+    const fetchData = async ()=>{
+      const id_user = state.infoUser._id
+      const response = await service.notification.getNotification(id_user)
+      const data_reverse = response.reverse()
+      console.log(data_reverse)
+      set_notifications(data_reverse)
+      for(let i= 0;i< response.length;i++){
+        if(response[i].status === false){
+          set_count_notification(i+1)
+        }
+      }
+    }
+    fetchData();
+  }
+  },[])
+  useEffect(()=>{
+    if(socket){
+        socket.on(`rep${state.infoUser._id}`,(data)=>{
+        console.log(data)
+        const fetchData = async ()=>{
+          const id_user = state.infoUser._id
+          const response = await service.notification.getNotification(id_user)
+          const data_reverse = response.reverse()
+          console.log(data_reverse)
+          set_notifications(data_reverse)
+          for(let i= 0;i< response.length;i++){
+            if(response[i].status === false){
+              set_count_notification(i+1)
+            }
+          }
+        }
+        fetchData();
+      })
+    }
+  },[socket]) 
+
   return (
       <div className="topbarContainer" >
         <div className="topbarLeft" >
@@ -70,9 +141,19 @@ export default function Topbar() {
               <Chat />
               {messageNoti ? <span className="topbarIconBadge">2</span> : null}
             </div>
-            <div className="topbarIconItem" onClick={() => setNotification(false)}>
-              <Notifications />
-              {notification ? <span className="topbarIconBadge">1</span> : null}
+            <div className="topbarIconItem" onClick={handler_Click_Notice}>
+              <Notifications style={{position: "relative"}}/>
+              {count_notification > 0 ? <span className="topbarIconBadge">{count_notification}</span> : null}
+              {
+
+                notice && (<div className = "dropNotice">
+                  {
+                    notifications && notifications.map(value =>(
+                      <Link to={`/profile/${infoUser._id}`} style={{color : "#070707",textDecoration: "none"}} key={value._id} ><li className="itemMenu" style={{cursor : "pointer"}}>{value.username} đã {value.action} bài viết của bạn</li></Link>
+                    ))
+                  }
+                </div>)
+              }
             </div>
           </div>
 

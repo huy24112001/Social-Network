@@ -125,9 +125,37 @@
 .user:hover>.menu{
   display: block;
 }
+.itemMenu:hover{
+  background-color: rgb(149, 146, 142);
+}
 .imgNav{
   width: 30px;
   height: 30px;
   border-radius: 50%;
   object-fit: cover;
+}
+
+.span_drop_notification{
+  position: absolute;
+  top: -60%;
+  left: 78%;
+  background-color: rgb(248, 81, 69);
+  color: #fff;
+  padding: .1rem .48rem;
+  border-radius: 50%;
+  font-size: .8rem;
+}
+
+.dropNotice{
+  overflow: auto;
+  position: absolute;
+  background-color: rgb(245, 239, 239);
+  list-style: none;
+  top: 40px;
+  right: 1px;
+  width: 300px;
+  height: 500px;
+  border-radius: 3px;
+  /*elevation: revert;*/
+  box-shadow: 2px 2px 2px 2px #2873c9;
 }
