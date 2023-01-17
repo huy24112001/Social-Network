@@ -101,7 +101,7 @@ export default function Topbar() {
   },[])
   useEffect(()=>{
     if(socket){
-        socket.on(`rep${state.infoUser._id}`,(data)=>{
+        socket.on('repnotice',(data)=>{
         console.log(data)
         const fetchData = async ()=>{
           const id_user = state.infoUser._id

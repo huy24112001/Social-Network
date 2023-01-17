@@ -92,8 +92,8 @@ io.on('connection', (socket) => {
 
     })
     socket.on('notification',(data)=>{
-        console.log(`rep${data.id}`)
-        io.emit(`rep${data.id}`,{
+        console.log(data)
+        io.emit('repnotice',{
             notification : true
         })
     })
