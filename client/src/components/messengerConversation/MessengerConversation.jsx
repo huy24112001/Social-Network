@@ -51,10 +51,10 @@ const CurrentConversationTopBar = ({receiver}) => {
 const CurrentConversationMessage = ({messages}) => {
   const [state, dispatch] = useContext(Context)
   const scrollRef = useRef();
-  const [newMessages, setNewMessages] = useState(messages);
+  const [newMessages, setNewMessages] = useState(messages ? messages : []);
   const socket = state.socket
   const userId = state.infoUser._id
-  const { conversationId } = useParams()
+  const { category, conversationId } = useParams()
 
   useEffect(() => {
     if(socket) {
@@ -122,7 +122,7 @@ const CurrentConversationInput = ({receiver, handlers, recorderState  }) => {
       senderId: infoUser._id,
       receiverId: receiver._id,
       data: {
-        audio: recordings.value,
+        audio: recordings?.value,
         text: text
       }
     }

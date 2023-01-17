@@ -59,8 +59,8 @@ function App() {
           {/* <Profile /> */}
         </Route>
 
-        <Route path="/messenger" element={<Messenger />} />
-        <Route path="/messenger/:conversationId" element={<Messenger />} />
+        <Route path="/messenger/:category/:conversationId" element={<Messenger />} />
+        <Route path="/messenger/:category" element={<Messenger />} />
       </Routes>
     </Router>
   );

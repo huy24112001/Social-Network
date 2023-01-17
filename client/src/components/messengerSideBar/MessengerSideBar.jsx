@@ -10,11 +10,13 @@ import {TextField} from "@mui/material";
 import {Conversations} from "./dummyData"
 import Conversation from '../conversations/Conversation';
 import generateKey from '../../utils/generate-key';
+import { NavLink, useNavigate, useParams } from 'react-router-dom';
+import ChatOnline from '../chatOnline/ChatOnline';
 
 
 const categories = [
-    {name: 'Chat', icon: <BsFillChatFill />}, 
-    {name: 'Mọi người', icon: <BsPeopleFill/>}
+    {name: 'Chat', icon: <BsFillChatFill />, param: 't'}, 
+    {name: 'Mọi người', icon: <BsPeopleFill/>, param: 'active'}
 ]
 
 
@@ -23,6 +25,14 @@ const MessengerSideBarMenu = () => {
     const infoUser = state.infoUser
 
     const avatar = infoUser.profilePicture === '' ? noAvatar : infoUser.profilePicture
+
+    const handleClickCategory = () => {
+        // navigate(`/messenger/${param}`)
+        // console.log(param)
+        dispatch({
+            type: 'CHANGE_CATEGORY'
+        })
+    }
 
     return (
         <div className='messengerSideBarMenu'>
@@ -48,14 +58,14 @@ const MessengerSideBarMenu = () => {
                     //   onClick={handleCloseSidebar}
                     //   key={category.name}
                     // >
-                    <div className="messengerCategoryItem" key={generateKey()}>
+                    <NavLink to={`/messenger/${category.param}`} className={({isActive}) => isActive ? 'messengerCategoryItem select' : 'messengerCategoryItem'} key={generateKey()} onClick={handleClickCategory}>
                         <div className='messengerCategoryItemIcon'>
                             {category.icon}
                         </div>
                         <p>
                         {category.name}
                         </p>
-                    </div>
+                    </NavLink>
                     // </NavLink>
                 ))}
             </div>
@@ -69,41 +79,66 @@ const MessengerSideBarMenu = () => {
     )
 }
 
-const MessengerSideBarContent = () => {
+const MessengerSideBarContent = ({onlineUsers}) => {
     const [state, dispatch] = useContext(Context)
     const infoUser = state.infoUser
     const conversations = state.conversations
+    const {category, conversationId} = useParams()
+    // console.log(onlineUsers)
     // console.log(conversations)
     return (
         <div className='messageSideBarContent'>
-            <div className='messengerSideBarTop'>
-                <p>Chat</p>
-            </div>
-            <div className='messengerSideBarSearch'>
-                <TextField
-                    id="outlined-basic"
-                    variant="outlined"
-                    fullWidth
-                    label="Search"
-                />
-            </div>
+
             {
-                conversations?.sort((p1, p2) => {
-                    return new Date(p2.createdAt) - new Date(p1.createdAt);
-                  }).map((conversation) => (
-                    <Conversation key={conversation._id} conversation={conversation} />
-                ))
+                category === 't' ? (
+                    <>
+                        <div className='messengerSideBarTop'>
+                            <p>Chat</p>
+                        </div>
+                        <div className='messengerSideBarSearch'>
+                            <TextField
+                                id="outlined-basic"
+                                variant="outlined"
+                                fullWidth
+                                label="Search"
+                            />
+                        </div>
+                        {
+                            conversations?.sort((p1, p2) => {
+                                return new Date(p2.createdAt) - new Date(p1.createdAt);
+                              }).map((conversation) => (
+                                <Conversation key={conversation._id} conversation={conversation} />
+                            ))
+                        }
+                    </>
+                ) : (
+                    <>
+                        <div className='messengerSideBarTop'>
+                            <p>Mọi người</p>
+                        </div>
+                        <div className='messengerSideBarSearch'>
+                            <TextField
+                                id="outlined-basic"
+                                variant="outlined"
+                                fullWidth
+                                label="Search"
+                            />
+                        </div>
+                        <ChatOnline onlineUsers={onlineUsers} />
+
+                    </>
+                )
             }
         </div>
         
     )
 }
 
-const MessengerSideBar = () => {
+const MessengerSideBar = ({onlineUsers}) => {
   return (
     <div className='messengerSideBar'>
         <MessengerSideBarMenu />
-        <MessengerSideBarContent />
+        <MessengerSideBarContent onlineUsers={onlineUsers} />
     </div>
   )
 }

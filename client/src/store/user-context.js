@@ -50,6 +50,13 @@ function reducer(state, action){
                 ...state,
                 conversationSelectReceiver: action.payload
             }
+
+        case 'CHANGE_CATEGORY': 
+            return {
+                ...state,
+                conversationSelect: null,
+                conversationSelectReceiver: null
+            }
         default :
             throw  new Error('Invalid Action')
 

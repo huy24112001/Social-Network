@@ -101,7 +101,7 @@ io.on('connection', (socket) => {
     socket.on("addUser", (userId) => {
         addUser(userId, socket.id);
         // console.log(users)
-        // io.emit("getUsers", users);
+        io.emit("getUsers", users);
       });
     
     socket.on('sendMessageToServer', (message) => {

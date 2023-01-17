@@ -38,7 +38,7 @@ export async function getConversationsOfUser(data) {
 
 export async function findConversationBetweenUser(data) {
     const {senderId, receiverId} = data
-    const url = REACT_APP_BACK_END + `/api/conversations/${senderId}/${receiverId}`
+    const url = REACT_APP_BACK_END + `/api/conversations/find/${senderId}/${receiverId}`
     // console.log(data)
     const response = await api.messengerRequests.findConversationBetweenUser(url)
     // console.log(response)

@@ -27,8 +27,9 @@ const Conversation = ({conversation}) => {
       payload: renderConversation.members[0]
     })
   }
+  // console.log(renderConversation)
   return (
-    <NavLink to={`/messenger/${conversation._id}`} className={({isActive}) => isActive ? 'conversation select' : 'conversation'} onClick={handleChooseConversation}>
+    <NavLink to={`/messenger/t/${conversation._id}`} className={({isActive}) => isActive ? 'conversation select' : 'conversation'} onClick={handleChooseConversation}>
         <img src={renderConversation.members[0].profilePicture} alt="avatar" className='conversationAvatar'/>
         {
           hasNoti ? (

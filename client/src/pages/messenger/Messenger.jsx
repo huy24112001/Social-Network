@@ -1,5 +1,5 @@
 import "./messenger.css";
-import React, { useContext, useEffect } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import MessengerConversation from '../../components/messengerConversation/MessengerConversation'
 import MessengerSideBar from '../../components/messengerSideBar/MessengerSideBar'
 import Topbar from "../../components/topbar/Topbar";
@@ -9,10 +9,11 @@ import Context from "../../store/context";
 
 
 const Messenger = () => {
-  const {conversationId} = useParams()
+  const {category,conversationId} = useParams()
   const [state, dispatch] = useContext(Context)
   const infoUser = state.infoUser
   const socket = state.socket
+  const [onlineUsers, setOnlineUsers] = useState([])
   useEffect(async () => {
     const conversations = await service.messengerService.getConversationsOfUser(infoUser._id)
   
@@ -28,8 +29,14 @@ const Messenger = () => {
     if(socket){
       socket.emit('addUser', infoUser._id)
       console.log("connected")
+      socket.on("getUsers", (users) => {
+        setOnlineUsers(
+          infoUser.followings.filter((f) => users.some((u) => u.userId === f))
+        );
+      });
     }
-  }, [socket])
+  }, [socket, infoUser])
+  // console.log(onlineUsers)
   
   
   useEffect( async () => {
@@ -56,7 +63,7 @@ const Messenger = () => {
     <>
         <Topbar />
         <div className='messenger'>
-            <MessengerSideBar  />
+            <MessengerSideBar onlineUsers={onlineUsers}  />
             <MessengerConversation />
         </div>
     </>
