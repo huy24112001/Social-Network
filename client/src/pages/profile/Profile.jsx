@@ -50,7 +50,7 @@ export default function Profile() {
             else
                 setStatusFriend(-1)
         }
-    },[profile])
+    },[profile, profileState])
 
     
 
