@@ -87,7 +87,6 @@ export default function Post({ post }) {
       })
   
       socket.emit('notification',{
-        id : state.infoUser._id,
       })
     } 
   };
@@ -143,7 +142,6 @@ export default function Post({ post }) {
       })
   
       socket.emit('notification',{
-        id : state.infoUser._id,
       })
     }
 
