@@ -173,7 +173,7 @@ export default function Profile() {
                     </div>
                     <div className="profileRightBottom">
                         <Rightbar profile = {profileState} />
-                        <Feed />
+                        <Feed userId={userId} />
 
                     </div>
                 </div>
