@@ -20,11 +20,11 @@ router.post('/', auth, async (req, res) => {
 })
 
 // update a post
-router.put("/:id", auth, async(req, res) => {
+router.put("/:id", async(req, res) => {
     try {
         const postId = req.params.id
         const post = await Post.findById(postId)
-        if (post.userId.equals(req.user._id)) {
+        if (post.userId == req.body.userId) {
             await post.updateOne({
                 $set: req.body
             })

@@ -57,9 +57,9 @@ const CurrentConversationMessage = ({messages}) => {
   const { category, conversationId } = useParams()
 
   useEffect(() => {
+    const ac = new AbortController();
     if(socket) {
       socket.once('getMessageFromServer', (data) => {
-        console.log(data)
         const newMessage = {
           _id: generateKey(), 
           conversationId: conversationId,
@@ -74,6 +74,8 @@ const CurrentConversationMessage = ({messages}) => {
         setNewMessages([...newMessages, newMessage])
       })
     }
+    return () => ac.abort(); // Abort both fetches on unmount
+
 
   }, [socket, newMessages, messages])
 
@@ -140,6 +142,9 @@ const CurrentConversationInput = ({receiver, handlers, recorderState  }) => {
           audio: recordings.value
         }
       })
+      if (state.conversationSelectMessages === []) {
+        await service.messengerService.setActiveConversation(conversationId)
+      }
     }
     else {
       if (text !== '') {
@@ -154,6 +159,9 @@ const CurrentConversationInput = ({receiver, handlers, recorderState  }) => {
             text: text
           }
         })
+        if (state.conversationSelectMessages.length === 0) {
+          await service.messengerService.setActiveConversation(conversationId)
+        }
         setText('')
       }
     }
@@ -264,7 +272,7 @@ const MessengerConversation = () => {
   const { recordings, deleteAudio } = useRecordingsList(audio);
 
   // console.log(recordings)
-  const messages = state.conversationSelect  
+  const messages = state.conversationSelectMessages  
   // const [renderMessages, setRenderMessages] = useState(messages)
   // console.log(messages)
   // useEffect(() => {
