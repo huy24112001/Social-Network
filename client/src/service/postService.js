@@ -49,3 +49,12 @@ export async function likePost(data) {
   const response = await api.postRequests.likePost(url, token)
 //   return response?.data || []
 }
+
+export async function deletePost(data) {
+  const {id, token} = data
+  console.log(token)
+  const url = REACT_APP_BACK_END + `/api/posts/${id}`
+  const response = await api.postRequests.deletePost(url, token)
+//   return response?.data || []
+}
+

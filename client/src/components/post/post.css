@@ -43,6 +43,10 @@
     margin: 20px 0;
 }
 
+.postText {
+  white-space: pre-wrap;
+}
+
 .postImg{
     margin-top: 20px;
     width: 100%;
