@@ -5,7 +5,13 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import React, {useContext, useEffect, useState} from "react";
 import Context from "../../store/context";
 import {useLocation} from "react-router-dom";
-import {inviteFriend, removeFriend, removeInviteFriend, statusFriendUser} from "../../service/authenService";
+import {
+    getListFriend,
+    inviteFriend,
+    removeFriend,
+    removeInviteFriend,
+    statusFriendUser
+} from "../../service/authenService";
 import {
     Button, Dialog,
     DialogActions,
@@ -30,6 +36,7 @@ export default function Profile() {
     // const statusFriend = location.state.statusFriend
     const [statusFriend,setStatusFriend] = useState()
     const [showEditProfile,setShowEditProfile] = useState(false)
+    const [listFriend,setListFriend] = useState([])
     const {userId} = useParams()
     console.log(userId)
 
@@ -45,26 +52,36 @@ export default function Profile() {
         if (profileState){
             if(state.infoUser._id !== profileState._id) {
                 const rsStatusFriend = await statusFriendUser({user_id: state.infoUser._id, user_query_id: profileState._id});
+                console.log(rsStatusFriend.result)
                 setStatusFriend(rsStatusFriend.result)
             }
             else
                 setStatusFriend(-1)
         }
-    },[profile, profileState])
+    },[profileState])
 
-    
+    useEffect(async () => {
+        if (profileState){
+           const rs = await getListFriend({user_info : profileState})
+            setListFriend(rs.result)
+        }
+    },[profileState])
+
+
+
+
 
     async function handleRequestFriend() {
 
         if (statusFriend === 1) {
-            const rs = await removeInviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id})
+            const rs = await removeInviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id , status : statusFriend})
             // console.log(rs.result)
             if (rs.result === 0 ) setStatusFriend(0);
 
         } else if (statusFriend === 3) {
 
-            const rs = await removeFriend({user_id: state.infoUser._id, user_query_id: profileState._id})
-            if (rs) setStatusFriend(0)
+            const rs = await removeFriend({user_id: state.infoUser._id, user_query_id: profileState._id,status : statusFriend})
+            if (rs.result === 0) setStatusFriend(0)
 
         } else if (statusFriend === 0) {
             const rs = await inviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id})
@@ -106,20 +123,24 @@ export default function Profile() {
                         <DialogContentText>
                             Chỉnh sửa các thông tin sau đây:
                         </DialogContentText>
-                        <TextField margin="normal" variant="standard" id="username" label="Username" type="text"
+                        <TextField margin="normal" variant="standard" id="Sống tại" label="Sống tại" type="text"
                                    fullWidth
                                    // onChange={(e) => setUsername(e.target.value)} value={username}
                                    inputProps={{ minLength: 2 }}
                                    required
                         />
-                        <TextField margin="normal" variant="standard" id="email" label="Email" type="email"
+                        <TextField margin="normal" variant="standard" id="Đến từ" label="Đến từ" type="text"
                                    fullWidth
                                    // onChange={(e) => setEmail(e.target.value)} value={email}
                                    required
                         />
-                        <TextField margin="normal" variant="standard" id="password" label="Password"
-                                   type="password" fullWidth
+                        <TextField margin="normal" variant="standard" id="Đã học tại" label="Đã học tại"
+                                   type="text" fullWidth
                                    // onChange={(e) => setPassword(e.target.value)} value={password}
+                                   required/>
+                        <TextField margin="normal" variant="standard" id="Mối quan hệ" label="Mối quan hệ"
+                                   type="text" fullWidth
+                            // onChange={(e) => setPassword(e.target.value)} value={password}
                                    required/>
                     </DialogContent>
                     <DialogActions sx={{ px: '19px',marginTop:3 }}>
@@ -151,7 +172,7 @@ export default function Profile() {
                             />
                             <img
                                 className="profileUserImg"
-                                src={profileState.profilePicture}
+                                src={profileState.profilePicture === '' ? noAvatar : profileState.profilePicture }
                                 alt=""
                             />
                         </div>
@@ -159,30 +180,25 @@ export default function Profile() {
                             <h4 className="profileInfoName">{profileState.username}</h4>
                             <span className="profileInfoDesc">Hello my friends!</span>
                         </div>
-                        {
-                            console.log(statusFriend + ' huy')
-                        }
-
 
                             <button className="friendBtn" onClick={handleRequestFriend}>{
                                 statusFriend === 3 ? 'Bạn bè' :
                                     statusFriend === 1 ? 'Đã gửi lời mời kết bạn' :
-                                        statusFriend === 0 ? 'Thêm bạn bè' : 'Chỉnh sửa thông tin cá nhân'
+                                        statusFriend !== -1 ? 'Thêm bạn bè' : 'Chỉnh sửa thông tin cá nhân'
                             }</button>
 
                     </div>
                     <div className="profileRightBottom">
-                        <Rightbar profile = {profileState} />
+                        <Rightbar profile = {profileState} listFriend = {listFriend} />
                         <Feed userId={userId} />
 
                     </div>
                 </div>
             </div>
-            
+
             </>
-            ) : (
-                null
-            )}
+            ) : null
+            }
         </>
     );
 

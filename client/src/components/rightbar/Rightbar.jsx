@@ -3,8 +3,10 @@ import { Users } from "../../constant/dummyData";
 import Online from "../online/Online";
 import {useContext} from "react";
 import Context from "../../store/context";
+import noAvatar from "../../img/person/noAvatar.png";
+import {Favorite, House, LocationOn, School} from "@material-ui/icons";
 
-export default function Rightbar({profile}) {
+export default function Rightbar({profile,listFriend}) {
   const [state , dispatch] = useContext(Context)
   // console.log(state)
   const HomeRightbar = () => {
@@ -28,81 +30,54 @@ export default function Rightbar({profile}) {
   };
 
   const ProfileRightbar = () => {
+
     return (
         <>
       <div className='leftBar'>
         <h4 className="rightbarTitle">Giới thiệu</h4>
         <div className="rightbarInfo">
           <div className="rightbarInfoItem">
+            <House className="rightBarIcon"/>
             <span className="rightbarInfoKey">Sống tại</span>
             <span className="rightbarInfoValue">{profile.city}</span>
           </div>
           <div className="rightbarInfoItem">
+            <LocationOn className="rightBarIcon"/>
             <span className="rightbarInfoKey">Đến từ</span>
             <span className="rightbarInfoValue">{profile.from}</span>
           </div>
           <div className="rightbarInfoItem">
+            <School className="rightBarIcon"/>
             <span className="rightbarInfoKey">Đã học tại</span>
             <span className="rightbarInfoValue">{profile.study}</span>
           </div>
           <div className="rightbarInfoItem">
+            <Favorite className="rightBarIcon"/>
             <span className="rightbarInfoKey">Mối quan hệ</span>
-            <span className="rightbarInfoValue">{profile.relationship === 1 ? "Độc thân" :
-                profile.relationship === 2 ? "Hẹn hò" : "Không có thông tin"  }</span>
+            <span className="rightbarInfoValue">{profile.relationship === 3 ? "Độc thân" :
+                profile.relationship === 2 ? " Đang hẹn hò" : "Chưa cật nhật thông tin"  }</span>
           </div>
         </div>
       </div>
           <div className='leftBar'>
         <h4 className="rightbarTitle">Bạn Bè</h4>
+            <p style={{color:'black', marginBottom:10}}>{`${profile.friends.length} người bạn`}</p>
         <div className="rightbarFollowings">
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/1.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/2.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/3.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/4.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/5.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
-          <div className="rightbarFollowing">
-            <img
-              src="assets/person/6.jpeg"
-              alt=""
-              className="rightbarFollowingImg"
-            />
-            <span className="rightbarFollowingName">John Carter</span>
-          </div>
+
+          {
+            listFriend && listFriend.map((value) =>{
+                console.log(value)
+              return   <div className="rightbarFollowing">
+                <img
+                    src={value.profilePicture === "" ? noAvatar : value.profilePicture}
+                    alt="Avatar"
+                    className="rightbarFollowingImg"
+                />
+                <span className="rightbarFollowingName">{value.username}</span>
+              </div>
+
+              })
+          }
         </div>
           </div>
       </>
