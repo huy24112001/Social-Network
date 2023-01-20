@@ -52,8 +52,8 @@ export default function Topbar() {
 
 
 
-  const [countFriendRequestNoti, setCountFriendRequestNoti] = useState(true)
-  const [messageNoti, setMessageNoti] = useState(true)
+  const [countFriendRequestNoti, setCountFriendRequestNoti] = useState(false)
+  const [messageNoti, setMessageNoti] = useState(false)
   const [notification, setNotification] = useState(true)
 
   const handleSignOut = () => {
@@ -184,7 +184,7 @@ export default function Topbar() {
             }}>
               <Person />
               {
-                countFriendRequestNoti ?
+                countFriendRequestNoti && arrFriendReq.length > 0 ?
                 <span className="topbarIconBadge">{arrFriendReq.length}</span> :
                 null
               }
