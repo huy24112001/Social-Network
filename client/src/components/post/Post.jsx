@@ -261,10 +261,18 @@ export default function Post({ post }) {
               padding:'0.5',
             }}
           >
+            {
+              oldComments?.map((c) => <Comment key={c._id} comment={c}/> )
+            }
+            {
+              comments?.map((c) => <Comment key={c._id} comment={c}/> )
+            }
+
             <Box
               sx={{
                 display: 'flex',
-                paddingTop: '2px'
+                paddingTop: '2px',
+                marginTop: '20px'
               }}
             >
 
@@ -294,12 +302,7 @@ export default function Post({ post }) {
                 />
               </Box>
             </Box>
-            {
-              oldComments?.map((c) => <Comment key={c._id} comment={c}/> )
-            }
-            {
-              comments?.map((c) => <Comment key={c._id} comment={c}/> )
-            }
+            
           </Box>
           )
         : null}

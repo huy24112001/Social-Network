@@ -1,18 +1,33 @@
 import { Grid, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React from "react";
+import React, { useState } from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { formatDistance} from 'date-fns';
 import noAvatar from "../../img/person/noAvatar.png"
+import "./comment.css"
 
 export default function Comment({ comment }) {
+
+  let [isLikedComment, setLikeComment] = useState(false);
   const timestamp = comment.createdAt ? new Date(comment.createdAt) : '';
 
+  const handleOnClickLikeComment = () => {
+    isLikedComment ? setLikeComment(false) : setLikeComment(true);
+   
+  }
+  
+  const handleOnClickResponeComment = () => {
+    // do something
+  }
+
   return (
+    <>
+    
     <Box
-      padding="1rem"
+      padding="1rem 2rem 0.5rem 2rem"
+      marginTop="15px"
       sx={{
         "&:hover": {
           backgroundColor: "#eee",
@@ -21,7 +36,7 @@ export default function Comment({ comment }) {
     >
       <Grid container flexWrap="nowrap">
         <Grid item sx={{ paddingRight: "1rem" }}>
-          <img src={noAvatar} alt="lgoog" width="50px" />
+          <img src="../../assets/person/1.jpeg" className="avatar-comment" alt="lgoog" />
         </Grid>
         <Grid item flexGrow="1">
           <Box>
@@ -30,11 +45,18 @@ export default function Comment({ comment }) {
               justifyContent="space-between"
               alignItems="center"
               flexWrap="nowrap"
+              width="fit-content"
             >
-              <Grid item>
+              <Grid item 
+                    borderRadius="10px"
+                    backgroundColor="#dbf8ff"
+                    padding="0.5rem"
+                
+              
+              >
                 <Box display="flex">
                   <Typography
-                    sx={{ fontSize: "16px", fontWeight: 500, mr: "6px" }}
+                    sx={{ fontSize: "16px", fontWeight: 600, mr: "6px", marginLeft: "10px" }}
                   >
                     {comment.user.username}
                   </Typography>
@@ -56,7 +78,7 @@ export default function Comment({ comment }) {
                   </Typography>
                 </Box>
                 <Box>
-                  <Typography sx={{ fontSize: "15px", color: "#555" }}>
+                  <Typography sx={{ fontSize: "15px", color: "#555", marginLeft: "10px"}}>
                     {comment.content}
                   </Typography>
                 </Box>
@@ -70,7 +92,7 @@ export default function Comment({ comment }) {
                         <MoreHorizIcon />
                       </IconButton>
                     } 
-                    position="right center"
+                    
                   >
                     <div className={'popup'}>
                       <div className="popupList">
@@ -94,5 +116,14 @@ export default function Comment({ comment }) {
         </Grid>
       </Grid>
     </Box>
+        <>{ isLikedComment ? <span className="liked-comment" onClick={handleOnClickLikeComment}>Like </span> :
+            <span className="not-like-comment" onClick={handleOnClickLikeComment}>Like </span> }
+
+            <span className="respone-comment" onClick={handleOnClickResponeComment}>Respone </span>
+        </>
+    
+    </>
   );
+
 }
+
