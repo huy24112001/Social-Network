@@ -22,33 +22,64 @@ const ChatOnline = ({onlineUsers}) => {
             console.log(result)
             setFriends(result);
         };
-    
         getFriends();
+        return () => {
+            setFriends([]); 
+          };
       }, [infoUser]);
 
     useEffect(() => {
         setOnlineFriends(friends.filter((f) => onlineUsers.includes(f._id)));
+        // setOnlineFriends(onlineUsers);
+        // console.log(onlineUsers)
+        return () => {
+            setOnlineFriends([]); 
+          };
+      
+
     }, [friends, onlineUsers]);
 
     
 
     const handleClick = async (user) => {
         try {
+            console.log(onlineFriends)
             const conversation = await service.messengerService.findConversationBetweenUser({
                 senderId: infoUser._id, 
                 receiverId: user._id
             })
-            const renderConversation = {
-                createdAt: conversation.createdAt,
-                members: conversation.members.filter((user) => user._id !== infoUser._id),
-                _id: conversation._id
-              }
-            dispatch({
-                type: 'SET_RECEIVER',
-                payload: renderConversation.members[0]
-              })
-
-              navigate(`/messenger/${category}/${conversation._id}`)
+            if (!conversation) {
+                const conversation = await service.messengerService.createConversation({
+                    data: {
+                        receiverId: user._id
+                    },
+                    token: infoUser.token
+                })
+                const renderConversation = {
+                    createdAt: conversation.createdAt,
+                    members: conversation.members.filter((user) => user._id !== infoUser._id),
+                    _id: conversation._id
+                  }
+                dispatch({
+                    type: 'SET_RECEIVER',
+                    payload: renderConversation.members[0]
+                  })
+    
+                navigate(`/messenger/${category}/${conversation._id}`)
+            }
+            else {
+                const renderConversation = {
+                    createdAt: conversation.createdAt,
+                    members: conversation.members.filter((user) => user._id !== infoUser._id),
+                    _id: conversation._id
+                  }
+                dispatch({
+                    type: 'SET_RECEIVER',
+                    payload: renderConversation.members[0]
+                  })
+    
+                navigate(`/messenger/${category}/${conversation._id}`)
+            }
         } catch (error) {
             
         }

@@ -16,6 +16,18 @@ router.post('/', auth, async (req, res) => {
     }
 })
 
+router.put('/active/:conversationId', async (req, res) => {
+    try {
+        const conversationId = req.params.conversationId
+        const update = {isActive: true}
+        const conversation = await Conversation.findOneAndUpdate({_id: conversationId}, update, {new: true})
+        // res.status(200).json("The post has been updated.")
+        res.status(200).json(conversation)
+    } catch (error) {
+        res.status(500).json(error)
+    }
+})
+
 // get conversation
 router.get('/:conversationId', async (req, res) => {
     try {
