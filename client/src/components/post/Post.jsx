@@ -84,6 +84,7 @@ export default function Post({ post }) {
       })
   
       socket.emit('notification',{
+        id : state.infoUser._id,
       })
     } 
   };
@@ -107,7 +108,6 @@ export default function Post({ post }) {
 
   useEffect(() => {
     if (socket){
-
       socket.once('like', (data) => {
         if(data.post === post._id){
           setLike(data.isLiked ? like+1 : like-1)
@@ -139,6 +139,7 @@ export default function Post({ post }) {
       })
   
       socket.emit('notification',{
+        id : state.infoUser._id,
       })
     }
 
