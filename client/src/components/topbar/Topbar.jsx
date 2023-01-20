@@ -61,6 +61,11 @@ export default function Topbar() {
     dispatch({type: 'SIGN_OUT'})
   }
 
+  const handleClickMessenger = () => {
+    setMessageNoti(false)
+    navigate("/messenger/t")
+  }
+
   // const handleFriendNoti = () => {
   //   setFriendRequestNoti(false)
   // }
@@ -101,7 +106,7 @@ export default function Topbar() {
       const id_user = state.infoUser._id
       const response = await service.notification.getNotification(id_user)
       const data_reverse = response.reverse()
-      console.log(data_reverse)
+      // console.log(data_reverse)
       set_notifications(data_reverse)
       for(let i= 0;i< response.length;i++){
         if(response[i].status === false){
@@ -213,7 +218,7 @@ export default function Topbar() {
               }
             </div>
 
-            <div className="topbarIconItem" onClick={() => setMessageNoti(false)}>
+            <div className="topbarIconItem" onClick={handleClickMessenger}>
               <Chat />
               {messageNoti ? <span className="topbarIconBadge">2</span> : null}
             </div>

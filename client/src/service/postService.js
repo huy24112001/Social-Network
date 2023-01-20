@@ -23,7 +23,7 @@ export async function getProfilePost(userId) {
   const url = REACT_APP_BACK_END + `/api/posts/profile/${userId}`
 //   console.log(url)
   const response = await api.postRequests.getProfilePost(url)
-  console.log(response)
+  // console.log(response)
   return response?.data || []
 }
 
