@@ -39,6 +39,11 @@ const ChatOnline = ({onlineUsers}) => {
 
     }, [friends, onlineUsers]);
 
+    useEffect(() => {
+      console.log(onlineFriends)
+    }, [onlineFriends])
+    
+
     
 
     const handleClick = async (user) => {
@@ -88,7 +93,7 @@ const ChatOnline = ({onlineUsers}) => {
 
     return (
         <div className="chatOnline">
-        {onlineFriends.map((o) => (
+        {onlineFriends?.map((o) => (
             <div key={o._id} className="chatOnlineFriend" onClick={() => handleClick(o)}>
             <div className="chatOnlineImgContainer">
                 <img

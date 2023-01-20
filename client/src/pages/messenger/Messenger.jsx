@@ -33,7 +33,7 @@ const Messenger = () => {
       console.log("connected")
       socket.on("getUsers", (users) => {
         setOnlineUsers(
-          infoUser.followings.filter((f) => users.some((u) => u.userId === f))
+          infoUser.friends.filter((f) => users.some((u) => u.userId === f))
         );
       });
     }
