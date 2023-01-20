@@ -105,7 +105,7 @@ router.get("/timeline/:userId", async (req,res) => {
         // console.log(userPosts)
         // const userPosts = await Post.find({userId: userId})
         const friendPosts = await Promise.all(
-            currentUser.followings.map((friendId) => {
+            currentUser.friends.map((friendId) => {
                 return Post.find({userId: friendId}).populate('userId').populate({path:'comments', populate: {
                     path: 'user',
                     select: 'username'
