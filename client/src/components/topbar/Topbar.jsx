@@ -179,7 +179,7 @@ export default function Topbar() {
             }}>
               <Person />
               {
-                countFriendRequestNoti ?
+                countFriendRequestNoti && arrFriendReq.length > 0 ?
                 <span className="topbarIconBadge">{arrFriendReq.length}</span> :
                 null
               }

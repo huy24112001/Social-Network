@@ -94,3 +94,11 @@ export async function getListFriend(param) {
 
   return response?.data || []
 }
+
+export async function updateProfileServer(data){
+  // console.log(data)
+  const url = REACT_APP_BACK_END + '/api/users/update-profile'
+  const response = await putAsyncWithToken(url,data)
+
+  return response?.data || []
+}

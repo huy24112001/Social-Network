@@ -17,14 +17,15 @@
 }
 
 .shareProfileImg {
-  width: 50px;
-  height: 50px;
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
   object-fit: cover;
   margin-right: 10px;
 }
 
 .shareInput {
+    font-size: 17px;
   border: none;
   width: 80%;
 }
@@ -74,6 +75,8 @@
     margin-right: 20px;
     cursor: pointer;
     color: white;
+    margin-top: 14px;
+    margin-bottom: 6px;
 }
 
 .shareImgContainer{

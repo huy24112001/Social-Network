@@ -55,9 +55,9 @@ export default function Share() {
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src={infoUser.profilePicture} alt="avatar" />
+          <img className="shareProfileImg" src={infoUser.profilePicture === "" ? noAvatar : infoUser.profilePicture} alt="avatar" />
           <textarea
-            placeholder={`What's in your mind ${infoUser?.username}?`}
+            placeholder={`${infoUser?.username} ơi , Bạn đang nghĩ gì thế ?`}
             className="shareInput"
             value={post.desc}
             onChange={(e) => setPost({...post, desc: e.target.value})}
@@ -78,7 +78,7 @@ export default function Share() {
             <div className="shareOptions">
                 <label className="shareOption">
                     <PermMedia htmlColor="tomato" className="shareIcon"/>
-                    <span className="shareOptionText">Photo or Video</span>
+                    <span className="shareOptionText">Ảnh/Video</span>
                     <input
                       style={{ display: "none" }}
                       type="file"
@@ -89,18 +89,18 @@ export default function Share() {
                 </label>
                 <div className="shareOption">
                     <Label htmlColor="blue" className="shareIcon"/>
-                    <span className="shareOptionText">Tag</span>
+                    <span className="shareOptionText">Gắn thẻ</span>
                 </div>
                 <div className="shareOption">
                     <Room htmlColor="green" className="shareIcon"/>
-                    <span className="shareOptionText">Location</span>
+                    <span className="shareOptionText">Vị trí</span>
                 </div>
                 <div className="shareOption">
                     <EmojiEmotions htmlColor="goldenrod" className="shareIcon"/>
-                    <span className="shareOptionText">Feelings</span>
+                    <span className="shareOptionText">Cảm xúc</span>
                 </div>
             </div>
-            <button className="shareButton" type="submit">Share</button>
+            <button className="shareButton" type="submit">Đăng</button>
         </form>
       </div>
     </div>
