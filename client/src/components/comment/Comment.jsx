@@ -6,9 +6,16 @@ import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import { formatDistance} from 'date-fns';
 import noAvatar from "../../img/person/noAvatar.png"
+import { useNavigate } from "react-router-dom";
 
 export default function Comment({ comment }) {
   const timestamp = comment.createdAt ? new Date(comment.createdAt) : '';
+  const navigate = useNavigate()
+
+  const handleClickComment = () => {
+    navigate(`/profile/${comment.user._id}`)
+    // console.log(comment.user)
+  }
 
   return (
     <Box
@@ -34,7 +41,8 @@ export default function Comment({ comment }) {
               <Grid item>
                 <Box display="flex">
                   <Typography
-                    sx={{ fontSize: "16px", fontWeight: 500, mr: "6px" }}
+                    sx={{ fontSize: "16px", fontWeight: 500, mr: "6px", cursor: "pointer" }}
+                    onClick={handleClickComment}
                   >
                     {comment.user.username}
                   </Typography>

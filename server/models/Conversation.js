@@ -5,7 +5,11 @@ const ConversationSchema = new mongoose.Schema({
     members: [{
         type: ObjectId,
         ref: 'User'
-    }]
+    }],
+    isActive: {
+        type: Boolean,
+        default: false
+    },
 }, {
     timestamps: true
 }

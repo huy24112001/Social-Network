@@ -159,11 +159,37 @@
   list-style: none;
   top: 40px;
   right: 1px;
-  width: 300px;
-  height: 500px;
+  width: 350px;
   border-radius: 3px;
   /*elevation: revert;*/
-  box-shadow: 2px 2px 2px 2px #2873c9;
+  box-shadow: 1px 2px 3px 1px #2873c9;
+}
+.itemInvite{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  background-color: white;
+  border-bottom: 1px solid #807b7b;
+
+}
+.btnAccept{
+  background-color:#336fde;
+  border:none;
+  padding: 10px 20px;
+  margin-right:20px;
+  border-radius:5px;
+  color: white;
+  cursor: pointer
+}
+.btnRemove{
+  background-color:#E4E6EB;
+  border:none;
+  padding: 10px 38px;
+  margin-right:20px;
+  border-radius:5px;
+  color: black;
+  cursor: pointer;
+  font-weight: bold;
 }
 .resultSearch{
   position: absolute;

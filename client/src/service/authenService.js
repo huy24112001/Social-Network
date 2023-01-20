@@ -1,4 +1,4 @@
-import {deleteAsyncWithToken, getAsync, getAsyncWithToken, postAsync} from "../api/request";
+import {deleteAsyncWithToken, getAsync, getAsyncWithToken, postAsync, putAsyncWithToken} from "../api/request";
 import {REACT_APP_BACK_END} from "../constant/backend";
 export async function login(params) {
   const url = REACT_APP_BACK_END + '/api/auth/login'
@@ -52,7 +52,7 @@ export async function statusFriendUser(param) {
 }
 
 export async function removeInviteFriend(param) {
-  const url = REACT_APP_BACK_END + '/api/friends/remove-invite'
+  const url = REACT_APP_BACK_END + '/api/friends/remove'
   const response = await deleteAsyncWithToken(url,param)
 
   return response?.data || []
@@ -68,5 +68,37 @@ export async function removeFriend(param) {
 export async function inviteFriend(data) {
   const url = REACT_APP_BACK_END + '/api/friends/send-request'
   const response = await postAsync(url, data)
+  return response?.data || []
+}
+
+export async function checkInviteFriend(data){
+  // console.log(data)
+  const url = REACT_APP_BACK_END + '/api/friends/check-invite'
+  const response = await getAsync(url,data)
+
+  return response?.data || []
+}
+
+
+export async function AcceptFriend(data){
+  // console.log(data)
+  const url = REACT_APP_BACK_END + '/api/friends/accept'
+  const response = await putAsyncWithToken(url,data)
+
+  return response?.data || []
+}
+
+export async function getListFriend(param) {
+  const url = REACT_APP_BACK_END + '/api/friends/list-friends'
+  const response = await getAsync(url,param)
+
+  return response?.data || []
+}
+
+export async function updateProfileServer(data){
+  // console.log(data)
+  const url = REACT_APP_BACK_END + '/api/users/update-profile'
+  const response = await putAsyncWithToken(url,data)
+
   return response?.data || []
 }

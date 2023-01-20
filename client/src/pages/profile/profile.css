@@ -19,6 +19,7 @@
 }
  .profileRightTop{
 background-color: white;
+position: relative;
  }
 
 .profileCoverImg{
@@ -46,7 +47,7 @@ background-color: white;
     position: absolute;
     /*align-items: center;*/
     /*justify-content: center;*/
-    top: 430px;
+    top: 390px;
     left: 370px;
 }
 
@@ -74,7 +75,7 @@ background-color: white;
     cursor: pointer;
     color: white;
     position: absolute;
-    top: 460px;
+    top: 410px;
     right: 330px;
 
 }

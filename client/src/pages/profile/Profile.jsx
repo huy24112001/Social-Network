@@ -5,14 +5,20 @@ import Rightbar from "../../components/rightbar/Rightbar";
 import React, {useContext, useEffect, useState} from "react";
 import Context from "../../store/context";
 import {useLocation} from "react-router-dom";
-import {inviteFriend, removeFriend, removeInviteFriend, statusFriendUser} from "../../service/authenService";
+import {
+    getListFriend,
+    inviteFriend,
+    removeFriend,
+    removeInviteFriend,
+    statusFriendUser, updateProfileServer
+} from "../../service/authenService";
 import {
     Button, Dialog,
     DialogActions,
     DialogContent,
     DialogContentText,
-    DialogTitle,
-    IconButton,
+    DialogTitle, FormControl, FormControlLabel, FormLabel,
+    IconButton, Radio, RadioGroup,
     TextField
 } from "@mui/material";
 import {Close, Send} from "@mui/icons-material";
@@ -23,15 +29,20 @@ import noCover from "../../img/person/noBackground.jpg"
 import service from "../../service";
 
 export default function Profile() {
+
     const [state,dispatch] = useContext(Context)
     const location = useLocation()
     const profile = location?.state?.profile;
     const [profileState, setProfileState] = useState(profile ? profile : null)
+
     // const statusFriend = location.state.statusFriend
     const [statusFriend,setStatusFriend] = useState()
+    const [listFriend,setListFriend] = useState([])
+
     const [showEditProfile,setShowEditProfile] = useState(false)
+    const [updateProfile,setUpdateProfile] = useState({from : String, city : String,relationship : Number,study : String})
     const {userId} = useParams()
-    console.log(userId)
+    // console.log(userId)
 
     useEffect( async () => {
       const resProfile = await service.authenService.getUserInfo({userId})
@@ -45,26 +56,37 @@ export default function Profile() {
         if (profileState){
             if(state.infoUser._id !== profileState._id) {
                 const rsStatusFriend = await statusFriendUser({user_id: state.infoUser._id, user_query_id: profileState._id});
+                console.log(rsStatusFriend.result)
                 setStatusFriend(rsStatusFriend.result)
             }
             else
                 setStatusFriend(-1)
         }
-    },[profile, profileState])
+    },[profileState])
 
-    
+
+    useEffect(async () => {
+        if (profileState){
+           const rs = await getListFriend({user_info : profileState})
+            setListFriend(rs.result)
+        }
+    },[profileState])
+
+
+
+
 
     async function handleRequestFriend() {
 
         if (statusFriend === 1) {
-            const rs = await removeInviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id})
+            const rs = await removeInviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id , status : statusFriend})
             // console.log(rs.result)
             if (rs.result === 0 ) setStatusFriend(0);
 
         } else if (statusFriend === 3) {
 
-            const rs = await removeFriend({user_id: state.infoUser._id, user_query_id: profileState._id})
-            if (rs) setStatusFriend(0)
+            const rs = await removeFriend({user_id: state.infoUser._id, user_query_id: profileState._id,status : statusFriend})
+            if (rs.result === 0) setStatusFriend(0)
 
         } else if (statusFriend === 0) {
             const rs = await inviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id})
@@ -77,8 +99,8 @@ export default function Profile() {
 
     }
 
-    function updateProfile() {
-
+    function handleUpdateProfile() {
+        const rs = updateProfileServer({update_Profile : updateProfile, idProfile : profileState._id})
     }
 
     return (
@@ -101,29 +123,51 @@ export default function Profile() {
                     </IconButton>
                 </DialogTitle>
 
-                <form onSubmit={updateProfile}>
+                <form onSubmit={handleUpdateProfile}>
                     <DialogContent dividers>
                         <DialogContentText>
                             Chỉnh sửa các thông tin sau đây:
                         </DialogContentText>
-                        <TextField margin="normal" variant="standard" id="username" label="Username" type="text"
+                        <TextField margin="normal" variant="standard" id="Sống tại" label="Sống tại" type="text"
                                    fullWidth
-                                   // onChange={(e) => setUsername(e.target.value)} value={username}
+                                   onChange={(e) => setUpdateProfile({from :updateProfile.from , city : e.target.value ,
+                                       relationship : updateProfile.relationship,study : updateProfile.study})}
+                                   value={updateProfile.city}
                                    inputProps={{ minLength: 2 }}
                                    required
                         />
-                        <TextField margin="normal" variant="standard" id="email" label="Email" type="email"
+                        <TextField margin="normal" variant="standard" id="Đến từ" label="Đến từ" type="text"
                                    fullWidth
-                                   // onChange={(e) => setEmail(e.target.value)} value={email}
+                                   onChange={(e) => setUpdateProfile({from : e.target.value, city : updateProfile.city,
+                                       relationship : updateProfile.relationship,study : updateProfile.study})}
+                                   value={updateProfile.from}
                                    required
                         />
-                        <TextField margin="normal" variant="standard" id="password" label="Password"
-                                   type="password" fullWidth
-                                   // onChange={(e) => setPassword(e.target.value)} value={password}
+                        <TextField margin="normal" variant="standard" id="Đã học tại" label="Đã học tại"
+                                   type="text" fullWidth
+                                   onChange={(e) => setUpdateProfile({from : updateProfile.from, city : updateProfile.city,
+                                       relationship : updateProfile.relationship,study :e.target.value })}
+                                   value={updateProfile.study}
                                    required/>
+
+                        <FormControl style={{marginTop:5}}>
+                            <FormLabel id="Mối quan hệ">Mối quan hệ</FormLabel>
+                            <RadioGroup
+                                aria-labelledby="Mối quan hệ"
+                                defaultValue="female"
+                                name="radio-buttons-group" row={true}
+                                value={updateProfile.relationship}
+                                onChange={(e) => setUpdateProfile({from : updateProfile.from, city : updateProfile.city,
+                                    relationship : e.target.value,study :updateProfile.study })}
+                            >
+                                <FormControlLabel value={3} control={<Radio />} label="Độc thân" />
+                                <FormControlLabel value={2} control={<Radio />} label="Đang hẹn hò" />
+                                <FormControlLabel value={1} control={<Radio />} label="Khác" />
+                            </RadioGroup>
+                        </FormControl>
                     </DialogContent>
                     <DialogActions sx={{ px: '19px',marginTop:3 }}>
-                        <Button  type="submit" variant="contained" endIcon={<Send />}>
+                        <Button   type="submit" variant="contained" endIcon={<Send />}>
                             Cật Nhật
                         </Button>
                     </DialogActions>
@@ -151,7 +195,7 @@ export default function Profile() {
                             />
                             <img
                                 className="profileUserImg"
-                                src={profileState.profilePicture}
+                                src={profileState.profilePicture === '' ? noAvatar : profileState.profilePicture }
                                 alt=""
                             />
                         </div>
@@ -159,30 +203,25 @@ export default function Profile() {
                             <h4 className="profileInfoName">{profileState.username}</h4>
                             <span className="profileInfoDesc">Hello my friends!</span>
                         </div>
-                        {
-                            console.log(statusFriend + ' huy')
-                        }
-
 
                             <button className="friendBtn" onClick={handleRequestFriend}>{
                                 statusFriend === 3 ? 'Bạn bè' :
                                     statusFriend === 1 ? 'Đã gửi lời mời kết bạn' :
-                                        statusFriend === 0 ? 'Thêm bạn bè' : 'Chỉnh sửa thông tin cá nhân'
+                                        statusFriend !== -1 ? 'Thêm bạn bè' : 'Chỉnh sửa thông tin cá nhân'
                             }</button>
 
                     </div>
                     <div className="profileRightBottom">
-                        <Rightbar profile = {profileState} />
+                        <Rightbar profile = {profileState} listFriend = {listFriend} />
                         <Feed userId={userId} />
 
                     </div>
                 </div>
             </div>
-            
+
             </>
-            ) : (
-                null
-            )}
+            ) : null
+            }
         </>
     );
 

@@ -23,7 +23,7 @@ export async function getProfilePost(userId) {
   const url = REACT_APP_BACK_END + `/api/posts/profile/${userId}`
 //   console.log(url)
   const response = await api.postRequests.getProfilePost(url)
-  console.log(response)
+  // console.log(response)
   return response?.data || []
 }
 
@@ -49,3 +49,12 @@ export async function likePost(data) {
   const response = await api.postRequests.likePost(url, token)
 //   return response?.data || []
 }
+
+export async function deletePost(data) {
+  const {id, token} = data
+  console.log(token)
+  const url = REACT_APP_BACK_END + `/api/posts/${id}`
+  const response = await api.postRequests.deletePost(url, token)
+//   return response?.data || []
+}
+

@@ -83,6 +83,7 @@ const MessengerSideBarContent = ({onlineUsers}) => {
     const [state, dispatch] = useContext(Context)
     const infoUser = state.infoUser
     const conversations = state.conversations
+    console.log(conversations)
     const {category, conversationId} = useParams()
     // console.log(onlineUsers)
     // console.log(conversations)
@@ -104,7 +105,7 @@ const MessengerSideBarContent = ({onlineUsers}) => {
                             />
                         </div>
                         {
-                            conversations?.sort((p1, p2) => {
+                            conversations?.filter((c) => (c.isActive === true)).sort((p1, p2) => {
                                 return new Date(p2.createdAt) - new Date(p1.createdAt);
                               }).map((conversation) => (
                                 <Conversation key={conversation._id} conversation={conversation} />

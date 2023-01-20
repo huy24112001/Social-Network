@@ -16,7 +16,6 @@ export const useLoginContext = () => useContext(LoginContext)
 //provider
 export const LoginContextProvider = ({ children }) => {
 
-    const [state , dispatch] = useContext(Context)
 
 
     const handleSignup = async (username, password, email) => {
@@ -26,14 +25,11 @@ export const LoginContextProvider = ({ children }) => {
             const response = await signup(params)
             console.log(response)
             if (response?.result) {
-
-                dispatch({type : 'SET_USER', payload : {...response.result, token: response.token} })
-
+                // dispatch({type : 'SET_USER', payload : {...response.result, token: response.token} })
                 toastSuccess("Success Notification !")
-
                 // await setCookie("currentuser", response?.token)
                  // setTimeout(() => window.location.reload(), 2000)
-                return true ;
+                return response ;
 
             }
             else {
@@ -55,14 +51,11 @@ export const LoginContextProvider = ({ children }) => {
             console.log(response)
 
             if (response?.result) {
-                // console.log(response.result)
-                dispatch({type : 'SET_USER', payload : {...response.result, token: response.token} })
-
                 toastSuccess("Success Notification !")
+                // console.log(response.result)
                 //  await setCookie("currentuser", response?.token)
                 //   setTimeout(() => window.location.reload(), 2000)
-                    return true;
-
+                    return response;
             }
             else {
                 toastError(response?.error)

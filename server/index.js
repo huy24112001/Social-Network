@@ -1,4 +1,3 @@
-
 // Libraries
 /************************************************************/
 const express = require("express");
@@ -34,15 +33,21 @@ const PORT = process.env.PORT || 5000
 
 // Middleware
 /************************************************************/
-// app.use(express.json()).use(express.urlencoded({extended: true})).use(cors());
+app.use(express.json()).use(express.urlencoded({extended: true})).use(cors());
+app.use(function (req, res, next) {
+//Enabling CORS
+    res.header("Access-Control-Allow-Origin", "*");
+    res.header("Access-Control-Allow-Methods", "GET,HEAD,OPTIONS,POST,PUT");
+    res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, x-client-key, x-client-token, x-client-secret, Authorization");
+    next();
+});
 app.use(helmet())
 app.use(morgan("common"))
 app.use(bodyParser.json({limit: '100mb', extended: true}));
 app.use(bodyParser.urlencoded({limit: "100mb", extended: true, parameterLimit:100000}));
 app.use(bodyParser.text({ limit: '500mb' }));
 
-
-app.use(cors({origin: '*'}));
+// app.use(cors({origin: 'http://localhost:3000'}));
 
 app.use(cookies())
 app.use("/api/users", userRoute)
@@ -102,7 +107,7 @@ io.on('connection', (socket) => {
         // console.log(users)
         io.emit("getUsers", users);
       });
-    
+
     socket.on('sendMessageToServer', (message) => {
         // socket.broadcast.emit('like', data)
         // console.log(message)
@@ -128,6 +133,7 @@ io.on('connection', (socket) => {
     socket.on('disconnect', function () {
         console.log('user disconnected');
         removeUser(socket.id);
+        io.emit("getUsers", users);
 
     });
 })
@@ -138,7 +144,7 @@ io.on('connection', (socket) => {
 // Start Server
 /************************************************************/
 app.get("/", (req, res) => {
-    
+
     res.send("Welcome to server")
 })
 mongoose.set('strictQuery', true).connect(process.env.MONGO_URI, {})

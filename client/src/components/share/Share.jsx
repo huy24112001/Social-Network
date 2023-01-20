@@ -11,7 +11,8 @@ export default function Share() {
   const infoUser = state.infoUser
   const initialPost = {
     userId: infoUser._id,
-    desc: ""
+    desc: "",
+    img: ""
   }
 
   const [post, setPost] = useState(initialPost)
@@ -33,7 +34,7 @@ export default function Share() {
   const handleShare = async (e) => {
     e.preventDefault();
     // console.log(post)
-    if (!post){
+    if (post?.desc === '' && post?.img === ''){
       return
     }
     await service.postService.createPost({data: post, token: infoUser.token})
@@ -54,26 +55,30 @@ export default function Share() {
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src={infoUser.profilePicture} alt="avatar" />
-          <input
-            placeholder={`What's in your mind ${infoUser?.username}?`}
+          <img className="shareProfileImg" src={infoUser.profilePicture === "" ? noAvatar : infoUser.profilePicture} alt="avatar" />
+          <textarea
+            placeholder={`${infoUser?.username} ơi , Bạn đang nghĩ gì thế ?`}
             className="shareInput"
             value={post.desc}
             onChange={(e) => setPost({...post, desc: e.target.value})}
-          />
+            cols="40" rows="1"
+          ></textarea>
         </div>
         <hr className="shareHr"/>
         {file && (
           <div className="shareImgContainer">
             <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
-            <Cancel className="shareCancelImg" onClick={() => setFile(null)} />
+            <Cancel className="shareCancelImg" onClick={() => {
+              setFile(null)
+              setPost({...post, img: ""})
+            }} />
           </div>
         )}
         <form className="shareBottom"  onSubmit={handleShare}>
             <div className="shareOptions">
                 <label className="shareOption">
                     <PermMedia htmlColor="tomato" className="shareIcon"/>
-                    <span className="shareOptionText">Photo or Video</span>
+                    <span className="shareOptionText">Ảnh/Video</span>
                     <input
                       style={{ display: "none" }}
                       type="file"
@@ -84,18 +89,18 @@ export default function Share() {
                 </label>
                 <div className="shareOption">
                     <Label htmlColor="blue" className="shareIcon"/>
-                    <span className="shareOptionText">Tag</span>
+                    <span className="shareOptionText">Gắn thẻ</span>
                 </div>
                 <div className="shareOption">
                     <Room htmlColor="green" className="shareIcon"/>
-                    <span className="shareOptionText">Location</span>
+                    <span className="shareOptionText">Vị trí</span>
                 </div>
                 <div className="shareOption">
                     <EmojiEmotions htmlColor="goldenrod" className="shareIcon"/>
-                    <span className="shareOptionText">Feelings</span>
+                    <span className="shareOptionText">Cảm xúc</span>
                 </div>
             </div>
-            <button className="shareButton" type="submit">Share</button>
+            <button className="shareButton" type="submit">Đăng</button>
         </form>
       </div>
     </div>

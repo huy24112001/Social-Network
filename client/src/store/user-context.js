@@ -6,7 +6,7 @@ const initState = {
     infoUser: JSON.parse(localStorage.getItem("infoUser")) || null,
     socket: null,
     conversations: null,
-    conversationSelect: null,
+    conversationSelectMessages: null,
     conversationSelectReceiver: null
 }
 
@@ -42,7 +42,7 @@ function reducer(state, action){
         case 'CHOOSE_CONVERSATION': 
             return {
                 ...state,
-                conversationSelect: action.payload
+                conversationSelectMessages: action.payload
             }
         
         case 'SET_RECEIVER': 
@@ -54,7 +54,7 @@ function reducer(state, action){
         case 'CHANGE_CATEGORY': 
             return {
                 ...state,
-                conversationSelect: null,
+                conversationSelectMessages: null,
                 conversationSelectReceiver: null
             }
         default :

@@ -2,6 +2,29 @@ const router = require("express").Router();
 const User = require("../models/User")
 const bcrypt = require("bcrypt")
 
+
+router.put("/update-profile", async(req,res) => {
+    console.log(req.body)
+    const newProfile = req.body.params
+        try {
+            const user = await User.findByIdAndUpdate(newProfile.idProfile, {
+                $set: newProfile.update_Profile
+            })
+            console.log('huy he huoc')
+            console.log(user)
+            res.status(200).json("Account has been updated")
+        } catch (error) {
+            return res.status(500).json(error)
+        }
+
+})
+
+
+
+
+
+
+
 // update user
 router.put("/:id", async(req,res) => {
     const id = req.params.id
@@ -62,7 +85,7 @@ router.get("/friends/:userId", async (req, res) => {
     try {
       const user = await User.findById(req.params.userId);
       const friends = await Promise.all(
-        user.followings.map((friendId) => {
+        user.friends.map((friendId) => {
           return User.findById(friendId);
         })
       );
