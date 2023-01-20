@@ -4,7 +4,7 @@ import Axios from "axios";
 
 export async function getAsync(url, param = {}, language = "vi") {
   try {
-    // console.log(param)
+
     return await Axios.get(url, {
       headers: {
         Accept: "application/json",

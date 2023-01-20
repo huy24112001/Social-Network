@@ -11,7 +11,8 @@ export default function Share() {
   const infoUser = state.infoUser
   const initialPost = {
     userId: infoUser._id,
-    desc: ""
+    desc: "",
+    img: ""
   }
 
   const [post, setPost] = useState(initialPost)
@@ -33,7 +34,7 @@ export default function Share() {
   const handleShare = async (e) => {
     e.preventDefault();
     // console.log(post)
-    if (!post){
+    if (post?.desc === '' && post?.img === ''){
       return
     }
     await service.postService.createPost({data: post, token: infoUser.token})
@@ -55,18 +56,22 @@ export default function Share() {
       <div className="shareWrapper">
         <div className="shareTop">
           <img className="shareProfileImg" src={infoUser.profilePicture} alt="avatar" />
-          <input
+          <textarea
             placeholder={`What's in your mind ${infoUser?.username}?`}
             className="shareInput"
             value={post.desc}
             onChange={(e) => setPost({...post, desc: e.target.value})}
-          />
+            cols="40" rows="1"
+          ></textarea>
         </div>
         <hr className="shareHr"/>
         {file && (
           <div className="shareImgContainer">
             <img className="shareImg" src={URL.createObjectURL(file)} alt="" />
-            <Cancel className="shareCancelImg" onClick={() => setFile(null)} />
+            <Cancel className="shareCancelImg" onClick={() => {
+              setFile(null)
+              setPost({...post, img: ""})
+            }} />
           </div>
         )}
         <form className="shareBottom"  onSubmit={handleShare}>

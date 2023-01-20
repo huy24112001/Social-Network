@@ -1,7 +1,7 @@
 import "./topbar.css";
-import { Search, Person, Chat, Notifications } from "@material-ui/icons";
+import {Search, Person, Chat, Notifications, Image} from "@material-ui/icons";
 import {useContext, useEffect, useState} from "react";
-import {searchUser, statusFriendUser} from "../../service/authenService";
+import {AcceptFriend, checkInviteFriend, searchUser, statusFriendUser} from "../../service/authenService";
 
 import Context from "../../store/context";
 import { IconButton } from "@mui/material";
@@ -10,6 +10,7 @@ import { Link, useNavigate } from "react-router-dom";
 import service from "../../service";
 import queryString from 'query-string';
 import io from 'socket.io-client';
+import noAvatar from "../../img/person/noAvatar.png";
 const socket = io();
 
 
@@ -18,7 +19,8 @@ export default function Topbar() {
   const [rsFriend,setRsFriend] = useState(false);
   const [results, setResults] = useState([]);
   const [showResults, setShowResults] = useState(false);
-
+  const [showFriendRequest,setShowFriendRequest] = useState(false)
+  const [arrFriendReq,setArrFriendReq] = useState([])
   const [state , dispatch] = useContext(Context)
   const navigate = useNavigate()
   const infoUser = state.infoUser
@@ -41,8 +43,16 @@ export default function Topbar() {
     if (results.length <= 0 || textSearch === '') setShowResults(false);
   }, [results,textSearch]);
 
+  useEffect(async () => {
+    const rs =  await checkInviteFriend({userID: state.infoUser._id})
+    setArrFriendReq(rs.result)
+  },[])
 
-  const [friendRequestNoti, setFriendRequestNoti] = useState(true)
+
+
+
+
+  const [countFriendRequestNoti, setCountFriendRequestNoti] = useState(true)
   const [messageNoti, setMessageNoti] = useState(true)
   const [notification, setNotification] = useState(true)
 
@@ -51,23 +61,26 @@ export default function Topbar() {
     dispatch({type: 'SIGN_OUT'})
   }
 
-  const handleFriendNoti = () => {
-    setFriendRequestNoti(false)
-  }
+  // const handleFriendNoti = () => {
+  //   setFriendRequestNoti(false)
+  // }
+
+
+
 
 
   // Hàm này dùng để hiện thông báo active notice
   const [notice, set_notice] = useState(false)
   const handler_Click_Notice = () =>{
     set_notice(!notice)
-  
+
     const fetchData = async ()=>{
       const params={
         id_user : state.infoUser._id
       }
       const query = '?' + queryString.stringify(params)
       const response = await service.notification.putNotification(params.id_user)
-      console.log(response)  
+      console.log(response)
     }
     fetchData();
     set_load_notification(true)
@@ -78,7 +91,7 @@ export default function Topbar() {
     const [notifications, set_notifications] = useState([])
 
     const [count_notification, set_count_notification] = useState(0)
-  
+
     const [load_notification, set_load_notification] = useState(true)
 
   // Hàm này dùng để gọi API lấy dữ liệu notification hiện thông báo
@@ -118,7 +131,8 @@ export default function Topbar() {
         fetchData();
       })
     }
-  },[socket]) 
+  },[socket])
+
 
   return (
       <div className="topbarContainer" >
@@ -159,15 +173,46 @@ export default function Topbar() {
             <span className="topbarLink">Timeline</span>
           </div>
           <div className="topbarIcons">
-            <div className="topbarIconItem" onClick={() => setFriendRequestNoti(false)}>
+            <div className="topbarIconItem" onClick={() => {
+              setCountFriendRequestNoti(false)
+              setShowFriendRequest(!showFriendRequest);
+            }}>
               <Person />
               {
-                friendRequestNoti ? 
-                <span className="topbarIconBadge">1</span> : 
+                countFriendRequestNoti ?
+                <span className="topbarIconBadge">{arrFriendReq.length}</span> :
                 null
               }
+              {
+                showFriendRequest ?  (<div className = "dropNotice">
+                  {
+                      arrFriendReq.length === 0 ? <div style={{height:30,color:'black',textAlign:'center',marginTop:12}}>Không có lời mời kết bạn nào</div>
+                          : arrFriendReq.map((value) => {
+
+                            async function handleAcceptFriend() {
+                              const rs = await AcceptFriend({userID_req : value._id, userID_rec : infoUser._id})
+                            }
+
+                      return <div className="itemInvite" key={value._id}>
+                                <img  style={{ marginLeft:10,width: 50, height: 50, borderRadius: '50%',color:'black'}} src={value.profilePicture ==='' ? noAvatar : value.profilePicture } alt="avatar"/>
+                                <div style={{flexDirection: 'column',display:'flex',margin:20}}>
+                                  <p style={{color: "black"}}>{value.username}</p>
+                                  <div style={{marginTop: 10,  display: 'flex',
+                                    flexDirection: 'row', justifyContent:'space-between'}}>
+                                    <button onClick={handleAcceptFriend} className='btnAccept'>Chấp nhận</button>
+                                    <button className='btnRemove'>Xóa</button>
+                                  </div>
+                                </div>
+
+                        </div>
+                          }
+                      )
+                  }
+                </div>) : null
+
+              }
             </div>
-                          
+
             <div className="topbarIconItem" onClick={() => setMessageNoti(false)}>
               <Chat />
               {messageNoti ? <span className="topbarIconBadge">2</span> : null}
@@ -184,6 +229,8 @@ export default function Topbar() {
                     ))
                   }
                 </div>)
+
+
               }
             </div>
           </div>
@@ -191,7 +238,7 @@ export default function Topbar() {
 
           <div className="user">
             <img
-                src="/assets/person/1.jpeg" alt="" className="imgNav"/>
+                src={state.infoUser.profilePicture === '' ? noAvatar : state.infoUser.profilePicture} alt="" className="imgNav"/>
             <span style={{position: "relative"}} className="name">{state.infoUser.username}</span>
             <ul className="menu">
               <li className="itemMenu" style={{cursor:'pointer'}}><div onClick={()=> navigate(`/profile/${state.infoUser._id}`,{state: {profile : state.infoUser }})}  style={{color : "#070707",textDecoration: "none",cursol : "pointer"}}>Trang cá nhân</div></li>

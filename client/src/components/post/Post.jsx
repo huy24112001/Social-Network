@@ -48,7 +48,7 @@ export default function Post({ post }) {
   const [comments, setComments] = useState([])
   const [oldComments, setOldComments] = useState(post.comments)
   const [commentText, setCommentText] = useState('')
-  const [popup, setPopup] = useState(false)
+  const [display, setDisplay] = useState(true)
 
   const handleOpenComment = () => {
     setOpenComment(!openComment)
@@ -56,9 +56,6 @@ export default function Post({ post }) {
 
   const userAvatar = (post?.userId?.profilePicture === "") ? noAvatar : post?.userId?.profilePicture
 
-  const handleOpenMenuPost = () => {
-    setPopup(true)
-  }
 
   const handleKeyPress = async (e) => {
     if (!e.shiftKey && e.key === 'Enter') {
@@ -87,7 +84,7 @@ export default function Post({ post }) {
       })
   
       socket.emit('notification',{
-        id : true
+        id : state.infoUser._id,
       })
     } 
   };
@@ -142,12 +139,20 @@ export default function Post({ post }) {
       })
   
       socket.emit('notification',{
-        id : true
+        id : state.infoUser._id,
       })
     }
 
     setLike(isLiked ? like-1 : like+1)
     setIsLiked(!isLiked)
+  }
+
+  const handleDeletePost = async () => {
+    // console.log(post)
+    await service.postService.deletePost({
+      id: post._id,
+      token: infoUser.token
+    })
   }
 
   return (
@@ -184,41 +189,77 @@ export default function Post({ post }) {
                     <MoreVert />
                   </IconButton>
                 } 
+                // modal
+                nested
                 position="bottom right"
               >
-                <div className={'popup'}>
+                {close => (<div className={'popup'}>
                   <div className="popupList">
-                    <li className="popupItem">
-                      <ModeEditOutlinedIcon style={{marginRight: 5}}/>
-                      Chỉnh sửa bài viết
-                    </li>
-                    <li className="popupItem">
+                    {
+                      (post?.userId?._id === infoUser._id ) ? (
+                        <li className="popupItem" onClick={() => {
+                          close()
+                        }}>
+                          <ModeEditOutlinedIcon style={{marginRight: 5}}/>
+                          Chỉnh sửa bài viết
+                        </li>
+                      ) : null
+                    }
+                    <li className="popupItem" onClick={() => {
+                      close()
+                    }}>
                       <NotificationsOffOutlinedIcon style={{marginRight: 5}}/>
                       Tắt thông báo về bài viết này
                     </li>
                     {
-                      post?.userId?._id === infoUser._id 
+                      (post?.userId?._id === infoUser._id )
                       ?  (
-                        <li className="popupItem">
-                          <DeleteForeverOutlinedIcon style={{marginRight: 5}}/> 
-                          Xóa bài viết
-                        </li>
+                        display ? (
+                          <li className="popupItem" onClick={() => {
+                            handleDeletePost()
+                            setDisplay(false)
+                            close()
+                          }}>
+                            <DeleteForeverOutlinedIcon style={{marginRight: 5}}/> 
+                            Xóa bài viết
+                          </li>
+                        ) : null
+                        
                       )
-                      : (
-                        <li className="popupItem">
-                          <CancelOutlinedIcon style={{marginRight: 5}}/> 
-                          Ẩn bài viết
-                        </li>
+                      : ( 
+                        display ? (
+                          <li className="popupItem" onClick={() => {
+                            setDisplay(false)
+                            close()
+                          }}>
+                            <CancelOutlinedIcon style={{marginRight: 5}}/> 
+                            Ẩn bài viết
+                          </li>
+                        ) : (
+                          <li className="popupItem" onClick={() => {
+                            setDisplay(true)
+                            close()
+                          }}>
+                            <CancelOutlinedIcon style={{marginRight: 5}}/> 
+                            Hiện bài viết
+                          </li>
+                        )
                       )
                     }
                     
                   </div>
-                </div>
+                </div>)}
               </Popup>
             </div>
         </div>
-        <div className="postCenter">
-          <span className="postText">{post?.desc}</span>
+        {
+          display ? (
+            <>
+<div className="postCenter">
+          <span className="postText">
+            {/* {post?.desc.length > 500 ? `${post?.desc.substring(0,500)}...` : post?.desc} */}
+            {post?.desc}
+          </span>
           <img className="postImg" src={post?.img} alt="" />
         </div>
         <div className="postBottom">
@@ -304,6 +345,14 @@ export default function Post({ post }) {
           </Box>
           )
         : null}
+            </>
+          ) : (
+            <div>
+                "This post has been hide"
+            </div>
+          )
+        }
+        
       </div>
     </div>
   );

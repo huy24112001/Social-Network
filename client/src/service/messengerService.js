@@ -5,8 +5,8 @@ export async function createConversation(data) {
     const url = REACT_APP_BACK_END + '/api/conversations'
     // console.log(data)
     const response = await api.messengerRequests.createConversation(url, data)
-    // console.log(response)
-  //   return response?.data || []
+    console.log(response)
+    return response?.data || []
 }
 
 export async function getConversation(data) {
@@ -26,10 +26,19 @@ export async function createMessage(data) {
   //   return response?.data || []
 }
 
+export async function setActiveConversation(data) {
+    const url = REACT_APP_BACK_END + `/api/conversations/active/${data}`
+    // const {token, message} = data
+    // console.log(data)
+    const response = await api.messengerRequests.setActiveConversation(url)
+    // console.log(response)
+  //   return response?.data || []
+}
+
 
 export async function getConversationsOfUser(data) {
     const url = REACT_APP_BACK_END + `/api/conversations/user/${data}`
-    // console.log(data)
+    console.log(data)
     const response = await api.messengerRequests.getConversationsOfUser(url)
     // console.log(response)
     return response?.data || []
@@ -42,7 +51,7 @@ export async function findConversationBetweenUser(data) {
     // console.log(data)
     const response = await api.messengerRequests.findConversationBetweenUser(url)
     // console.log(response)
-    return response?.data || []
+    return response?.data
 }
 
 

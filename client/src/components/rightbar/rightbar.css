@@ -3,13 +3,13 @@
 }
 .leftBar{
   /*width: 75%;*/
+  padding: 15px;
   min-width: 250px;
   border-radius: 10px;
   -webkit-box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   box-shadow: 0px 0px 16px -8px rgba(0, 0, 0, 0.68);
   background-color: white;
   margin-left: 20px;
-  padding-bottom: 15px;
   margin-bottom: 25px;
 
 }
@@ -40,11 +40,11 @@
 }
 
 .rightbarTitle{
-  margin-bottom: 20px;
-  text-align:center;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  /*text-align:center;*/
   font-weight: bold;
   font-size: 20px;
-  padding-top: 20px;
 }
 
 .rightbarFriendList {
@@ -57,13 +57,19 @@
 
 .rightbarInfo{
   margin-bottom: 30px;
-  margin-left: 10px;
 }
 
 .rightbarInfoItem{
-  margin-bottom: 10px;
+  margin-bottom: 17px;
+  display: flex;
+  align-items: center;
 }
+.rightBarIcon{
+  font-size: 24px !important;
+  margin-right: 10px;
+  color: #8C939D;
 
+}
 .rightbarInfoKey{
   font-weight: 500;
   margin-right: 15px;
@@ -77,7 +83,8 @@
 .rightbarFollowings{
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+
+  justify-content: space-around;
 }
 
 .rightbarFollowing{
@@ -91,5 +98,10 @@
   width: 100px;
   height: 100px;
   object-fit: cover;
+  background-color: #E8EDF4;
   border-radius: 5px;
+}
+.rightbarFollowingName{
+  margin-top: 5px;
+  font-weight: 550;
 }

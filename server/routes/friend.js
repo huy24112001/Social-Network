@@ -7,7 +7,7 @@ router.use(bodyParser.urlencoded({ extended: true }));
 
 
 router.get('/search', async (req, res) => {
-    console.log(req.query.username)
+    // console.log(req.query.username)
     if (req.query.username) {
         var username = req.query.username
         // console.log(username)
@@ -27,7 +27,7 @@ router.get('/search', async (req, res) => {
 
 
 router.post('/send-request',  async (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     var match= {
         receiver: req.body.user_query_id
     }
@@ -73,72 +73,51 @@ router.post('/send-request',  async (req, res) => {
 
 //{{url}}/accept-friend?id=....&status=2
 
-router.post('/accept-friend',auth, async (req, res) => {
-    try{
-        if(req.query.status == 1 || req.query.status == 3)
-        {
-            let actionA = await Friend.findOneAndRemove({
-                requester: req.user._id,
-                receiver: req.query.id,
-            });
+router.put('/accept', async (req, res) => {
+    // console.log(req.body.params)
+    const id = req.body.params
+    Friend.updateOne({ requester : id.userID_req,receiver : id.userID_rec} ,{status :3,friends : true},function (err,docs) {
+        if (err)
+            console.log(err);
+        else
+            console.log(docs)
+    })
+    Friend.updateOne({requester : id.userID_rec , receiver : id.userID_req},{status :3,friends : true},function (err,docs) {
+        if (err)
+            console.log(err);
+        else
+            console.log('docs')
+    })
+    await User.findOneAndUpdate({_id: id.userID_req}, {
+        $push: {friends: id.userID_rec}
+    });
 
-            let actionB = await Friend.findOneAndRemove({
-                requester: req.query.id,
-                receiver: req.user._id,
-            });
-
-            await User.findOneAndUpdate({_id: req.user._id}, {
-                $pull: {friends: actionA._id}
-            });
-
-            await User.findOneAndUpdate({_id: req.query.id},{
-                $pull: {friends: actionB._id}
-            });
-
-            return res.redirect('back')
-        }
-        else if(req.query.status === 2)
-        {
-            await Friend.findOneAndUpdate({
-                requester: req.user._id,
-                receiver: req.query.id
-            }, {
-                $set: {status: 3, friends: true}
-            });
-
-            await Friend.findOneAndUpdate({
-                requester: req.query.id,
-                receiver: req.user._id
-            }, {
-                $set: {status: 3, friends: true}
-            });
-
-            return res.redirect('back')
-        }
-    }catch(err)
-    {
-        console.log(err);
-        return;
-    }
+    await User.findOneAndUpdate({_id: id.userID_rec}, {
+        $push: {friends: id.userID_req}
+    });
 })
 
 
-router.get('/friends', auth, async (req, res) => {
-    const match = {friends : true }
+router.get('/list-friends', async (req, res) => {
+    // console.log(req.query.user_info);
+     const arr = req.query.user_info.friends;
+
     try {
-        await req.user.populate({
-            path: 'friends',
-            match: match
+        let result = []
+        console.log('huy hia huoc')
+        for(let i=0;i< arr.length;i++){
+          const user = await User.findById(arr[i])
+            // result = result.concat([user]);
+            result =  result.concat([{username : user.username , profilePicture : user.profilePicture }])
+        }
+        console.log(result)
 
-        }).execPopulate();
-        // res.send(req.user.friends)
-
-        var friendArr = await Promise.all(req.user.friends.map(friend => User.findById(friend.receiver)))
-        res.send(friendArr)
+        // var friendArr = await Promise.all(req.user.friends.map(friend => User.findById(friend.receiver)))
+        res.status(200).send({result: result})
 
 
     } catch (e) {
-        res.status(500).send()
+        res.status(500).send({result : "LOI"})
     }
 })
 
@@ -162,7 +141,7 @@ router.get('/status', async (req, res) => {
     }
 })
 
-router.delete('/remove-invite', async (req, res) => {
+router.delete('/remove', async (req, res) => {
     // console.log(req.query)
     try {
 
@@ -174,7 +153,16 @@ router.delete('/remove-invite', async (req, res) => {
             requester: req.query.user_query_id,
             receiver:   req.query.user_id
         });
+    if(req.query.status === '3'){
 
+        await User.findOneAndUpdate({_id: req.query.user_id}, {
+            $pull: {friends: req.query.user_query_id}
+        });
+
+        await User.findOneAndUpdate({_id: req.query.user_query_id}, {
+            $pull: {friends: req.query.user_id}
+        });
+    }
         console.log(rs1 + ' ' + rs2);
 
         res.send({result : 0})
@@ -207,6 +195,37 @@ router.get('/friend-request', auth, async (req, res) => {
     }
 
 
+})
+
+
+router.get('/check-invite', async (req, res) => {
+     console.log(req.query.userID)
+    try {
+        Friend.find({requester : req.query.userID, status : 2}, async function (err, docs) {
+            if (err)
+                console.log(err);
+            else {
+                console.log(docs.length)
+                let data = [];
+                if (docs.length !== 0) {
+                    for (let i = 0; i < docs.length; i++) {
+                        const rs = await User.findById(docs[i].receiver.valueOf())
+                        data = data.concat([rs]);
+                    }
+                    //  console.log(data)
+                    res.status(200).send({result: data})
+                } else
+                    res.status(200).send({result: []})
+            }
+        })
+
+
+
+    } catch (e) {
+        res.status(500).send(e)
+    }
+}, (err) => {
+    console.log(err);
 })
 
 

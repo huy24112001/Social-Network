@@ -6,6 +6,7 @@ import Topbar from "../../components/topbar/Topbar";
 import { useParams } from "react-router-dom";
 import service from "../../service";
 import Context from "../../store/context";
+import { Info } from "react-feather";
 
 
 const Messenger = () => {
@@ -16,6 +17,7 @@ const Messenger = () => {
   const [onlineUsers, setOnlineUsers] = useState([])
   useEffect(async () => {
     const conversations = await service.messengerService.getConversationsOfUser(infoUser._id)
+    console.log(infoUser._id)
   
     // console.log(conversations)
     dispatch({
@@ -23,7 +25,7 @@ const Messenger = () => {
       payload: conversations
     })
     
-  }, [infoUser])
+  }, [infoUser,conversationId])
 
   useEffect(() => {
     if(socket){
@@ -42,7 +44,6 @@ const Messenger = () => {
   useEffect( async () => {
     if (conversationId){
       const messages = await service.messengerService.getMessagesOfConversation(conversationId)
-      console.log(messages)
       const conversation = await service.messengerService.getConversation(conversationId)
       const receiver = conversation?.members.filter((user) => user._id !== infoUser._id)[0];
       // console.log(receiver)

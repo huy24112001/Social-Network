@@ -50,12 +50,12 @@ const UserSchema = new mongoose.Schema({
     city: {
         type: String,
         max: 50,
-        default: 'Khong co thong tin'
+        default: 'Chưa cật nhật thông tin'
     },
     from: {
         type: String,
         max: 50,
-        default: 'Khong co thong tin'
+        default: 'Chưa cật nhật thông tin'
     },
     relationship: {
         type: Number,
@@ -65,7 +65,7 @@ const UserSchema = new mongoose.Schema({
     study: {
         type: String,
         max: 50,
-        default: 'Khong co thong tin'
+        default: 'Chưa cật nhật thông tin'
     }
 },
     {
