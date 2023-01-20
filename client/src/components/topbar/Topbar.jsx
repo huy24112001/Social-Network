@@ -52,7 +52,7 @@ export default function Topbar() {
 
 
 
-  const [countFriendRequestNoti, setCountFriendRequestNoti] = useState(false)
+  const [countFriendRequestNoti, setCountFriendRequestNoti] = useState(true)
   const [messageNoti, setMessageNoti] = useState(false)
   const [notification, setNotification] = useState(true)
 

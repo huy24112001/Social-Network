@@ -11,48 +11,49 @@ export default function Rightbar({profile,listFriend}) {
   const [state, dispatch] = useContext(Context)
   
   // console.log(state)
+  const socket = state.socket
+  const infoUser = state.infoUser
+  const [onlineUsers, setOnlineUsers] = useState([])
+  const [onlineFriends, setOnlineFriends] = useState([]);
+  const [friends, setFriends] = useState([]);
+
+
+  useEffect(() => {
+    if(socket){
+      socket.emit('addUser', infoUser._id)
+      console.log("connected")
+      socket.on("getUsers", (users) => {
+        setOnlineUsers(
+          infoUser.friends.filter((f) => users.some((u) => u.userId === f))
+        );
+        console.log(users)
+      });
+    }
+  }, [socket, infoUser])
+
+  useEffect(() => {
+    const getFriends = async () => {
+        const result = await service.userService.getFollowings(infoUser?._id)
+        console.log(result)
+        setFriends(result);
+    };
+    getFriends();
+    // return () => {
+    //     setFriends([]); 
+    //   };
+  }, [infoUser]);
+
+  useEffect(() => {
+    setOnlineFriends(friends.filter((f) => onlineUsers.includes(f._id)));
+    // setOnlineFriends(onlineUsers);
+    // console.log(onlineUsers)
+    // return () => {
+    //     setOnlineFriends([]); 
+    //   };
+  
+
+}, [friends, onlineUsers]);
   const HomeRightbar = () => {
-    const socket = state.socket
-    const infoUser = state.infoUser
-    const [onlineUsers, setOnlineUsers] = useState([])
-    const [onlineFriends, setOnlineFriends] = useState([]);
-    const [friends, setFriends] = useState([]);
-
-
-    useEffect(() => {
-      if(socket){
-        socket.emit('addUser', infoUser._id)
-        console.log("connected")
-        socket.on("getUsers", (users) => {
-          setOnlineUsers(
-            infoUser.friends.filter((f) => users.some((u) => u.userId === f))
-          );
-        });
-      }
-    }, [socket, infoUser])
-
-    useEffect(() => {
-      const getFriends = async () => {
-          const result = await service.userService.getFollowings(infoUser?._id)
-          console.log(result)
-          setFriends(result);
-      };
-      getFriends();
-      return () => {
-          setFriends([]); 
-        };
-    }, [infoUser]);
-
-    useEffect(() => {
-      setOnlineFriends(friends.filter((f) => onlineUsers.includes(f._id)));
-      // setOnlineFriends(onlineUsers);
-      // console.log(onlineUsers)
-      return () => {
-          setOnlineFriends([]); 
-        };
-    
-
-  }, [friends, onlineUsers]);
     return (
       <>
         <div className="birthdayContainer">
@@ -64,7 +65,7 @@ export default function Rightbar({profile,listFriend}) {
         <img className="rightbarAd" src="assets/ad.png" alt="" />
         <h4 className="rightbarTitle">Online Friends</h4>
         <ul className="rightbarFriendList">
-          {onlineFriends.map((u) => (
+          {onlineFriends?.map((u) => (
             <Online key={u._id} user={u} />
           ))}
         </ul>
