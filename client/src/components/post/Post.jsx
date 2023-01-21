@@ -304,7 +304,8 @@ export default function Post({ post }) {
             <Box
               sx={{
                 display: 'flex',
-                paddingTop: '2px'
+                paddingTop: '2px',
+                // marginTop: '20px'
               }}
             >
 
