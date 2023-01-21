@@ -100,6 +100,7 @@ export default function Comment({ comment }) {
                         <MoreHorizIcon />
                       </IconButton>
                     } 
+                    position="right center"
                     
                   >
                     <div className={'popup'}>
