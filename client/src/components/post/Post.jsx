@@ -65,13 +65,14 @@ export default function Post({ post }) {
       socket.emit('comment', {
         user: infoUser,
         post: post._id,
-        content: commentText
+        content: commentText,
+        // user: infoUser._id
       })
-      await service.postService.createComment({data: {
-        user: infoUser._id,
-        post: post._id,
-        content: commentText
-      }, token: infoUser.token})
+      // await service.postService.createComment({data: {
+      //   user: infoUser._id,
+      //   post: post._id,
+      //   content: commentText
+      // }, token: infoUser.token})
       setCommentText('')
 ////////////////////////////////////
       await service.notification.postNotification({
@@ -97,6 +98,7 @@ export default function Post({ post }) {
   useEffect(() => {
     if (socket){
       socket.on('replyComment', (data) => {
+        console.log(data)
         if(data.post === post._id){
           setComments([...comments, data])
         }

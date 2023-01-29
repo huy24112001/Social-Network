@@ -25,7 +25,9 @@ const conversationRoute = require("./routes/conversations")
 const messageRoute = require("./routes/messages")
 const cookies = require("cookie-parser");
 const bodyParser = require("body-parser")
-const NotificationRoute = require("./routes/notification")
+const NotificationRoute = require("./routes/notification");
+const Post = require("./models/Post");
+const Comment = require("./models/Comment");
 
 const PORT = process.env.PORT || 5000
 /************************************************************/
@@ -86,10 +88,38 @@ io.on('connection', (socket) => {
         socket.join(id)
     })
 
-    socket.on('comment', (data) => {
-        data.createdAt = Date()
-        // console.log(data)
-        io.emit('replyComment', data)
+    socket.on('comment', async (data) => {
+        // data.createdAt = Date()
+        const user = data.user
+        const comment_data = {
+            user: user._id,
+            post: data.post,
+            content: data.content,
+        }
+        const post = await Post.findById(data.post)
+        if(post) {
+            const comment = new Comment({
+                ...comment_data, 
+            })
+            
+
+            const return_data = {
+                ...comment._doc,
+                user: {
+                    _id: user._id,
+                    username: user.username,
+                    profilePicture: user.profilePicture
+                },
+                createdAt: Date()
+            }
+
+            await comment.save()
+            post.comments.push(comment)
+            await post.save()
+        io.emit('replyComment', 
+            return_data
+        )
+        }
     })
 
     socket.on('sendLike', (data) => {

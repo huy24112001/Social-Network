@@ -8,8 +8,12 @@ import { formatDistance} from 'date-fns';
 import noAvatar from "../../img/person/noAvatar.png"
 import { useNavigate } from "react-router-dom";
 import "./comment.css"
+import likeImg from "../../img/like.png"
+import heartImg from "../../img/heart.png"
 
 export default function Comment({ comment }) {
+
+  const [like, setLike] = useState(comment?.likes?.length)
 
   let [isLikedComment, setLikeComment] = useState(false);
   const timestamp = comment.createdAt ? new Date(comment.createdAt) : '';
@@ -22,6 +26,8 @@ export default function Comment({ comment }) {
 
   const handleOnClickLikeComment = () => {
     isLikedComment ? setLikeComment(false) : setLikeComment(true);
+    setLike(isLikedComment ? like-1 : like+1)
+
    
   }
   
@@ -43,7 +49,7 @@ export default function Comment({ comment }) {
     >
       <Grid container flexWrap="nowrap">
         <Grid item sx={{ paddingRight: "1rem" }}>
-          <img src="../../assets/person/1.jpeg" className="avatar-comment" alt="lgoog" />
+          <img src={comment.user.profilePicture} className="avatar-comment" alt="lgoog" />
         </Grid>
         <Grid item flexGrow="1">
           <Box>
@@ -122,10 +128,20 @@ export default function Comment({ comment }) {
               </Grid>
             </Grid>
           </Box>
-        <>{ isLikedComment ? <span className="liked-comment" onClick={handleOnClickLikeComment}>Like </span> :
-            <span className="not-like-comment" onClick={handleOnClickLikeComment}>Like </span> }
+        <>
+          { 
+            isLikedComment ? 
+              <span className="liked-comment" onClick={handleOnClickLikeComment}>Like </span> :
+              <span className="not-like-comment" onClick={handleOnClickLikeComment}>Like </span> 
+          }
 
             <span className="respone-comment" onClick={handleOnClickResponeComment}>Respone </span>
+            <Box>
+              <img className="likeIcon" src={likeImg} alt="" />
+              {/* <img className="likeIcon" src={heartImg} onClick={handleOnClickLikeComment} alt="" /> */}
+              <span className="postLikeCounter">{like}</span>
+
+            </Box>
         </>
         </Grid>
       </Grid>

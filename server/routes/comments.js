@@ -32,4 +32,29 @@ router.post('/create', auth, async(req, res) => {
     }
 })
 
+// like a comment
+router.put("/:postId/like/:commentId", auth ,async (req, res) => {
+    try {
+        const postId = req.params.postId
+        const commentId = req.params.id
+        const likerId = req.user._id
+        // console.log(likerId)
+        const post = await Post.findById(postId)
+        if(!post.likes.includes(likerId)) {
+            await post.updateOne({
+                $push: {likes: likerId}
+            })
+            res.status(200).json("The post has been liked")
+        } else {
+            await post.updateOne({
+                $pull: {likes: likerId}
+            })
+            res.status(200).json("The post has been disliked")
+        }
+    } catch (error) {
+        res.status(500).json(err)
+
+    }
+})
+
 module.exports = router
