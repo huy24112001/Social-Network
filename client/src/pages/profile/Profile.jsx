@@ -31,6 +31,7 @@ import service from "../../service";
 export default function Profile() {
 
     const [state,dispatch] = useContext(Context)
+    const socket = state.socket
     const location = useLocation()
     const profile = location?.state?.profile;
     const [profileState, setProfileState] = useState(profile ? profile : null)
@@ -82,9 +83,12 @@ export default function Profile() {
             const rs = await removeInviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id , status : statusFriend})
             // console.log(rs.result)
             if (rs.result === 0 ) setStatusFriend(0);
-
+            
         } else if (statusFriend === 3) {
-
+            socket.emit('removeFriend',{
+                user_req: state.infoUser._id, user_rec: profileState._id
+            })
+            
             const rs = await removeFriend({user_id: state.infoUser._id, user_query_id: profileState._id,status : statusFriend})
             if (rs.result === 0) setStatusFriend(0)
 

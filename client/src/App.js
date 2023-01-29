@@ -19,7 +19,8 @@ import Messenger from "./pages/messenger/Messenger";
 function App() {
   const [state , dispatch] = useContext(Context)
   const user = state.infoUser
-  
+  const socket = state.socket
+
   useEffect(() => {
     const socket = io(process.env.REACT_APP_WS);
     // socket.on("connection", (data) => {
@@ -35,6 +36,27 @@ function App() {
     })
     return () =>  socket.close()
   }, []);
+
+  useEffect(() => {
+    if (socket){
+      socket.once('acceptedFriend', (data) => {
+        // console.log(data)
+        dispatch({
+          type: 'ACCEPT_FRIEND',
+          payload: data
+        })
+      })
+      
+      socket.once('removedFriend', (data) => {
+        console.log(data)
+        dispatch({
+          type: 'REMOVE_FRIEND',
+          payload: data
+        })
+      })
+    }
+
+  }, [socket])
 
 
   return (

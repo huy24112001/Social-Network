@@ -195,6 +195,10 @@ export default function Topbar() {
                           : arrFriendReq.map((value) => {
 
                             async function handleAcceptFriend() {
+                              socket.emit('acceptFriend', {
+                                userID_req : value._id, 
+                                userID_rec : infoUser._id
+                              })
                               const rs = await AcceptFriend({userID_req : value._id, userID_rec : infoUser._id})
                             }
 

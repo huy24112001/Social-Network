@@ -122,6 +122,37 @@ io.on('connection', (socket) => {
         }
     })
 
+    socket.on('acceptFriend', (data) => {
+        // const {userID_req, userID_rec} = data
+        const requester = getUser(data.userID_req);
+        const receiver = getUser(data.userID_rec);
+        console.log(requester)
+        console.log(receiver)
+        io.to(receiver.socketId).emit("acceptedFriend",
+            data.userID_req
+        );
+        if(requester){
+            io.to(requester.socketId).emit("acceptedFriend", 
+                data.userID_rec
+            );
+        }
+    })
+
+    socket.on('removeFriend', (data) => {
+        const requester = getUser(data.user_req);
+        const receiver = getUser(data.user_rec);
+        // console.log(requester)
+        // console.log(receiver)
+        io.to(receiver.socketId).emit("removedFriend",
+            data.user_req
+        );
+        if(requester){
+            io.to(requester.socketId).emit("removedFriend", 
+                data.user_rec
+            );
+        }
+    })
+
     socket.on('sendLike', (data) => {
         socket.broadcast.emit('like', data)
 

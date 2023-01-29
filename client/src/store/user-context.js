@@ -57,6 +57,29 @@ function reducer(state, action){
                 conversationSelectMessages: null,
                 conversationSelectReceiver: null
             }
+
+        case 'ACCEPT_FRIEND': 
+            var user = JSON.parse(localStorage.getItem("infoUser"))
+
+            return {
+                ...state,
+                infoUser: {
+                    ...user,
+                    friends: [...user.friends, action.payload]
+                }
+
+            }
+        case 'REMOVE_FRIEND': 
+            var user = JSON.parse(localStorage.getItem("infoUser"))
+
+            return {
+                ...state,
+                infoUser: {
+                    ...user,
+                    friends: user.friends.filter(item => item !== action.payload)
+                }
+
+            }
         default :
             throw  new Error('Invalid Action')
 
