@@ -21,7 +21,7 @@ function App() {
   const user = state.infoUser
   
   useEffect(() => {
-    const socket = io("ws://localhost:5000");
+    const socket = io(process.env.REACT_APP_WS);
     // socket.on("connection", (data) => {
     //   setArrivalMessage({
     //     sender: data.senderId,

@@ -44,7 +44,7 @@ export default function Rightbar({profile,listFriend}) {
   }, [infoUser]);
 
   useEffect(() => {
-    setOnlineFriends(friends.filter((f) => onlineUsers.includes(f._id)));
+    setOnlineFriends(friends?.filter((f) => onlineUsers?.includes(f._id)));
     // setOnlineFriends(onlineUsers);
     // console.log(onlineUsers)
     // return () => {
@@ -83,41 +83,41 @@ export default function Rightbar({profile,listFriend}) {
           <div className="rightbarInfoItem">
             <House className="rightBarIcon"/>
             <span className="rightbarInfoKey">Sống tại</span>
-            <span className="rightbarInfoValue">{profile.city}</span>
+            <span className="rightbarInfoValue">{profile?.city}</span>
           </div>
           <div className="rightbarInfoItem">
             <LocationOn className="rightBarIcon"/>
             <span className="rightbarInfoKey">Đến từ</span>
-            <span className="rightbarInfoValue">{profile.from}</span>
+            <span className="rightbarInfoValue">{profile?.from}</span>
           </div>
           <div className="rightbarInfoItem">
             <School className="rightBarIcon"/>
             <span className="rightbarInfoKey">Đã học tại</span>
-            <span className="rightbarInfoValue">{profile.study}</span>
+            <span className="rightbarInfoValue">{profile?.study}</span>
           </div>
           <div className="rightbarInfoItem">
             <Favorite className="rightBarIcon"/>
             <span className="rightbarInfoKey">Mối quan hệ</span>
-            <span className="rightbarInfoValue">{profile.relationship === 3 ? "Độc thân" :
-                profile.relationship === 2 ? " Đang hẹn hò" : "Chưa cật nhật thông tin"  }</span>
+            <span className="rightbarInfoValue">{profile?.relationship === 3 ? "Độc thân" :
+                profile?.relationship === 2 ? " Đang hẹn hò" : "Chưa cật nhật thông tin"  }</span>
           </div>
         </div>
       </div>
           <div className='leftBar'>
         <h4 className="rightbarTitle">Bạn Bè</h4>
-            <p style={{color:'black', marginBottom:10}}>{`${profile.friends.length} người bạn`}</p>
+            <p style={{color:'black', marginBottom:10}}>{`${profile?.friends?.length} người bạn`}</p>
         <div className="rightbarFollowings">
 
           {
-            listFriend && listFriend.map((value,index) =>{
+            listFriend && listFriend?.map((value,index) =>{
                 console.log(value)
               return   <div className="rightbarFollowing" key={index}>
                 <img
-                    src={value.profilePicture === "" ? noAvatar : value.profilePicture}
+                    src={value?.profilePicture === "" ? noAvatar : value?.profilePicture}
                     alt="Avatar"
                     className="rightbarFollowingImg"
                 />
-                <span className="rightbarFollowingName">{value.username}</span>
+                <span className="rightbarFollowingName">{value?.username}</span>
               </div>
 
               })

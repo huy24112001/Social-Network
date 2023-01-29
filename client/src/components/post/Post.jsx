@@ -320,7 +320,7 @@ export default function Post({ post }) {
                   marginRight:'5px'
                 }}
                 alt="avatar"
-                src={userAvatar}
+                src={infoUser?.profilePicture}
 
               />
               <Box padding="0.1rem 0.5rem" border="1px solid #ccc" borderRadius={18} width='100%'>
