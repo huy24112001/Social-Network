@@ -81,7 +81,7 @@ export async function createMessage(url, {token, data}) {
   }
 
 export async function getConversationsOfUser(url) {
-    console.log(url)
+    // console.log(url)
     try {
         const headers =  {
             "Content-Type": "application/json",

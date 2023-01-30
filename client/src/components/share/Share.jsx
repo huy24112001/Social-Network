@@ -55,7 +55,7 @@ export default function Share() {
     <div className="share">
       <div className="shareWrapper">
         <div className="shareTop">
-          <img className="shareProfileImg" src={infoUser.profilePicture === "" ? noAvatar : infoUser.profilePicture} alt="avatar" />
+          <img className="shareProfileImg" src={infoUser.profilePicture} alt="avatar" />
           <textarea
             placeholder={`${infoUser?.username} ơi , Bạn đang nghĩ gì thế ?`}
             className="shareInput"

@@ -255,7 +255,7 @@ export default function Post({ post }) {
         {
           display ? (
             <>
-<div className="postCenter">
+        <div className="postCenter">
           <span className="postText">
             {/* {post?.desc.length > 500 ? `${post?.desc.substring(0,500)}...` : post?.desc} */}
             {post?.desc}

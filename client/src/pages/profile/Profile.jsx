@@ -107,8 +107,13 @@ export default function Profile() {
 
     }
 
-    function handleUpdateProfile() {
-        const rs = updateProfileServer({update_Profile : updateProfile, idProfile : profileState._id})
+    async function handleUpdateProfile() {
+        const rs = await updateProfileServer({update_Profile : updateProfile, idProfile : profileState._id})
+        console.log(rs)
+    }
+
+    const handleDoneUpdate = async () => {
+        const resProfile = await service.authenService.getUserInfo({userId: state.infoUser._id})
     }
 
     const convertToBase64 = (file) => {

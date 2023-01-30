@@ -247,7 +247,7 @@ export default function Topbar() {
 
           <div className="user">
             <img
-                src={state.infoUser.profilePicture === '' ? noAvatar : state.infoUser.profilePicture} alt="" className="imgNav"/>
+                src={state?.infoUser?.profilePicture} alt="" className="imgNav"/>
             <span style={{position: "relative"}} className="name">{state.infoUser.username}</span>
             <ul className="menu">
               <li className="itemMenu" style={{cursor:'pointer'}}><div onClick={()=> navigate(`/profile/${state.infoUser._id}`,{state: {profile : state.infoUser }})}  style={{color : "#070707",textDecoration: "none",cursol : "pointer"}}>Trang cá nhân</div></li>

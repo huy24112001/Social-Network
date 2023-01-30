@@ -28,6 +28,13 @@
     font-weight: 600;
 }
 
+.likeIcon{
+    width: 15px;
+    height: 15px;
+    margin-right: 5px;
+    cursor: pointer;
+}
+
 .not-like-comment{
     margin-inline-start: 10px;
     cursor: pointer;

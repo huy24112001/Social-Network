@@ -83,7 +83,7 @@ const MessengerSideBarContent = ({onlineUsers}) => {
     const [state, dispatch] = useContext(Context)
     const infoUser = state.infoUser
     const conversations = state.conversations
-    console.log(conversations)
+    // console.log(conversations)
     const {category, conversationId} = useParams()
     // console.log(onlineUsers)
     // console.log(conversations)

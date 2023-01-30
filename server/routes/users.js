@@ -11,8 +11,8 @@ router.put("/update-profile", async(req,res) => {
                 $set: newProfile.update_Profile
             })
             // console.log('huy he huoc')
-            // console.log(user)
-            res.status(200).json("Account has been updated")
+            console.log(user)
+            res.status(200).json(user)
         } catch (error) {
             return res.status(500).json(error)
         }
