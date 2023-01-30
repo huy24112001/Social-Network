@@ -99,18 +99,19 @@ router.put('/accept', async (req, res) => {
 
 
 router.get('/list-friends', async (req, res) => {
-    // console.log(req.query.user_info);
-     const arr = req.query.user_info.friends;
+
+     const arr = req.query.user_info;
 
     try {
         let result = []
         // console.log('huy hia huoc')
+
         for(let i=0;i< arr.length;i++){
           const user = await User.findById(arr[i])
             // result = result.concat([user]);
             result =  result.concat([{username : user.username , profilePicture : user.profilePicture }])
         }
-        // console.log(result)
+        console.log(result)
 
         // var friendArr = await Promise.all(req.user.friends.map(friend => User.findById(friend.receiver)))
         res.status(200).send({result: result})

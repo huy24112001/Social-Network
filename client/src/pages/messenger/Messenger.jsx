@@ -18,13 +18,13 @@ const Messenger = () => {
   useEffect(async () => {
     const conversations = await service.messengerService.getConversationsOfUser(infoUser._id)
     console.log(infoUser._id)
-  
+
     // console.log(conversations)
     dispatch({
       type: 'GET_CONVERSATIONS',
       payload: conversations
     })
-    
+
   }, [infoUser,conversationId])
 
   useEffect(() => {
@@ -39,8 +39,8 @@ const Messenger = () => {
     }
   }, [socket, infoUser])
   // console.log(onlineUsers)
-  
-  
+
+
   useEffect( async () => {
     if (conversationId){
       const messages = await service.messengerService.getMessagesOfConversation(conversationId)
@@ -57,9 +57,9 @@ const Messenger = () => {
       })
       // console.log(conversation)
     }
-  
+
   }, [conversationId])
-  
+
   return (
     <>
         <Topbar />

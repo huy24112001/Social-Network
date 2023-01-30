@@ -100,7 +100,7 @@ router.get("/timeline/:userId", async (req,res) => {
         // console.log(currentUser)
         const userPosts = await Post.find({userId: currentUser._id}).populate('userId').populate({path:'comments', populate: {
             path: 'user',
-            select: ['username', 'profilePicture']
+            select: 'username'
           } })
         // console.log(userPosts)
         // const userPosts = await Post.find({userId: userId})
@@ -108,7 +108,7 @@ router.get("/timeline/:userId", async (req,res) => {
             currentUser.friends.map((friendId) => {
                 return Post.find({userId: friendId}).populate('userId').populate({path:'comments', populate: {
                     path: 'user',
-                    select: ['username', 'profilePicture']
+                    select: 'username'
                   } })
             })
         )
@@ -128,7 +128,7 @@ router.get("/profile/:userId", async (req, res) => {
         console.log(user)
         const posts = await Post.find({ userId: user._id }).populate('userId').populate({path:'comments', populate: {
             path: 'user',
-            select: ['username', 'profilePicture']
+            select: 'username'
         } })
     //   const posts = await Post.find({ userId: user._id }).populate('userId').populate('comments').exec((err, comments) => {
     //     comments.map((comment) => console.log(comment))
@@ -136,7 +136,7 @@ router.get("/profile/:userId", async (req, res) => {
     //   posts.map((post) => {
     //     const comments = post.comments
     //     comments.map((comment) => {
-            
+
     //     })
     //   })
       res.status(200).json(posts);

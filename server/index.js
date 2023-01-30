@@ -165,7 +165,7 @@ io.on('connection', (socket) => {
 
     socket.on("addUser", (userId) => {
         addUser(userId, socket.id);
-        // console.log(users)
+        console.log(users)
         io.emit("getUsers", users);
       });
 

@@ -27,6 +27,7 @@ import { useParams } from "react-router";
 import noAvatar from "../../img/person/noAvatar.png"
 import noCover from "../../img/person/noBackground.jpg"
 import service from "../../service";
+import {Cancel, PermMedia} from "@material-ui/icons";
 
 export default function Profile() {
 
@@ -41,9 +42,11 @@ export default function Profile() {
     const [listFriend,setListFriend] = useState([])
 
     const [showEditProfile,setShowEditProfile] = useState(false)
-    const [updateProfile,setUpdateProfile] = useState({from : String, city : String,relationship : Number,study : String})
+    const [updateProfile,setUpdateProfile] = useState({from : String, city : String,relationship : Number,study : String, profilePicture : String})
     const {userId} = useParams()
     // console.log(userId)
+
+    const [file, setFile] = useState(null);
 
     useEffect( async () => {
       const resProfile = await service.authenService.getUserInfo({userId})
@@ -68,7 +71,8 @@ export default function Profile() {
 
     useEffect(async () => {
         if (profileState){
-           const rs = await getListFriend({user_info : profileState})
+
+           const rs = await getListFriend({user_info: profileState.friends})
             setListFriend(rs.result)
         }
     },[profileState])
@@ -83,12 +87,12 @@ export default function Profile() {
             const rs = await removeInviteFriend({user_id: state.infoUser._id, user_query_id: profileState._id , status : statusFriend})
             // console.log(rs.result)
             if (rs.result === 0 ) setStatusFriend(0);
-            
+
         } else if (statusFriend === 3) {
             socket.emit('removeFriend',{
                 user_req: state.infoUser._id, user_rec: profileState._id
             })
-            
+
             const rs = await removeFriend({user_id: state.infoUser._id, user_query_id: profileState._id,status : statusFriend})
             if (rs.result === 0) setStatusFriend(0)
 
@@ -107,11 +111,35 @@ export default function Profile() {
         const rs = updateProfileServer({update_Profile : updateProfile, idProfile : profileState._id})
     }
 
+    const convertToBase64 = (file) => {
+        return new Promise((resolve, reject) => {
+            const fileReader = new FileReader();
+            fileReader.readAsDataURL(file);
+            fileReader.onload = () => {
+                resolve(fileReader.result);
+            };
+            fileReader.onerror = (error) => {
+                reject(error);
+            };
+        });
+    };
+
+
+    const handleFile = async (e) => {
+        e.preventDefault();
+        let filename = ''
+        const encodedString = await convertToBase64(e.target.files[0])
+        // console.log(encodedString)
+        setFile(e.target.files[0])
+        // setPost(encodedString)
+        setUpdateProfile({...updateProfile, profilePicture : encodedString})
+    }
+
     return (
         <>
             {profileState ? (
             <>
-            <Dialog   onClose={()=> setShowEditProfile(false)} open={showEditProfile}>
+            <Dialog  fullWidth={true} maxWidth={'sm'}   onClose={()=> setShowEditProfile(false)} open={showEditProfile}>
                 <DialogTitle >
                     Thông tin cá nhân
                     <IconButton
@@ -128,14 +156,35 @@ export default function Profile() {
                 </DialogTitle>
 
                 <form onSubmit={handleUpdateProfile}>
-                    <DialogContent dividers>
+                    <DialogContent dividers  >
                         <DialogContentText>
                             Chỉnh sửa các thông tin sau đây:
                         </DialogContentText>
+                        {file ?    (
+                            <div className="shareImgContainer">
+                                <img style={{width:'40%',marginLeft:120,marginTop:20}}  src={URL.createObjectURL(file)} alt="" />
+                                <Cancel className="shareCancelImg" onClick={() => {
+                                    setFile(null)
+                                    // setPost( "")
+                                    setUpdateProfile({...updateProfile, profilePicture: ''})
+                                }} />
+                            </div>
+                        ) :  <div style={{alignContent:'center',justifyContent:'center'}}><img style={{width:'40%',marginLeft:120,marginTop:20}} src={noAvatar} alt="" /></div>
+                            }
+                        <label className="shareOption">
+                            <span style={{fontSize:14,color:'blue',marginLeft:135,marginTop:10,marginBottom:10}}>Thêm Ảnh Đại diện</span>
+                            <input
+                                style={{ display: "none" }}
+                                type="file"
+                                id="file"
+                                accept=".png,.jpeg,.jpg"
+                                onChange={(e) => handleFile(e)}
+                            />
+                        </label>
                         <TextField margin="normal" variant="standard" id="Sống tại" label="Sống tại" type="text"
                                    fullWidth
                                    onChange={(e) => setUpdateProfile({from :updateProfile.from , city : e.target.value ,
-                                       relationship : updateProfile.relationship,study : updateProfile.study})}
+                                       relationship : updateProfile.relationship,study : updateProfile.study, profilePicture: updateProfile.profilePicture})}
                                    value={updateProfile.city}
                                    inputProps={{ minLength: 2 }}
                                    required
@@ -143,14 +192,14 @@ export default function Profile() {
                         <TextField margin="normal" variant="standard" id="Đến từ" label="Đến từ" type="text"
                                    fullWidth
                                    onChange={(e) => setUpdateProfile({from : e.target.value, city : updateProfile.city,
-                                       relationship : updateProfile.relationship,study : updateProfile.study})}
+                                       relationship : updateProfile.relationship,study : updateProfile.study,profilePicture: updateProfile.profilePicture})}
                                    value={updateProfile.from}
                                    required
                         />
                         <TextField margin="normal" variant="standard" id="Đã học tại" label="Đã học tại"
                                    type="text" fullWidth
                                    onChange={(e) => setUpdateProfile({from : updateProfile.from, city : updateProfile.city,
-                                       relationship : updateProfile.relationship,study :e.target.value })}
+                                       relationship : updateProfile.relationship,study :e.target.value,profilePicture: updateProfile.profilePicture })}
                                    value={updateProfile.study}
                                    required/>
 
@@ -162,7 +211,7 @@ export default function Profile() {
                                 name="radio-buttons-group" row={true}
                                 value={updateProfile.relationship}
                                 onChange={(e) => setUpdateProfile({from : updateProfile.from, city : updateProfile.city,
-                                    relationship : e.target.value,study :updateProfile.study })}
+                                    relationship : e.target.value,study :updateProfile.study,profilePicture: updateProfile.profilePicture })}
                             >
                                 <FormControlLabel value={3} control={<Radio />} label="Độc thân" />
                                 <FormControlLabel value={2} control={<Radio />} label="Đang hẹn hò" />
