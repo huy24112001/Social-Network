@@ -107,8 +107,9 @@ export default function Profile() {
 
     }
 
-    async function handleUpdateProfile() {
-        const rs = await updateProfileServer({update_Profile : updateProfile, idProfile : profileState._id})
+    function handleUpdateProfile() {
+        console.log('update')
+        const rs = updateProfileServer({update_Profile : updateProfile, idProfile : profileState._id})
         console.log(rs)
     }
 

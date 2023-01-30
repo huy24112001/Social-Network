@@ -213,8 +213,8 @@ export default function Comment({ comment }) {
 
                   <span className="respone-comment" onClick={handleOnClickResponeComment}>Respone </span>
                   <Box>
-                    <img className="likeIcon" src={likeImg} alt="" />
-                    {/* <img className="likeIcon" src={heartImg} onClick={handleOnClickLikeComment} alt="" /> */}
+                    <img className="likeIconComment" src={likeImg} alt="" />
+                    {/* <img className="likeIconComment" src={heartImg} onClick={handleOnClickLikeComment} alt="" /> */}
                     <span className="postLikeCounter">{like}</span>
 
                   </Box>

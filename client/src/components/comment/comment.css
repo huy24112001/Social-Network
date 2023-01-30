@@ -28,11 +28,10 @@
     font-weight: 600;
 }
 
-.likeIcon{
+.likeIconComment{
     width: 15px;
     height: 15px;
     margin-right: 5px;
-    cursor: pointer;
 }
 
 .not-like-comment{
