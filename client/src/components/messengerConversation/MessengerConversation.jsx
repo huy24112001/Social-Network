@@ -23,27 +23,27 @@ const CurrentConversationTopBar = ({receiver}) => {
   const avatar = (receiver?.profilePicture === '') ? noAvatar : receiver?.profilePicture
 
   return (
-    <div className="messengerConversationTop">
-      <div className="messengerConversationTopInfo">
-        <img src={avatar} className='messengerConversationChatAvatar' />
-        {receiver?.username}
+      <div className="messengerConversationTop">
+        <div className="messengerConversationTopInfo">
+          <img src={avatar} className='messengerConversationChatAvatar' />
+          {receiver?.username}
 
+        </div>
+        <div className="messengerConversationTopIcon">
+          <IconButton sx={{ color: "rgb(74, 122, 211)" }}  className='messengerTopIcon' >
+            <BsTelephoneFill/>
+
+          </IconButton>
+          <IconButton sx={{ color: "rgb(74, 122, 211)" }} className='messengerTopIcon' >
+            <BsCameraVideoFill/>
+
+          </IconButton>
+          <IconButton sx={{ color: "rgb(74, 122, 211)" }} className='messengerTopIcon'>
+            <FiMoreHorizontal />
+
+          </IconButton>
+        </div>
       </div>
-      <div className="messengerConversationTopIcon">
-        <IconButton sx={{ color: "rgb(74, 122, 211)" }}  className='messengerTopIcon' >
-          <BsTelephoneFill/>
-
-        </IconButton>
-        <IconButton sx={{ color: "rgb(74, 122, 211)" }} className='messengerTopIcon' >
-          <BsCameraVideoFill/>
-
-        </IconButton>
-        <IconButton sx={{ color: "rgb(74, 122, 211)" }} className='messengerTopIcon'>
-          <FiMoreHorizontal />
-
-        </IconButton>
-      </div>
-    </div>
   )
 }
 
@@ -70,7 +70,7 @@ const CurrentConversationMessage = ({messages}) => {
           updatedAt: Date(),
           __v: 0
         }
-        console.log(newMessage)
+        // console.log(newMessage)
         setNewMessages([...newMessages, newMessage])
       })
     }
@@ -91,18 +91,18 @@ const CurrentConversationMessage = ({messages}) => {
 
   return (
 
-    <div className='messengerConversationBody'>
-      {/* {messages?.map((m) => (
+      <div className='messengerConversationBody'>
+        {/* {messages?.map((m) => (
         <div ref={scrollRef}>
           <Message key={m._id} message={m} own={m.sender._id === userId} />
         </div>
       ))} */}
-      {newMessages?.map((m) => (
-        <div ref={scrollRef} key={m._id}>
-          <Message key={m._id} message={m} own={m.sender._id === userId} />
-        </div>
-      ))}
-    </div>
+        {newMessages?.map((m) => (
+            <div ref={scrollRef} key={m._id}>
+              <Message key={m._id} message={m} own={m.sender._id === userId} />
+            </div>
+        ))}
+      </div>
   )
 }
 
@@ -200,68 +200,68 @@ const CurrentConversationInput = ({receiver, handlers, recorderState  }) => {
   };
 
   const emojiMart = (
-    <Picker
-      data={data}
-      emoji="point_up"
-      // color={FEATURE_COLOR.primary}
-      onEmojiSelect={(emoji) => {
-        setText(text + emoji.native);
-      }}
-    />
+      <Picker
+          data={data}
+          emoji="point_up"
+          // color={FEATURE_COLOR.primary}
+          onEmojiSelect={(emoji) => {
+            setText(text + emoji.native);
+          }}
+      />
   );
   return (
-    <div className='messengerConversationInput'>
-      <TextField
-        size="small"
-        multiline
-        maxRows={1}
-        variant="outlined"
-        className="messengerConversationTextInput"
-        value={text}
-        onChange={(e) => handleChangeText(e)}
-        InputProps={{
-          endAdornment: (
-            <InputAdornment position="end">
-              <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
-                <EmojiEmotionsIcon color="primary" />
-              </IconButton>
-            </InputAdornment>
-          ),
-        }}
-        onKeyDown={handleKeyPress}
-      />
+      <div className='messengerConversationInput'>
+        <TextField
+            size="small"
+            multiline
+            maxRows={1}
+            variant="outlined"
+            className="messengerConversationTextInput"
+            value={text}
+            onChange={(e) => handleChangeText(e)}
+            InputProps={{
+              endAdornment: (
+                  <InputAdornment position="end">
+                    <IconButton onClick={(e) => setAnchorEl(e.currentTarget)}>
+                      <EmojiEmotionsIcon color="primary" />
+                    </IconButton>
+                  </InputAdornment>
+              ),
+            }}
+            onKeyDown={handleKeyPress}
+        />
 
-      <Popover
-        open={Boolean(anchorEl)}
-        anchorEl={anchorEl}
-        onClose={() => setAnchorEl(null)}
+        <Popover
+            open={Boolean(anchorEl)}
+            anchorEl={anchorEl}
+            onClose={() => setAnchorEl(null)}
         >
-        {emojiMart}
-      </Popover>
-      <div className="messengerConversationIconWrap">
-        <Tooltip title="Ghi âm" placement="top">
-          {
-            !recording ? (
-              <IconButton onClick={handleRecordMessage}>
-                <MicIcon id="test_audio" className="icon" color="primary" />
-              </IconButton>
-            ) : (
-              <IconButton onClick={handleRecordMessage}>
-                <StopCircleIcon id="stop_audio" className="iconStop" />
-              </IconButton>
-            )
-          }
+          {emojiMart}
+        </Popover>
+        <div className="messengerConversationIconWrap">
+          <Tooltip title="Ghi âm" placement="top">
+            {
+              !recording ? (
+                  <IconButton onClick={handleRecordMessage}>
+                    <MicIcon id="test_audio" className="icon" color="primary" />
+                  </IconButton>
+              ) : (
+                  <IconButton onClick={handleRecordMessage}>
+                    <StopCircleIcon id="stop_audio" className="iconStop" />
+                  </IconButton>
+              )
+            }
 
-        </Tooltip>
-        <Tooltip title="Gửi" placement="top">
-          <IconButton onClick={handleSendMessage} >
-            <SendIcon className="icon" color="secondary"/>
+          </Tooltip>
+          <Tooltip title="Gửi" placement="top">
+            <IconButton onClick={handleSendMessage} >
+              <SendIcon className="icon" color="secondary"/>
 
-          </IconButton>
+            </IconButton>
 
-        </Tooltip>
+          </Tooltip>
+        </div>
       </div>
-    </div>
   )
 }
 
@@ -281,22 +281,22 @@ const MessengerConversation = () => {
   // }, [messages])
   const receiver = state.conversationSelectReceiver
   return (
-    <div className='messengerConversation'>
-      {
-        messages ? (
-          <>
-            <CurrentConversationTopBar receiver={receiver}/>
-            <CurrentConversationMessage messages={messages}  />
-            <CurrentConversationInput receiver={receiver} handlers={handlers} recorderState={recorderState}  />
-          </>
-        ) : (
-          <span className='messengerNoConversation'>
+      <div className='messengerConversation'>
+        {
+          messages ? (
+              <>
+                <CurrentConversationTopBar receiver={receiver}/>
+                <CurrentConversationMessage messages={messages}  />
+                <CurrentConversationInput receiver={receiver} handlers={handlers} recorderState={recorderState}  />
+              </>
+          ) : (
+              <span className='messengerNoConversation'>
             Chưa chọn đoạn chat nào
           </span>
 
-        )
-      }
-    </div>
+          )
+        }
+      </div>
   )
 }
 

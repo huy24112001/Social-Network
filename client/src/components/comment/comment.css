@@ -30,12 +30,6 @@
     font-weight: 600;
 }
 
-.likeIconComment{
-    width: 15px;
-    height: 15px;
-    margin-right: 5px;
-}
-
 .not-like-comment{
     color: #77797C;
     margin-inline-start: 10px;

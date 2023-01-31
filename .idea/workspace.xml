@@ -2,7 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59d312ce-c2f0-4df9-ab94-491185648942" name="Changes" comment="lan1">
+<<<<<<< HEAD
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+=======
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_20_2023_11_11_PM_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Update_at_1_20_2023_11_11_PM__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/messenger/Messenger.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/messenger/Messenger.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/profile/Profile.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/friend.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/friend.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/posts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
+>>>>>>> parent of 8e7e1d96 (done_fix_ui)
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,9 +129,13 @@
       <workItem from="1674793001246" duration="30000" />
       <workItem from="1674961978484" duration="18000" />
       <workItem from="1675008941542" duration="1806000" />
+<<<<<<< HEAD
       <workItem from="1675048100721" duration="22052000" />
       <workItem from="1675131644602" duration="13108000" />
       <workItem from="1675148670376" duration="5108000" />
+=======
+      <workItem from="1675048100721" duration="4543000" />
+>>>>>>> parent of 8e7e1d96 (done_fix_ui)
     </task>
     <task id="LOCAL-00001" summary="lan1">
       <created>1673155690850</created>

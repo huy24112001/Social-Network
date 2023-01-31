@@ -33,7 +33,7 @@ const Messenger = () => {
       console.log("connected")
       socket.on("getUsers", (users) => {
         setOnlineUsers(
-          infoUser.friends.filter((f) => users.some((u) => u.userId === f))
+            infoUser.friends.filter((f) => users.some((u) => u.userId === f))
         );
       });
     }
@@ -61,13 +61,13 @@ const Messenger = () => {
   }, [conversationId])
 
   return (
-    <>
+      <>
         <Topbar />
         <div className='messenger'>
-            <MessengerSideBar onlineUsers={onlineUsers}  />
-            <MessengerConversation />
+          <MessengerSideBar onlineUsers={onlineUsers}  />
+          <MessengerConversation />
         </div>
-    </>
+      </>
   )
 }
 

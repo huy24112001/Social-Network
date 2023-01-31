@@ -10,15 +10,15 @@ export default function Home() {
 
     const [state,dispatch] = useContext(Context)
 
-  return (
-    <>
-      <Topbar />
-      <div className="homeContainer">
-        <Sidebar />
-        <Feed />
-        <Rightbar/>
+    return (
+        <>
+            <Topbar />
+            <div className="homeContainer">
+                <Sidebar />
+                <Feed userId={state.infoUser._id}/>
+                <Rightbar/>
 
-      </div>
-    </>
-  );
+            </div>
+        </>
+    );
 }

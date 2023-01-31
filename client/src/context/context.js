@@ -28,7 +28,7 @@ export const LoginContextProvider = ({ children }) => {
                 // dispatch({type : 'SET_USER', payload : {...response.result, token: response.token} })
                 toastSuccess("Đăng Nhập Thành Công !")
                 // await setCookie("currentuser", response?.token)
-                 // setTimeout(() => window.location.reload(), 2000)
+                // setTimeout(() => window.location.reload(), 2000)
                 return response ;
 
             }
@@ -55,7 +55,7 @@ export const LoginContextProvider = ({ children }) => {
                 // console.log(response.result)
                 //  await setCookie("currentuser", response?.token)
                 //   setTimeout(() => window.location.reload(), 2000)
-                    return response;
+                return response;
             }
             else {
                 toastError(response?.error)

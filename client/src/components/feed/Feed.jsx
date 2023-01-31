@@ -32,16 +32,16 @@ export default function Feed({ userId }) {
 
 
   return (
-    <div className="feed">
-      <div className="feedWrapper">
-        <Share />
-        {posts.map((p) => (
-          <Post key={p._id} post={p} />
-        ))}
-        {/* {Posts.map((p) => (
+      <div className="feed">
+        <div className="feedWrapper">
+          <Share />
+          {posts.map((p) => (
+              <Post key={p._id} post={p} />
+          ))}
+          {/* {Posts.map((p) => (
           <Post key={p.id} post={p} />
         ))} */}
+        </div>
       </div>
-    </div>
   );
 }

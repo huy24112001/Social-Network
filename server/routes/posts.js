@@ -123,14 +123,19 @@ router.get("/timeline/:userId", async (req,res) => {
 
 //get user's all posts
 router.get("/profile/:userId", async (req, res) => {
-    // console.log(req.query.userId)
     try {
         const user = await User.findOne({ _id: req.params.userId });
+
         // console.log(user)
         const posts = await Post.find({ userId: user._id }).populate('userId').populate({path:'comments', populate: {
             path: 'user',
             select: ['username', 'profilePicture']
-        } })
+            } })
+        // console.log(user)
+        // const posts = await Post.find({ userId: user._id }).populate('userId').populate({path:'comments', populate: {
+        //     path: 'user',
+        //     select: 'username'
+
     //   const posts = await Post.find({ userId: user._id }).populate('userId').populate('comments').exec((err, comments) => {
     //     comments.map((comment) => console.log(comment))
     //   });
@@ -140,7 +145,6 @@ router.get("/profile/:userId", async (req, res) => {
 
     //     })
     //   })
-        console.log(posts[1].comments)
       res.status(200).json(posts);
     } catch (err) {
       res.status(500).json(err);
