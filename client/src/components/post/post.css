@@ -25,18 +25,22 @@
 .postProfileImg {
   width: 32px;
   height: 32px;
-  border-radius: 50%;
+  border-radius: 60%;
   object-fit: cover;
+    border: 1px solid #d9d5d5;
 }
 
 .postUsername {
+    display: block;
   font-size: 15px;
   font-weight: 600;
   margin: 0 10px;
 }
 
-.postDate{
+.postDate {
     font-size: 12px;
+    margin-top: 7px;
+    margin-left: 10px;
 }
 
 .postCenter{
@@ -67,14 +71,16 @@
 }
 
 .likeIcon{
-    width: 24px;
-    height: 24px;
+    width: 20px;
+    height: 20px;
     margin-right: 5px;
     cursor: pointer;
+    /*margin-top: 5px;*/
 }
 
 .postLikeCounter{
     font-size: 15px;
+    margin-top: 3px;
 }
 
 .postCommentText{

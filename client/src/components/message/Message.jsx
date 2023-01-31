@@ -1,8 +1,10 @@
 import React from 'react'
 import './message.css'
-import { format } from "timeago.js";
+import getTimeAgo from "../../time/GetTimeAgo";
+
 
 const Message = ({message, own}) => {
+
   // console.log(message)
   return (
     <div className={own ? "message own" : "message"}>
@@ -17,10 +19,10 @@ const Message = ({message, own}) => {
             <p className="messageText">{message?.text}</p>
           ) : (
             <audio controls  src={message?.audio} />
-          ) 
+          )
         }
       </div>
-      <div className="messageBottom">{format(message?.createdAt)}</div>
+        <div className="messageBottom">{getTimeAgo(message?.createdAt)}</div>
     </div>
   )
 }

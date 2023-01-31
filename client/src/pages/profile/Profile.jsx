@@ -42,7 +42,7 @@ export default function Profile() {
     const [listFriend,setListFriend] = useState([])
 
     const [showEditProfile,setShowEditProfile] = useState(false)
-    const [updateProfile,setUpdateProfile] = useState({from : String, city : String,relationship : Number,study : String, profilePicture : String})
+    const [updateProfile,setUpdateProfile] = useState({from : '', city : '',relationship : Number,study : '', profilePicture : ''})
     const {userId} = useParams()
     // console.log(userId)
 
@@ -109,6 +109,7 @@ export default function Profile() {
 
     function handleUpdateProfile() {
         const rs = updateProfileServer({update_Profile : updateProfile, idProfile : profileState._id})
+        // dispatch({type : 'SET_USER', payload : {...rs.result} })
     }
 
     const convertToBase64 = (file) => {
@@ -139,7 +140,7 @@ export default function Profile() {
         <>
             {profileState ? (
             <>
-            <Dialog  fullWidth={true} maxWidth={'sm'}   onClose={()=> setShowEditProfile(false)} open={showEditProfile}>
+            <Dialog  onClose={()=> setShowEditProfile(false)} open={showEditProfile}>
                 <DialogTitle >
                     Thông tin cá nhân
                     <IconButton
@@ -156,7 +157,7 @@ export default function Profile() {
                 </DialogTitle>
 
                 <form onSubmit={handleUpdateProfile}>
-                    <DialogContent dividers  >
+                    <DialogContent   >
                         <DialogContentText>
                             Chỉnh sửa các thông tin sau đây:
                         </DialogContentText>
@@ -169,10 +170,10 @@ export default function Profile() {
                                     setUpdateProfile({...updateProfile, profilePicture: ''})
                                 }} />
                             </div>
-                        ) :  <div style={{alignContent:'center',justifyContent:'center'}}><img style={{width:'40%',marginLeft:120,marginTop:20}} src={noAvatar} alt="" /></div>
+                        ) :  <div style={{alignContent:'center',justifyContent:'center'}}><img style={{width:'40%',marginLeft:120,marginTop:20}} src={profileState.profilePicture === '' ? noAvatar : profileState.profilePicture} alt="" /></div>
                             }
                         <label className="shareOption">
-                            <span style={{fontSize:14,color:'blue',marginLeft:135,marginTop:10,marginBottom:10}}>Thêm Ảnh Đại diện</span>
+                            <span style={{fontSize:14,color:'blue',marginLeft:135,marginTop:10,marginBottom:10}}>{profileState.profilePicture === '' ? 'Thêm Ảnh Đại diện' : 'Thay đổi ảnh đại diện'}</span>
                             <input
                                 style={{ display: "none" }}
                                 type="file"

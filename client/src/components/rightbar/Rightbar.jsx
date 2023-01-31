@@ -9,7 +9,7 @@ import service from "../../service";
 
 export default function Rightbar({profile,listFriend}) {
   const [state, dispatch] = useContext(Context)
-  
+
   // console.log(state)
   const socket = state.socket
   const infoUser = state.infoUser
@@ -39,7 +39,7 @@ export default function Rightbar({profile,listFriend}) {
     };
     getFriends();
     // return () => {
-    //     setFriends([]); 
+    //     setFriends([]);
     //   };
   }, [infoUser]);
 
@@ -48,9 +48,9 @@ export default function Rightbar({profile,listFriend}) {
     // setOnlineFriends(onlineUsers);
     // console.log(onlineUsers)
     // return () => {
-    //     setOnlineFriends([]); 
+    //     setOnlineFriends([]);
     //   };
-  
+
 
 }, [friends, onlineUsers]);
   const HomeRightbar = () => {
@@ -59,11 +59,11 @@ export default function Rightbar({profile,listFriend}) {
         <div className="birthdayContainer">
           <img className="birthdayImg" src="assets/gift.png" alt="" />
           <span className="birthdayText">
-            <b>Pola Foster</b> and <b>3 other friends</b> have a birhday today.
+            <b>Bạn</b> và <b>3 người bạn khác</b> có sinh nhật vào hôm nay.
           </span>
         </div>
         <img className="rightbarAd" src="assets/ad.png" alt="" />
-        <h4 className="rightbarTitle">Online Friends</h4>
+        <h4 className="rightbarTitle">Đang hoạt động</h4>
         <ul className="rightbarFriendList">
           {onlineFriends?.map((u) => (
             <Online key={u._id} user={u} />

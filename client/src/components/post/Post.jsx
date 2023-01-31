@@ -7,6 +7,7 @@ import {
   IconButton,
   Input
 } from "@mui/material";
+import vi from "date-fns/locale/vi";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
@@ -30,15 +31,15 @@ import heartImg from "../../img/heart.png"
 import noAvatar from "../../img/person/noAvatar.png"
 import Context from "../../store/context";
 import service from "../../service";
-import { formatDistance} from 'date-fns';
-import { useSelector } from 'react-redux'
+import getTimeAgo from "../../time/GetTimeAgo";
+
 
 export default function Post({ post }) {
   // const comments = Comments.filter(comment => comment.postId === post.id)
   const [state , dispatch] = useContext(Context)
   const socket = state.socket
   const infoUser = state.infoUser
-  // console.log(comments)
+  console.log(post.comments)
 
   const timestamp = post?.createdAt ? new Date(post?.createdAt) : '';
 
@@ -46,7 +47,7 @@ export default function Post({ post }) {
   const [isLiked,setIsLiked] = useState(post?.likes.some(userId => userId === infoUser._id))
   const [openComment, setOpenComment] = useState(false)
   const [comments, setComments] = useState([])
-  const [oldComments, setOldComments] = useState(post.comments)
+  const [oldComments, setOldComments] = useState( post.comments)
   const [commentText, setCommentText] = useState('')
   const [display, setDisplay] = useState(true)
 
@@ -74,7 +75,7 @@ export default function Post({ post }) {
       //   content: commentText
       // }, token: infoUser.token})
       setCommentText('')
-////////////////////////////////////
+
       await service.notification.postNotification({
         userId : post.userId,
         username : infoUser.username,
@@ -83,10 +84,10 @@ export default function Post({ post }) {
         userId2: infoUser._id,
         post : post._id
       })
-  
+
       socket.emit('notification',{
       })
-    } 
+    }
   };
 
   // useEffect(() => {
@@ -138,7 +139,7 @@ export default function Post({ post }) {
         userId2: infoUser._id,
         post : post._id
       })
-  
+
       socket.emit('notification',{
       })
     }
@@ -168,27 +169,30 @@ export default function Post({ post }) {
                 alt=""
               />
             </Link>
+            <div style={{display:'block'}}>
             <span className="postUsername">
               <Link to={`/profile/${post?.userId._id}`} style={{color:'#000', textDecoration: 'none' }}>
-              
+
               {/* {Users.filter((u) => u.id === post?.userId)[0].username} */}
               {post?.userId?.username}
               </Link>
             </span>
-            
+
             <span className="postDate">
-            {formatDistance(Date.now(), timestamp, {addSuffix: true})}{" "}
-  
+            {/*{formatDistance(Date.now(), timestamp, {addSuffix: true, locale: vi})}{" "}*/}
+              {getTimeAgo(timestamp)}
+
             </span>
+            </div>
           </div>
             <div className="postTopRight">
               {/* <MoreVert onClick={() => setPopup(true)} /> */}
-              <Popup 
+              <Popup
                 trigger={
                   <IconButton>
                     <MoreVert />
                   </IconButton>
-                } 
+                }
                 // modal
                 nested
                 position="bottom right"
@@ -220,19 +224,19 @@ export default function Post({ post }) {
                             setDisplay(false)
                             close()
                           }}>
-                            <DeleteForeverOutlinedIcon style={{marginRight: 5}}/> 
+                            <DeleteForeverOutlinedIcon style={{marginRight: 5}}/>
                             Xóa bài viết
                           </li>
                         ) : null
-                        
+
                       )
-                      : ( 
+                      : (
                         display ? (
                           <li className="popupItem" onClick={() => {
                             setDisplay(false)
                             close()
                           }}>
-                            <CancelOutlinedIcon style={{marginRight: 5}}/> 
+                            <CancelOutlinedIcon style={{marginRight: 5}}/>
                             Ẩn bài viết
                           </li>
                         ) : (
@@ -240,13 +244,13 @@ export default function Post({ post }) {
                             setDisplay(true)
                             close()
                           }}>
-                            <CancelOutlinedIcon style={{marginRight: 5}}/> 
+                            <CancelOutlinedIcon style={{marginRight: 5}}/>
                             Hiện bài viết
                           </li>
                         )
                       )
                     }
-                    
+
                   </div>
                 </div>)}
               </Popup>
@@ -266,10 +270,10 @@ export default function Post({ post }) {
           <div className="postBottomLeft">
             <img className="likeIcon" src={likeImg}  alt="" />
             <img className="likeIcon" src={heartImg} onClick={likeHandler} alt="" />
-            <span className="postLikeCounter">{like} people like it</span>
+            <span className="postLikeCounter">{like}</span>
           </div>
           <div className="postBottomRight">
-            <span className="postCommentText" onClick={handleOpenComment}>{post?.comments?.length + comments.length} comments</span>
+            <span className="postCommentText" onClick={handleOpenComment}>{post?.comments?.length + comments.length} bình luận</span>
           </div>
         </div>
         <Box
@@ -281,23 +285,34 @@ export default function Post({ post }) {
               {/* <IconButton size="small">
                 <ChatBubbleOutlineIcon fontSize="small" />
               </IconButton> */}
+
               <IconButton onClick={likeHandler} size="small">
                 {isLiked ? (
-                  <ThumbUp fontSize="small" />
+                    <div style={{display:"flex",flexDirection:"row",margin:5}}>
+                  <ThumbUp fontSize="small" style={{color:'#0571ED'}} />
+                    <p style={{marginLeft:7,fontSize:15,color:'#2F81F5',fontWeight:550,marginTop:2}}>Thích</p>
+                    </div>
                 ) : (
+                    <div style={{display:"flex",flexDirection:"row",margin:5}}>
                   <ThumbUpOutlinedIcon fontSize="small" />
+                  <p style={{marginLeft:7,fontSize:15,fontWeight:550,marginTop:2}}>Thích</p>
+                  </div>
                 )}
               </IconButton>
+
+
               <IconButton size="small" onClick={handleOpenComment}>
                 <ChatBubbleOutlineIcon  fontSize="small" />
+                <p style={{marginLeft:7,fontSize:15,fontWeight:550}}>Bình luận</p>
               </IconButton>
-              <IconButton size="small">
-                <IosShareIcon fontSize="small" />
+              <IconButton size="small" >
+                <IosShareIcon fontSize="small" style={{marginTop:-5}} />
+                <p style={{marginLeft:7,fontSize:15,fontWeight:550}}>Chia sẻ</p>
               </IconButton>
             </Box>
-      {openComment 
+      {openComment
         ? (
-          <Box 
+          <Box
             sx = {{
               borderTop:"1px solid #ccc",
               padding:'0.5',
@@ -307,7 +322,8 @@ export default function Post({ post }) {
               sx={{
                 display: 'flex',
                 paddingTop: '2px',
-                // marginTop: '20px'
+                marginTop: '15px',
+
               }}
             >
 
@@ -317,13 +333,14 @@ export default function Post({ post }) {
                   height: 32,
                   width: 32,
                   borderRadius:'50%',
-                  marginRight:'5px'
+                  marginRight:'5px',
+
                 }}
                 alt="avatar"
-                src={infoUser?.profilePicture}
+                src={infoUser.profilePicture == '' ? noAvatar : infoUser.profilePicture }
 
               />
-              <Box padding="0.1rem 0.5rem" border="1px solid #ccc" borderRadius={18} width='100%'>
+              <Box padding="0.1rem 0.5rem" paddingLeft={'15px'} style={{backgroundColor:'#f0f2f5'}} border="1px solid #ccc" borderRadius={18} width='100%'>
                 <Input
                   onChange={(e) => setCommentText(e.target.value)}
                   value={commentText}
@@ -331,14 +348,15 @@ export default function Post({ post }) {
                   rows="1"
                   disableUnderline
                   type="text"
-                  placeholder="Post your comment"
+                  placeholder=" Viết bình luận của bạn"
                   sx={{ width: "100%" }}
                   onKeyDown={handleKeyPress}
                 />
               </Box>
             </Box>
             {
-              oldComments?.map((c) => <Comment key={c._id} comment={c}/> )
+              oldComments?.map((c) => <Comment key={c._id}  comment={c}/> )
+
             }
             {
               comments?.map((c) => <Comment key={c._id} comment={c}/> )
@@ -349,11 +367,11 @@ export default function Post({ post }) {
             </>
           ) : (
             <div>
-                "This post has been hide"
+                "Bài đăng này đã được ẩn"
             </div>
           )
         }
-        
+
       </div>
     </div>
   );

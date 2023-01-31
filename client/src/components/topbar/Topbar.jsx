@@ -2,7 +2,7 @@ import "./topbar.css";
 import {Search, Person, Chat, Notifications, Image} from "@material-ui/icons";
 import {useContext, useEffect, useState} from "react";
 import {AcceptFriend, checkInviteFriend, searchUser, statusFriendUser} from "../../service/authenService";
-
+import HomeIcon from '@material-ui/icons/Home';
 import Context from "../../store/context";
 import { IconButton } from "@mui/material";
 import 'reactjs-popup/dist/index.css';
@@ -11,6 +11,8 @@ import service from "../../service";
 import queryString from 'query-string';
 import io from 'socket.io-client';
 import noAvatar from "../../img/person/noAvatar.png";
+import {HomeMini} from "@mui/icons-material";
+import {Home} from "react-feather";
 const socket = io();
 
 
@@ -143,7 +145,8 @@ export default function Topbar() {
       <div className="topbarContainer" >
         <div className="topbarLeft" >
           <div onClick={()=> navigate('/')} style={{textDecoration: "none"}}>
-            <span className="logo">Home</span>
+
+            <span className="logo">Social Networking</span>
           </div>
         </div>
         <div className="topbarCenter">
@@ -173,9 +176,10 @@ export default function Topbar() {
           </div>
         </div>
         <div className="topbarRight">
-          <div className="topbarLinks">
-            <span className="topbarLink">Homepage</span>
-            <span className="topbarLink">Timeline</span>
+          <div className="topbarLinks" onClick={()=> navigate('/')}>
+            <span className="topbarLink"><HomeIcon style={{marginRight:4}}/><p style={{marginTop:4,fontSize:17}}>Trang chủ</p></span>
+
+            {/*<span className="topbarLink">Timeline</span>*/}
           </div>
           <div className="topbarIcons">
             <div className="topbarIconItem" onClick={() => {
@@ -196,7 +200,7 @@ export default function Topbar() {
 
                             async function handleAcceptFriend() {
                               socket.emit('acceptFriend', {
-                                userID_req : value._id, 
+                                userID_req : value._id,
                                 userID_rec : infoUser._id
                               })
                               const rs = await AcceptFriend({userID_req : value._id, userID_rec : infoUser._id})

@@ -26,7 +26,7 @@ export const LoginContextProvider = ({ children }) => {
             console.log(response)
             if (response?.result) {
                 // dispatch({type : 'SET_USER', payload : {...response.result, token: response.token} })
-                toastSuccess("Success Notification !")
+                toastSuccess("Đăng Nhập Thành Công !")
                 // await setCookie("currentuser", response?.token)
                  // setTimeout(() => window.location.reload(), 2000)
                 return response ;
@@ -38,7 +38,7 @@ export const LoginContextProvider = ({ children }) => {
             }
         }
         else {
-            toastError("Error")
+            toastError("Đã xảy ra lỗi !")
             return false;
         }
     }
@@ -51,7 +51,7 @@ export const LoginContextProvider = ({ children }) => {
             console.log(response)
 
             if (response?.result) {
-                toastSuccess("Success Notification !")
+                toastSuccess("Đăng Nhập Thành Công !")
                 // console.log(response.result)
                 //  await setCookie("currentuser", response?.token)
                 //   setTimeout(() => window.location.reload(), 2000)
@@ -63,7 +63,7 @@ export const LoginContextProvider = ({ children }) => {
             }
         }
         else {
-            toastError("Error")
+            toastError("Đã xảy ra lỗi !")
             return false ;
         }
     }

@@ -14,7 +14,7 @@ export default function Feed({ userId }) {
   const [state , dispatch] = useContext(Context)
   const infoUser = state.infoUser
 
-  useEffect(() => {
+  useEffect(async () => {
     const fetchPosts = async () => {
       // const res = username
       //   ? await axios.get("/posts/profile/" + username)
@@ -22,12 +22,12 @@ export default function Feed({ userId }) {
       const res = userId ? await service.postService.getProfilePost(userId) : await service.postService.getTimelinePost(infoUser._id)
       console.log(res)
       setPosts(
-        res?.sort((p1, p2) => {
-          return new Date(p2.createdAt) - new Date(p1.createdAt);
-        })
+          res?.sort((p1, p2) => {
+            return new Date(p2.createdAt) - new Date(p1.createdAt);
+          })
       );
     };
-    fetchPosts();
+    await fetchPosts();
   }, [userId, infoUser._id]);
 
 

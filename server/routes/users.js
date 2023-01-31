@@ -12,7 +12,7 @@ router.put("/update-profile", async(req,res) => {
             })
             // console.log('huy he huoc')
             // console.log(user)
-            res.status(200).json("Account has been updated")
+            res.status(200).json({results: user})
         } catch (error) {
             return res.status(500).json(error)
         }

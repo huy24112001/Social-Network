@@ -7,14 +7,15 @@ import {useContext} from "react";
 import Context from "../../store/context";
 
 export default function Home() {
-  
+
+    const [state,dispatch] = useContext(Context)
 
   return (
     <>
       <Topbar />
       <div className="homeContainer">
         <Sidebar />
-        <Feed/>
+        <Feed userId={state.infoUser._id}/>
         <Rightbar/>
 
       </div>

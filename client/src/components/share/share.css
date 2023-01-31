@@ -22,12 +22,14 @@
   border-radius: 50%;
   object-fit: cover;
   margin-right: 10px;
+    border: 1px solid #e1dede;
 }
 
 .shareInput {
     font-size: 17px;
-  border: none;
-  width: 80%;
+    font-family: Arial;
+    border: none;
+    width: 80%;
 }
 
 .shareInput:focus {

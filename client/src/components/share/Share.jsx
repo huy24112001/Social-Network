@@ -61,7 +61,7 @@ export default function Share() {
             className="shareInput"
             value={post.desc}
             onChange={(e) => setPost({...post, desc: e.target.value})}
-            cols="40" rows="1"
+            cols="45" rows="1"
           ></textarea>
         </div>
         <hr className="shareHr"/>

@@ -21,7 +21,7 @@ import useRecorder from '../../utils/voice-recorder-example/src/hooks/useRecorde
 
 const CurrentConversationTopBar = ({receiver}) => {
   const avatar = (receiver?.profilePicture === '') ? noAvatar : receiver?.profilePicture
-  
+
   return (
     <div className="messengerConversationTop">
       <div className="messengerConversationTopInfo">
@@ -32,15 +32,15 @@ const CurrentConversationTopBar = ({receiver}) => {
       <div className="messengerConversationTopIcon">
         <IconButton sx={{ color: "rgb(74, 122, 211)" }}  className='messengerTopIcon' >
           <BsTelephoneFill/>
-          
+
         </IconButton>
         <IconButton sx={{ color: "rgb(74, 122, 211)" }} className='messengerTopIcon' >
           <BsCameraVideoFill/>
-          
+
         </IconButton>
         <IconButton sx={{ color: "rgb(74, 122, 211)" }} className='messengerTopIcon'>
           <FiMoreHorizontal />
-          
+
         </IconButton>
       </div>
     </div>
@@ -61,7 +61,7 @@ const CurrentConversationMessage = ({messages}) => {
     if(socket) {
       socket.once('getMessageFromServer', (data) => {
         const newMessage = {
-          _id: generateKey(), 
+          _id: generateKey(),
           conversationId: conversationId,
           text: data?.data?.text,
           audio: data?.data?.audio,
@@ -79,7 +79,7 @@ const CurrentConversationMessage = ({messages}) => {
 
   }, [socket, newMessages, messages])
 
-  
+
   useEffect(() => {
     scrollRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, newMessages]);
@@ -90,6 +90,7 @@ const CurrentConversationMessage = ({messages}) => {
 
 
   return (
+
     <div className='messengerConversationBody'>
       {/* {messages?.map((m) => (
         <div ref={scrollRef}>
@@ -136,7 +137,7 @@ const CurrentConversationInput = ({receiver, handlers, recorderState  }) => {
       }
       await service.messengerService.createMessage({
         token: infoUser.token,
-  
+
         data: {
           conversationId: conversationId,
           audio: recordings.value
@@ -153,7 +154,7 @@ const CurrentConversationInput = ({receiver, handlers, recorderState  }) => {
         }
         await service.messengerService.createMessage({
           token: infoUser.token,
-    
+
           data: {
             conversationId: conversationId,
             text: text
@@ -189,7 +190,7 @@ const CurrentConversationInput = ({receiver, handlers, recorderState  }) => {
     cancelRecording()
   }
 
-  
+
   const handleKeyPress = (e) => {
     if (!e.shiftKey && e.key === 'Enter') {
       e.preventDefault();
@@ -197,7 +198,7 @@ const CurrentConversationInput = ({receiver, handlers, recorderState  }) => {
       // console.log(text)
     }
   };
-  
+
   const emojiMart = (
     <Picker
       data={data}
@@ -272,7 +273,7 @@ const MessengerConversation = () => {
   const { recordings, deleteAudio } = useRecordingsList(audio);
 
   // console.log(recordings)
-  const messages = state.conversationSelectMessages  
+  const messages = state.conversationSelectMessages
   // const [renderMessages, setRenderMessages] = useState(messages)
   // console.log(messages)
   // useEffect(() => {

@@ -1,19 +1,23 @@
 import { Grid, IconButton, Typography } from "@mui/material";
 import { Box } from "@mui/system";
-import React, { useState } from "react";
+import React, {useContext, useState} from "react";
 import MoreHorizIcon from "@mui/icons-material/MoreHoriz";
 import Popup from 'reactjs-popup';
 import 'reactjs-popup/dist/index.css';
-import { formatDistance} from 'date-fns';
 import noAvatar from "../../img/person/noAvatar.png"
 import { useNavigate } from "react-router-dom";
 import "./comment.css"
 import likeImg from "../../img/like.png"
 import heartImg from "../../img/heart.png"
+import getTimeAgo from "../../time/GetTimeAgo";
+import Context from "../../store/context";
 
 export default function Comment({ comment }) {
 
   const [like, setLike] = useState(comment?.likes?.length)
+  const [state , dispatch] = useContext(Context)
+  const socket = state.socket
+  const infoUser = state.infoUser
 
   let [isLikedComment, setLikeComment] = useState(false);
   const timestamp = comment.createdAt ? new Date(comment.createdAt) : '';
@@ -28,28 +32,28 @@ export default function Comment({ comment }) {
     isLikedComment ? setLikeComment(false) : setLikeComment(true);
     setLike(isLikedComment ? like-1 : like+1)
 
-   
+
   }
-  
+
   const handleOnClickResponeComment = () => {
     // do something
+    console.log(comment);
   }
 
   return (
     <>
-    
     <Box
-      padding="1rem 2rem 0.5rem 1rem"
-      marginTop="15px"
-      sx={{
-        "&:hover": {
-          backgroundColor: "#eee",
-        },
-      }}
+      padding="0.5rem 2rem 0.5rem 1rem"
+      marginTop="10px"
+      // sx={{
+      //   "&:hover": {
+      //     backgroundColor: "#f0f2f5",
+      //   },
+      // }}
     >
       <Grid container flexWrap="nowrap">
-        <Grid item sx={{ paddingRight: "1rem" }}>
-          <img src={comment.user.profilePicture} className="avatar-comment" alt="lgoog" />
+        <Grid item sx={{ paddingRight: "7px" }}>
+          <img src={comment.user.profilePicture == '' ? noAvatar : comment.user.profilePicture } className="avatar-comment" alt="avatar" />
         </Grid>
         <Grid item flexGrow="1">
           <Box>
@@ -60,20 +64,22 @@ export default function Comment({ comment }) {
               flexWrap="nowrap"
               width="fit-content"
             >
-              <Grid item 
+              <Grid item
                     borderRadius="10px"
-                    backgroundColor="#dbf8ff"
+                    backgroundColor="#f0f2f5"
                     padding="0.5rem"
-                
-              
+
+
               >
                 <Box display="flex">
                   <Typography
-                    sx={{ fontSize: "16px", fontWeight: 500, mr: "6px", cursor: "pointer" }}
+                    sx={{ fontSize: "16px", fontWeight: 600, mr: "6px", cursor: "pointer" }}
                     onClick={handleClickComment}
                   >
                     {comment.user.username}
                   </Typography>
+
+
                   {/* <Typography
                     sx={{ fontSize: "15px", mr: "6px", color: "#555" }}
                   >
@@ -85,10 +91,10 @@ export default function Comment({ comment }) {
                   >
                     .
                   </Typography> */}
-                  <Typography
-                    sx={{ fontSize: "15px", mr: "6px", color: "#555" }}
-                  >
-                    {formatDistance(Date.now(), timestamp, {addSuffix: true})}{" "}
+                  <Typography sx={{ fontSize: "15px", mr: "16px", color: "#555",marginTop:'1px' }}>
+                    {/*{formatDistance(Date.now(), timestamp, {addSuffix: true, locale: vi})}{" "}*/}
+                    {getTimeAgo(timestamp)}
+
                   </Typography>
                 </Box>
                 <Box>
@@ -100,14 +106,14 @@ export default function Comment({ comment }) {
               <Grid item>
                 {/* <IconButton> */}
                   {/* <MoreHorizIcon /> */}
-                  <Popup 
+                  <Popup
                     trigger={
                       <IconButton>
                         <MoreHorizIcon />
                       </IconButton>
-                    } 
+                    }
                     position="right center"
-                    
+
                   >
                     <div className={'popup'}>
                       <div className="popupList">
@@ -120,7 +126,7 @@ export default function Comment({ comment }) {
                         <li className="popupItem">
                           Báo cáo bình luận
                         </li>
-                        
+
                       </div>
                     </div>
                   </Popup>
@@ -129,14 +135,15 @@ export default function Comment({ comment }) {
             </Grid>
           </Box>
         <>
-          { 
-            isLikedComment ? 
-              <span className="liked-comment" onClick={handleOnClickLikeComment}>Like </span> :
-              <span className="not-like-comment" onClick={handleOnClickLikeComment}>Like </span> 
+          {
+            isLikedComment ?
+              <span className="liked-comment" onClick={handleOnClickLikeComment}>Thích</span> :
+              <span className="not-like-comment" onClick={handleOnClickLikeComment}>Thích</span>
           }
 
-            <span className="respone-comment" onClick={handleOnClickResponeComment}>Respone </span>
-            <Box>
+            <span className="respone-comment" onClick={handleOnClickResponeComment}>Phản hồi</span>
+
+            <Box style={{display:'flex', flexDirection:'row' ,marginLeft:'6px', marginTop:'5px'}}>
               <img className="likeIcon" src={likeImg} alt="" />
               {/* <img className="likeIcon" src={heartImg} onClick={handleOnClickLikeComment} alt="" /> */}
               <span className="postLikeCounter">{like}</span>
@@ -146,7 +153,7 @@ export default function Comment({ comment }) {
         </Grid>
       </Grid>
     </Box>
-    
+
     </>
   );
 
