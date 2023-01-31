@@ -157,6 +157,24 @@ io.on('connection', (socket) => {
         socket.broadcast.emit('like', data)
 
     })
+
+    socket.on('likeComment', async (data) => {
+        const commentId = data.comment
+        const likerId = data.user
+        // console.log(likerId)
+        const comment = await Comment.findById(commentId)
+        if(!comment.likes.includes(likerId)) {
+            await comment.updateOne({
+                $push: {likes: likerId}
+            })
+        } else {
+            await comment.updateOne({
+                $pull: {likes: likerId}
+            })
+        }
+        socket.broadcast.emit('getLikeComment', data)
+    })
+
     socket.on('notification',(data)=>{
         io.emit('repnotice',{
             notification : true

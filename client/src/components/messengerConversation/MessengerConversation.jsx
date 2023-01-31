@@ -70,7 +70,7 @@ const CurrentConversationMessage = ({messages}) => {
           updatedAt: Date(),
           __v: 0
         }
-        // console.log(newMessage)
+        console.log(newMessage)
         setNewMessages([...newMessages, newMessage])
       })
     }

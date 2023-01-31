@@ -15,7 +15,7 @@ export default function Home() {
       <Topbar />
       <div className="homeContainer">
         <Sidebar />
-        <Feed userId={state.infoUser._id}/>
+        <Feed />
         <Rightbar/>
 
       </div>

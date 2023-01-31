@@ -50,6 +50,33 @@ export async function createPost(url, {token, data}) {
   }
 }
 
+export async function updatePost(url, {token, data}) {
+  try {
+    // console.log(token)
+    // console.log(data)
+    const headers =  {
+      "Content-Type": "application/json; charset=UTF-8",
+      "Authorization": `Bearer ${token}`,
+    }
+    return await Axios.put(
+      url, 
+      data,
+      {
+      headers: headers,
+      },
+    );
+  } catch (ex) {
+    const { status = 400, data = {} } = ex.response || {};
+    const error = data?.errors || [];
+    return {
+      status,
+      data: {},
+      message: error[0]?.message || "",
+      code: error[0]?.code || 0,
+    };
+  }
+}
+
 export async function getProfilePost(url) {
   try {
     const headers =  {

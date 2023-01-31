@@ -108,6 +108,7 @@ export default function Profile() {
     }
 
     function handleUpdateProfile() {
+        console.log('update')
         const rs = updateProfileServer({update_Profile : updateProfile, idProfile : profileState._id})
         // dispatch({type : 'SET_USER', payload : {...rs.result} })
     }

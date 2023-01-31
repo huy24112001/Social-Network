@@ -110,7 +110,7 @@ export default function Rightbar({profile,listFriend}) {
 
           {
             listFriend && listFriend?.map((value,index) =>{
-                console.log(value)
+                // console.log(value)
               return   <div className="rightbarFollowing" key={index}>
                 <img
                     src={value?.profilePicture === "" ? noAvatar : value?.profilePicture}

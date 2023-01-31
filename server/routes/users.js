@@ -4,7 +4,7 @@ const bcrypt = require("bcrypt")
 
 
 router.put("/update-profile", async(req,res) => {
-    console.log(req.body)
+    // console.log(req.body)
     const newProfile = req.body.params
         try {
             const user = await User.findByIdAndUpdate(newProfile.idProfile, {
