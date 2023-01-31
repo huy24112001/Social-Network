@@ -2,32 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="59d312ce-c2f0-4df9-ab94-491185648942" name="Changes" comment="lan1">
-      <change afterPath="$PROJECT_DIR$/client/src/assets/facebook-logo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/time/GetTimeAgo.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/client/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/comment/Comment.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/comment/Comment.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/comment/comment.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/comment/comment.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/feed/Feed.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/feed/Feed.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/message/Message.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/message/Message.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messengerConversation/MessengerConversation.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messengerConversation/MessengerConversation.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/messengerConversation/messengerConversation.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/messengerConversation/messengerConversation.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/post/Post.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/post/Post.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/post/post.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/post/post.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/rightbar/Rightbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/rightbar/Rightbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/share/Share.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/share/Share.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/share/share.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/share/share.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/Sidebar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/sidebar/sidebar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/sidebar/sidebar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/topbar/Topbar.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/topbar/Topbar.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/components/topbar/topbar.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/components/topbar/topbar.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/context/context.js" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/context/context.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/home/Home.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/Home.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/home/home.css" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/home/home.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/pages/profile/Profile.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/profile/Profile.jsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/client/yarn.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/posts.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/posts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/routes/users.js" beforeDir="false" afterPath="$PROJECT_DIR$/server/routes/users.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,7 +20,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="assassin" />
+        <entry key="$PROJECT_DIR$" value="main" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -87,7 +62,7 @@
       <recent name="E:\CongNgheThongTinBk\20221\CongNgheWebDichVuTT\bt_lon\social-network-btl\client\src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.start (1)">
+  <component name="RunManager" selected="npm.start">
     <configuration name="start (1)" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/client/package.json" />
       <command value="run" />
@@ -110,10 +85,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.start" />
+        <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start (1)" />
         <item itemvalue="npm.start" />
         <item itemvalue="npm.start (1)" />
-        <item itemvalue="npm.start" />
       </list>
     </recent_temporary>
   </component>
@@ -142,7 +118,8 @@
       <workItem from="1674961978484" duration="18000" />
       <workItem from="1675008941542" duration="1806000" />
       <workItem from="1675048100721" duration="22052000" />
-      <workItem from="1675131644602" duration="10946000" />
+      <workItem from="1675131644602" duration="13108000" />
+      <workItem from="1675148670376" duration="5108000" />
     </task>
     <task id="LOCAL-00001" summary="lan1">
       <created>1673155690850</created>
