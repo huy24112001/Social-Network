@@ -9,7 +9,6 @@ import noAvatar from "../../img/person/noAvatar.png"
 import { useNavigate } from "react-router-dom";
 import "./comment.css"
 import likeImg from "../../img/like.png"
-import heartImg from "../../img/heart.png"
 import ModeEditOutlinedIcon from '@mui/icons-material/ModeEditOutlined';
 import DeleteForeverOutlinedIcon from '@mui/icons-material/DeleteForeverOutlined';
 import NotificationsOffOutlinedIcon from '@mui/icons-material/NotificationsOffOutlined';

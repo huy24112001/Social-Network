@@ -5,7 +5,7 @@ import {PermMedia, Label,Room, EmojiEmotions, Cancel} from "@material-ui/icons"
 import noAvatar from "../../img/person/noAvatar.png"
 import service from "../../service";
 
-export default function Share() {
+export default function Share({modify, postModify, close}) {
 
   const [state , dispatch] = useContext(Context)
   const infoUser = state.infoUser
@@ -15,7 +15,8 @@ export default function Share() {
     img: ""
   }
 
-  const [post, setPost] = useState(initialPost)
+
+  const [post, setPost] = useState(modify ? postModify : initialPost)
   const [file, setFile] = useState(null);
 
   const convertToBase64 = (file) => {
@@ -37,7 +38,14 @@ export default function Share() {
     if (post?.desc === '' && post?.img === ''){
       return
     }
-    await service.postService.createPost({data: post, token: infoUser.token})
+    if (modify){
+      console.log('modify')
+      close()
+      await service.postService.updatePost({data: post, token: infoUser.token})
+    }
+    else{
+      await service.postService.createPost({data: post, token: infoUser.token})
+    }
     setFile(null)
     setPost(initialPost)
   }
@@ -100,7 +108,12 @@ export default function Share() {
                     <span className="shareOptionText">Cảm xúc</span>
                 </div>
             </div>
-            <button className="shareButton" type="submit">Đăng</button>
+            {modify ? (
+              <button className="shareButton" type="submit">{"Cập nhật"}</button>
+              
+              ) : (
+                <button className="shareButton" type="submit">{'Đăng'}</button>
+            )}
         </form>
       </div>
     </div>

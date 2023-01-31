@@ -19,6 +19,15 @@ export async function createPost(data) {
 //   return response?.data || []
 }
 
+export async function updatePost(data) {
+  console.log(data)
+  const url = REACT_APP_BACK_END + `/api/posts/${data.data._id}`
+//   console.log(url)
+  const response = await api.postRequests.updatePost(url, data)
+  // console.log(response)
+//   return response?.data || []
+}
+
 export async function getProfilePost(userId) {
   const url = REACT_APP_BACK_END + `/api/posts/profile/${userId}`
 //   console.log(url)

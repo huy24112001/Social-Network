@@ -21,7 +21,6 @@ import ChatBubbleOutlineIcon from '@mui/icons-material/ChatBubbleOutline';
 // import FavoriteIcon from "@mui/icons-material/Favorite";
 
 import IosShareIcon from "@mui/icons-material/IosShare";
-import { Comments, Users } from "../../dummyData";
 import { useContext, useEffect, useState } from "react";
 import Comment from "../comment/Comment";
 import { Link } from "react-router-dom";
@@ -31,7 +30,8 @@ import noAvatar from "../../img/person/noAvatar.png"
 import Context from "../../store/context";
 import service from "../../service";
 import { formatDistance} from 'date-fns';
-import { useSelector } from 'react-redux'
+import { Cancel } from "@mui/icons-material";
+import Share from "../share/Share";
 
 export default function Post({ post }) {
   // const comments = Comments.filter(comment => comment.postId === post.id)
@@ -49,6 +49,17 @@ export default function Post({ post }) {
   const [oldComments, setOldComments] = useState(post.comments)
   const [commentText, setCommentText] = useState('')
   const [display, setDisplay] = useState(true)
+  const [open, setOpen] = useState(false);
+  const initialPost = {
+    userId: infoUser._id,
+    desc: post?.desc,
+    img: post?.img
+  }
+
+  const [postModify, setPostModify] = useState(initialPost)
+  const [file, setFile] = useState(null);
+
+  const closeModal = () => setOpen(false);
 
   const handleOpenComment = () => {
     setOpenComment(!openComment)
@@ -147,6 +158,10 @@ export default function Post({ post }) {
     setIsLiked(!isLiked)
   }
 
+  const handleOpenModify = () => {
+    
+  }
+
   const handleDeletePost = async () => {
     // console.log(post)
     await service.postService.deletePost({
@@ -156,205 +171,231 @@ export default function Post({ post }) {
   }
 
   return (
-    <div className="post">
-      <div className="postWrapper">
-        <div className="postTop">
-          <div className="postTopLeft">
-            <Link to={`/profile/${post?.userId}`} >
-              <img
-                className="postProfileImg"
-                // src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
-                src={userAvatar}
-                alt=""
-              />
-            </Link>
-            <span className="postUsername">
-              <Link to={`/profile/${post?.userId._id}`} style={{color:'#000', textDecoration: 'none' }}>
-              
-              {/* {Users.filter((u) => u.id === post?.userId)[0].username} */}
-              {post?.userId?.username}
+    <>
+    
+      <div className="post">
+        <div className="postWrapper">
+          <div className="postTop">
+            <div className="postTopLeft">
+              <Link to={`/profile/${post?.userId}`} >
+                <img
+                  className="postProfileImg"
+                  // src={Users.filter((u) => u.id === post?.userId)[0].profilePicture}
+                  src={userAvatar}
+                  alt=""
+                />
               </Link>
-            </span>
-            
-            <span className="postDate">
-            {formatDistance(Date.now(), timestamp, {addSuffix: true})}{" "}
-  
-            </span>
-          </div>
-            <div className="postTopRight">
-              {/* <MoreVert onClick={() => setPopup(true)} /> */}
-              <Popup 
-                trigger={
-                  <IconButton>
-                    <MoreVert />
-                  </IconButton>
-                } 
-                // modal
-                nested
-                position="bottom right"
-              >
-                {close => (<div className={'popup'}>
-                  <div className="popupList">
-                    {
-                      (post?.userId?._id === infoUser._id ) ? (
-                        <li className="popupItem" onClick={() => {
-                          close()
-                        }}>
-                          <ModeEditOutlinedIcon style={{marginRight: 5}}/>
-                          Chỉnh sửa bài viết
-                        </li>
-                      ) : null
-                    }
-                    <li className="popupItem" onClick={() => {
-                      close()
-                    }}>
-                      <NotificationsOffOutlinedIcon style={{marginRight: 5}}/>
-                      Tắt thông báo về bài viết này
-                    </li>
-                    {
-                      (post?.userId?._id === infoUser._id )
-                      ?  (
-                        display ? (
-                          <li className="popupItem" onClick={() => {
-                            handleDeletePost()
-                            setDisplay(false)
-                            close()
-                          }}>
-                            <DeleteForeverOutlinedIcon style={{marginRight: 5}}/> 
-                            Xóa bài viết
-                          </li>
-                        ) : null
-                        
-                      )
-                      : ( 
-                        display ? (
-                          <li className="popupItem" onClick={() => {
-                            setDisplay(false)
-                            close()
-                          }}>
-                            <CancelOutlinedIcon style={{marginRight: 5}}/> 
-                            Ẩn bài viết
-                          </li>
-                        ) : (
-                          <li className="popupItem" onClick={() => {
-                            setDisplay(true)
-                            close()
-                          }}>
-                            <CancelOutlinedIcon style={{marginRight: 5}}/> 
-                            Hiện bài viết
-                          </li>
-                        )
-                      )
-                    }
-                    
-                  </div>
-                </div>)}
-              </Popup>
+              <span className="postUsername">
+                <Link to={`/profile/${post?.userId._id}`} style={{color:'#000', textDecoration: 'none' }}>
+                
+                {/* {Users.filter((u) => u.id === post?.userId)[0].username} */}
+                {post?.userId?.username}
+                </Link>
+              </span>
+              
+              <span className="postDate">
+              {formatDistance(Date.now(), timestamp, {addSuffix: true})}{" "}
+    
+              </span>
             </div>
-        </div>
-        {
-          display ? (
-            <>
-        <div className="postCenter">
-          <span className="postText">
-            {/* {post?.desc.length > 500 ? `${post?.desc.substring(0,500)}...` : post?.desc} */}
-            {post?.desc}
-          </span>
-          <img className="postImg" src={post?.img} alt="" />
-        </div>
-        <div className="postBottom">
-          <div className="postBottomLeft">
-            <img className="likeIcon" src={likeImg}  alt="" />
-            <img className="likeIcon" src={heartImg} alt="" />
-            <span className="postLikeCounter">{like} people like it</span>
+              <div className="postTopRight">
+                {/* <MoreVert onClick={() => setPopup(true)} /> */}
+                <Popup 
+                  trigger={
+                    <IconButton>
+                      <MoreVert />
+                    </IconButton>
+                  } 
+                  // modal
+                  nested
+                  position="bottom right"
+                >
+                  {close => (<div className={'popup'}>
+                    <div className="popupList">
+                      {
+                        (post?.userId?._id === infoUser._id ) ? (
+                          <>
+                            <li className="popupItem" onClick={() => {
+                              handleOpenModify()
+                              setOpen(o => !o)
+                              close()
+                            }}>
+                              
+                              <ModeEditOutlinedIcon style={{marginRight: 5}}/>
+                              Chỉnh sửa bài viết
+                            </li>
+                          
+                          
+                          </>
+                          
+                        ) : null
+                      }
+                      <li className="popupItem" onClick={() => {
+                        close()
+                      }}>
+                        <NotificationsOffOutlinedIcon style={{marginRight: 5}}/>
+                        Tắt thông báo về bài viết này
+                      </li>
+                      {
+                        (post?.userId?._id === infoUser._id )
+                        ?  (
+                          display ? (
+                            <li className="popupItem" onClick={() => {
+                              handleDeletePost()
+                              setDisplay(false)
+                              close()
+                            }}>
+                              <DeleteForeverOutlinedIcon style={{marginRight: 5}}/> 
+                              Xóa bài viết
+                            </li>
+                          ) : null
+                          
+                        )
+                        : ( 
+                          display ? (
+                            <li className="popupItem" onClick={() => {
+                              setDisplay(false)
+                              close()
+                            }}>
+                              <CancelOutlinedIcon style={{marginRight: 5}}/> 
+                              Ẩn bài viết
+                            </li>
+                          ) : (
+                            <li className="popupItem" onClick={() => {
+                              setDisplay(true)
+                              close()
+                            }}>
+                              <CancelOutlinedIcon style={{marginRight: 5}}/> 
+                              Hiện bài viết
+                            </li>
+                          )
+                        )
+                      }
+                      
+                    </div>
+                  </div>)}
+                </Popup>
+              </div>
           </div>
-          <div className="postBottomRight">
-            <span className="postCommentText" onClick={handleOpenComment}>{post?.comments?.length + comments.length} comments</span>
+          {
+            display ? (
+              <>
+          <div className="postCenter">
+            <span className="postText">
+              {/* {post?.desc.length > 500 ? `${post?.desc.substring(0,500)}...` : post?.desc} */}
+              {post?.desc}
+            </span>
+            <img className="postImg" src={post?.img} alt="" />
           </div>
-        </div>
-        <Box
-              display="flex"
-              justifyContent="space-around"
-              padding=".2rem 0"
-              borderTop="1px solid #ccc"
-            >
-              {/* <IconButton size="small">
-                <ChatBubbleOutlineIcon fontSize="small" />
-              </IconButton> */}
-              <IconButton onClick={likeHandler} size="small">
-                {isLiked ? (
-                  <ThumbUp fontSize="small" />
-                ) : (
-                  <ThumbUpOutlinedIcon fontSize="small" />
-                )}
-              </IconButton>
-              <IconButton size="small" onClick={handleOpenComment}>
-                <ChatBubbleOutlineIcon  fontSize="small" />
-              </IconButton>
-              <IconButton size="small">
-                <IosShareIcon fontSize="small" />
-              </IconButton>
-            </Box>
-      {openComment 
-        ? (
-          <Box 
-            sx = {{
-              borderTop:"1px solid #ccc",
-              padding:'0.5',
-            }}
-          >
-            <Box
-              sx={{
-                display: 'flex',
-                paddingTop: '2px',
-                // marginTop: '20px'
+          <div className="postBottom">
+            <div className="postBottomLeft">
+              <img className="likeIcon" src={likeImg}  alt="" />
+              <img className="likeIcon" src={heartImg} alt="" />
+              <span className="postLikeCounter">{like} people like it</span>
+            </div>
+            <div className="postBottomRight">
+              <span className="postCommentText" onClick={handleOpenComment}>{post?.comments?.length + comments.length} comments</span>
+            </div>
+          </div>
+          <Box
+                display="flex"
+                justifyContent="space-around"
+                padding=".2rem 0"
+                borderTop="1px solid #ccc"
+              >
+                {/* <IconButton size="small">
+                  <ChatBubbleOutlineIcon fontSize="small" />
+                </IconButton> */}
+                <IconButton onClick={likeHandler} size="small">
+                  {isLiked ? (
+                    <ThumbUp fontSize="small" />
+                  ) : (
+                    <ThumbUpOutlinedIcon fontSize="small" />
+                  )}
+                </IconButton>
+                <IconButton size="small" onClick={handleOpenComment}>
+                  <ChatBubbleOutlineIcon  fontSize="small" />
+                </IconButton>
+                <IconButton size="small">
+                  <IosShareIcon fontSize="small" />
+                </IconButton>
+              </Box>
+        {openComment 
+          ? (
+            <Box 
+              sx = {{
+                borderTop:"1px solid #ccc",
+                padding:'0.5',
               }}
             >
-
               <Box
-                component="img"
                 sx={{
-                  height: 32,
-                  width: 32,
-                  borderRadius:'50%',
-                  marginRight:'5px'
+                  display: 'flex',
+                  paddingTop: '2px',
+                  // marginTop: '20px'
                 }}
-                alt="avatar"
-                src={infoUser?.profilePicture}
+              >
 
-              />
-              <Box padding="0.1rem 0.5rem" border="1px solid #ccc" borderRadius={18} width='100%'>
-                <Input
-                  onChange={(e) => setCommentText(e.target.value)}
-                  value={commentText}
-                  multiline
-                  rows="1"
-                  disableUnderline
-                  type="text"
-                  placeholder="Post your comment"
-                  sx={{ width: "100%" }}
-                  onKeyDown={handleKeyPress}
+                <Box
+                  component="img"
+                  sx={{
+                    height: 32,
+                    width: 32,
+                    borderRadius:'50%',
+                    marginRight:'5px'
+                  }}
+                  alt="avatar"
+                  src={infoUser?.profilePicture}
+
                 />
+                <Box padding="0.1rem 0.5rem" border="1px solid #ccc" borderRadius={18} width='100%'>
+                  <Input
+                    onChange={(e) => setCommentText(e.target.value)}
+                    value={commentText}
+                    multiline
+                    rows="1"
+                    disableUnderline
+                    type="text"
+                    placeholder="Post your comment"
+                    sx={{ width: "100%" }}
+                    onKeyDown={handleKeyPress}
+                  />
+                </Box>
               </Box>
+              {
+                oldComments?.map((c) => <Comment key={c._id} comment={c}/> )
+              }
+              {
+                comments?.map((c) => <Comment key={c._id} comment={c}/> )
+              }
             </Box>
-            {
-              oldComments?.map((c) => <Comment key={c._id} comment={c}/> )
-            }
-            {
-              comments?.map((c) => <Comment key={c._id} comment={c}/> )
-            }
-          </Box>
-          )
-        : null}
-            </>
-          ) : (
-            <div>
-                "This post has been hide"
-            </div>
-          )
-        }
-        
+            )
+          : null}
+              </>
+            ) : (
+              <div>
+                  "This post has been hide"
+              </div>
+            )
+          }
+          
+        </div>
       </div>
-    </div>
+      <Popup
+        open={open} closeOnDocumentClick onClose={closeModal}
+        modal
+        nested
+        className='modify'
+      >
+        {close => (
+          <div className='modal'>
+            <div className='header'>
+              Chỉnh sửa bài viết    
+            </div>
+            <Share modify={true} postModify={post} close={close} />
+          </div>
+        )}
+      </Popup>
+    </>
   );
 }

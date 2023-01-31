@@ -12,7 +12,7 @@ router.post('/', auth, async (req, res) => {
     try {
         const newPost = new Post(req.body)
         const savedPost = await newPost.save()
-        console.log(savedPost)
+        // console.log(savedPost)
         res.status(200).json(savedPost)
     } catch (error) {
         res.status(500).json(error)
@@ -20,11 +20,11 @@ router.post('/', auth, async (req, res) => {
 })
 
 // update a post
-router.put("/:id", async(req, res) => {
+router.put("/:id", auth, async(req, res) => {
     try {
         const postId = req.params.id
         const post = await Post.findById(postId)
-        if (post.userId == req.body.userId) {
+        if (post.userId._id.equals(req.user._id)) {
             await post.updateOne({
                 $set: req.body
             })
@@ -43,7 +43,7 @@ router.delete("/:id", auth, async(req, res) => {
         // console.log(req.user._id)
         const postId = req.params.id
         const post = await Post.findById(postId)
-        console.log(post.userId.equals(req.user._id))
+        // console.log(post.userId.equals(req.user._id))
         if (post.userId.equals(req.user._id)) {
             await post.deleteOne();
             res.status(200).json("The post has been deleted.")
@@ -125,7 +125,7 @@ router.get("/timeline/:userId", async (req,res) => {
 router.get("/profile/:userId", async (req, res) => {
     try {
         const user = await User.findOne({ _id: req.params.userId });
-        console.log(user)
+        // console.log(user)
         const posts = await Post.find({ userId: user._id }).populate('userId').populate({path:'comments', populate: {
             path: 'user',
             select: ['username', 'profilePicture']
